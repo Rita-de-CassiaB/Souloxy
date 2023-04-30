@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGIN - Souloxy</title>
+    <title>MEU PERFIL - Souloxy</title>
 
     <!-- Aqui colocamos o link para o arquivo de estilização-->
     <link rel="stylesheet" href="CSS/perfil.css">
@@ -22,10 +22,10 @@
             <h1>SOULOXY</h1>
             <ul class="navBar">
                 <li> <a href="index.html">Home</a></li>
-                <li> <a href="quiz.html">Quiz</a></li>
+
                 <li>|</li>
-                <li id="aqui"><a href="login.html">Login</a></li>
-                <li> <a href="cadastro.html">Cadastro</a></li>
+                <li> <a href="login.html">Login</a></li>
+                <li id="aqui"> <a href="cadastro.html">Cadastro</a></li>
             </ul>
         </div>
 
@@ -36,8 +36,17 @@
     <div class="banner">
         <div class="container">
             <div class="caixa_formulario">
-                <p>SEJA BEM-VINDO(A) </br>AO LOGIN</p>
+
                 <div class="formulario">
+
+                    <span>Nome:</span>
+                    <input id="nome_input" type="nome">
+
+                    <span>Sobrenome:</span>
+                    <input id="sobrenome_input" type="Sobrenome">
+
+                    <span>CEP:</span>
+                    <input id="CEP_input" type="CEP">
 
                     <span>E-mail:</span>
                     <input id="email_input" type="email">
@@ -45,15 +54,33 @@
                     <span>Senha:</span>
                     <input id="senha_input" type="password">
 
-                    <center>
-                        <button id="botão">Entrar</button>
-                    </center>
+                    <span>Confirme a senha:</span>
+                    <input id="senha_input" type="password">
+
                 </div>
+
+            </div>
+            <div class="caixa_formulario2">
+                <div>
+                    <center>
+                        <div class="Confirme">
+                            <p>SEJA BEM-VINDO(A) </br> AO CADASTRO</p>
+                            <img id="logo"
+                                src="file:///C:/Users/ritad/OneDrive/%C3%81rea%20de%20Trabalho/Projeto%20individual%20-%20Souloxy/SpTech-ProjetoIndividual/Site/Identidade%20Visual/LogoRox.png"
+                                alt="">
+                            <button id="botão"> Confirmar Cadastro</button>
+                        </div>
+                    </center>
+
+
+                </div>
+
             </div>
         </div>
     </div>
 
     <!-- Fim do Banner -->
+
 
     <!-- Começo do footer -->
     <div class="footer">

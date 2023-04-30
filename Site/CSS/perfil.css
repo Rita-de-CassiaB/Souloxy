@@ -2,18 +2,28 @@
 body {
     margin: 0;
     background: #69418B;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .header {
-    border-bottom: 2px solid #5AA96B;
+    border-bottom: 3px solid #BEC4ED;
     background-color: #1C3720;
-    height: 85px;
+    height: 100px;
 }
 
 .container {
-    width: auto;
+    width: 80%;
     margin: auto;
+    display: flex;
+}
+.container h1 {
+    margin: 10px;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 50px;
+    align-self: center;
+    padding: 0;
+    list-style: none;
     display: flex;
 
 }
@@ -22,32 +32,25 @@ body {
     justify-content: space-between;
 }
 
-.header ul #aqui {
-    font-weight: 1000;
-    color: #ffffff;
-}
 
-ul {
-    color: #ffffff;
+li {
+    color: #BEC4ED;
     font-weight: 1000;
 }
-
 a {
-    color: #ffffff;
+    color: #BEC4ED;
     font-weight: 1000;
     text-decoration: none;
 }
 
 .titulo img{
-width: 90px;
-}
-.titulo {
-    width: fit-content;
-    font-weight: 500;
+    padding-top: 5px;
+    width: 100px;
 }
 
 .navBar {
     width: 300px;
+    height: auto;
     padding: 0;
     list-style: none;
     display: flex;
@@ -63,29 +66,35 @@ width: 90px;
 .banner {
    background-image: url("");
     height: 500px;
-    color: #ffffff;
+    color: #BEC4ED;
     display: flex;
-
+    padding: 40px;
+    width: 92%;
 }
 
-.banner .container p span {
-    font-weight: 1000;
+.banner .container p {
+    width: 500px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.Confirme {
+    width: 500px;
+    margin-left: 10px;
 }
 
 .banner .container {
     font-size: 36px;
+    width: 300px;
     justify-content: center;
 }
 
-.banner .container p {
-    width: 30%;
-}
 
 /* Fim do banner */
 
 /* Começo do Social */
 .social {
-    background-color: beige;
+    background-color:#BEC4ED;
     display: flex;
 }
 
@@ -115,8 +124,8 @@ width: 90px;
 /* Começo do Footer */
 
 .footer {
-    height: 150px;
-    color: #fff;
+    height: 50px;
+    color: #BEC4ED;
     display: flex;
     font-size: 15px;
     width: 100%;
