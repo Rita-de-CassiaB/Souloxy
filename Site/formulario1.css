@@ -12,7 +12,7 @@ body {
 }
 
 .container {
-    width: 80%;
+    width: auto;
     margin: auto;
     display: flex;
 
