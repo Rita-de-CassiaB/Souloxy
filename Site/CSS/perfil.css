@@ -8,12 +8,13 @@ body {
 .header {
     border-bottom: 3px solid #BEC4ED;
     background-color: #1C3720;
-    height: 100px;
+    height: 50px;
 }
 
 .container {
     width: 80%;
     margin: auto;
+    height: 50px;
     display: flex;
 }
 .container h1 {

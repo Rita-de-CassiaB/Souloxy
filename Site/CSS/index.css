@@ -1,13 +1,11 @@
 /* Começo do cabeçalho */
 body {
     margin: 0;
-    background-image: url(file:///C:/Users/ritad/OneDrive/%C3%81rea%20de%20Trabalho/Projeto%20Individual/Souloxy/Site/Identidade%20Visual/Site%20Souloxy.png);
-    font-family: 'Courier New', Courier, monospace;
-}
-
+    background-image: url(C:/Users/ritad/OneDrive/Área%20de%20Trabalho/Projeto%20Individual/Souloxy/Site/Identidade%20Visual/Site%20Souloxy.png);
+    background-size: 100%;
+}   
 
 .header {
-    border-bottom: 3px solid #BEC4ED;
     height: 50px;
 }
 
@@ -46,8 +44,8 @@ a {
 }
 
 .titulo img {
-    padding-top: 5px;
-    width: 100px;
+    padding-top: 3px;
+    width: 90px;
 }
 
 .navBar {
@@ -61,6 +59,7 @@ a {
     color: #1C3720;
 }
 
+
 /* Fim do cabeçalho */
 
 /* Começo do Banner */
@@ -70,101 +69,73 @@ a {
     text-align: center;
     width: 97%;
     height: 30px;
-    margin: 10px;
+    margin: 29px;
     color: #ffffff;
     align-self: center;
     font-family: 'Courier New', Courier, monospace;
 }
 
 .banner {
-    height: 350px;
+    height: 300px;
     color: #ffffff;
     display: flex;
 }
 
 .container {
     display: flex;
-    justify-content: space-around;
+    margin-left: 20px;
 }
 
 #logo {
-    height: 300px;
+    height: 400px;
+    margin-top: -90px;
 }
 
-#frase {
-    height: 250px;
-    padding-top: 25px;
-}
 
 .caixa_conteiner {
-    width: 96%;
-    height: 150px;
+    width: 600px;
+    height: 400px;
     display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    margin-left: 20%;
+
+}
+
+.b1 {
+    height: 300px;
+    width: 200px;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
-.botões {
-    width: 90%;
-    height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-}
-
-.botões a {
+.b1 a {
     background-color: #1C3720;
     border-radius: 20px;
-    height: 50px;
-    margin-top: 10px;
     color: #BEC4ED;
     text-align: center;
-    padding: 13px;
-    font-size: 20px;
+    padding: 19px;
+    font-size: 22px;
 }
+
+
+
 
 /* Fim do banner */
-
-/* Começo do Social */
-.social {
-    background-color: beige;
-    display: flex;
-}
-
-.box img {
-    width: 170px;
-}
-
-.social .container .boxes {
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-}
-
-.box {
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.social p {
-    text-align: center;
-}
 
 /* Final do Social */
 
 /* Começo do Footer */
 
 .footer {
-    background-color: #32b9cd;
     height: 50px;
-    color: #fff;
+    color: #BEC4ED;
     display: flex;
     font-size: 15px;
     width: 100%;
+    margin-top: 100px;
+    background-color: black;
 }
 
 .footer .container {
