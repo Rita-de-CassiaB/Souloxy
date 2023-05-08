@@ -1,11 +1,8 @@
 /* Começo do cabeçalho */
 body {
     margin: 0;
-    background-image: url(file:///C:/Users/ritad/Desktop/Faculdade/Souloxy/Identidade%20Visual/Site%20Souloxy.png);
-    background-size: 100%;
     font-family: 'Courier New', Courier, monospace;
-}   
-
+}
 
 .header {
     border-bottom: 3px solid #BEC4ED;
@@ -62,70 +59,65 @@ a {
     color: #1C3720;
 }
 
-
 /* Fim do cabeçalho */
 
 /* Começo do Banner */
 
-.inicio {
-    font-size: 30px;
-    text-align: center;
-    width: 92%;
-    height: 30px;
-    margin: 29px;
-    color: #BEC4ED;
-    align-self: center;
-    font-family: 'Courier New', Courier, monospace;
-}
-
 .banner {
-    height: 300px;
-    color: #ffffff;
+   background-image: url("");
+    height: 500px;
+    color: #BEC4ED;
     display: flex;
+    padding: 40px;
+    width: 92%;
 }
 
-.container {
-    display: flex;
-    margin-left: 20px;
+.banner .container p {
+    width: 500px;
+    font-weight: 900;
+    text-align: center;
 }
 
-#logo {
-    height: 400px;
-    margin-top: -90px;
+.Confirme {
+    width: 500px;
+    margin-left: 10px;
 }
 
-
-.caixa_conteiner {
-    width: 600px;
-    height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: nowrap;
-    margin-left: 20%;
-
-}
-
-.b1 {
-    height: 300px;
-    width: 200px;
-    flex-direction: column;
+.banner .container {
+    font-size: 36px;
+    width: 300px;
     justify-content: center;
 }
 
-.b1 a {
-    background-color: #1C3720;
-    border-radius: 20px;
-    color: #BEC4ED;
-    text-align: center;
-    padding: 19px;
-    font-size: 22px;
-}
-
-
-
 
 /* Fim do banner */
+
+/* Começo do Social */
+.social {
+    background-color:#BEC4ED;
+    display: flex;
+}
+
+.box img {
+    width: 170px;
+}
+
+.social .container .boxes {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.box {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social p {
+    text-align: center;
+}
 
 /* Final do Social */
 
@@ -137,8 +129,6 @@ a {
     display: flex;
     font-size: 15px;
     width: 100%;
-    margin-top: 100px;
-    background-color: black;
 }
 
 .footer .container {

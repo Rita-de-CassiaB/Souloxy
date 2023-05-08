@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CADASTRO - Souloxy</title>
+
+    <!-- Aqui colocamos o link para o arquivo de estilização-->
+    <link rel="stylesheet" href="perfil.css">
+    <link rel="stylesheet" href="formulários.css">
+</head>
+
+<body>
+    <!-- Nosso cabeçalho -->
+    <div class="header">
+        <div class="container">
+            <h1 class="titulo">SOULOXY</h1>
+            <ul class="navBar">
+                <li> <a href="Home.html">Home</a></li>
+                <li> <a href="quiz.html">Quiz</a></li>
+                <li>|</li>
+                <li> <a href="login.html">Login</a></li>
+                <li id="aqui">Cadastro</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- Começo do Banner -->
+
+    <div class="banner">
+        <div class="container">
+            <div class="caixa_formulario">
+  </br>
+                <div class="formulario">
+                  
+                    <span>Nome:</span>
+                    <input id="nome_input" type="nome">
+
+                    <span>Sobrenome:</span>
+                    <input id="sobrenome_input" type="Sobrenome">
+
+                    <span>CEP:</span>
+                    <input id="CEP_input" type="CEP">
+
+                    <span>E-mail:</span>
+                    <input id="email_input" type="email">
+
+                    <span>Senha:</span>
+                    <input id="senha_input" type="password">
+
+                    <span>Confirme a senha:</span>
+                    <input id="confirmesenha_input" type="password">
+
+                </div>
+
+            </div>
+            <div class="caixa_formulario2">
+                <div>
+                    <center>
+                    </br></br></br></br></br></br></br></br></br>
+                        <div class="Confirme">
+                            <p>SEJA BEM-VINDO(A) </br> AO CADASTRO</p>
+                            <img id="logo" src="imgs/LogoRoxo.png" alt="">
+                            <button onclick="Confirmar()" id="botão"> Confirmar Cadastro</button>
+                        </div>
+                    </center>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Fim do Banner -->
+
+
+    <!-- Começo do footer -->
+   
+</body>
+
+</html>
+
+<Script>
+    function Confirmar() {
+        var nome = nome_input.value;
+        var sobrenome = sobrenome_input.value
+        var CEP = Number(CEP_input.value);
+        var email = email_input.value;
+        var senha = Number(senha_input.value);
+        var confirme = Number(confirmesenha_input.value);
+
+
+        if (confirme != senha) {
+            alert(`Erro na inserção de dados, confirme suas informações`)
+        } else {
+            alert(`Cadastro confirmado, redirecionando página`)
+        }
+    }
+</Script>
