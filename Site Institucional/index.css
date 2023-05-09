@@ -48,6 +48,9 @@ a {
 /* Fim do cabeçalho */
 
 /* Começo do Banner */
+.a{
+    height: 2100px;
+}
 .fundo {
     height: 1200px;
 }
@@ -69,7 +72,6 @@ a {
     align-items: center;
     flex-wrap: nowrap;
     margin: 50px;
-
 }
 
 .b1 a {
@@ -111,7 +113,6 @@ a {
     margin-top: 20px;
     display: flex;
     color: #1C3720;
-
 }
 
 
@@ -178,14 +179,12 @@ a {
 /* Final do Social */
 
 /* Começo do Footer */
-.footer {
-    height: 50px;
+.footer .container2{
+
+    background-color: #1C3720;
     color: #BEC4ED;
     display: flex;
-    font-size: 15px;
+    font-size: 20px;
     width: 100%;
-}
-
-.footer .container {
     justify-content: center;
 }
