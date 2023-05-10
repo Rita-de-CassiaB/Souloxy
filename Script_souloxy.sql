@@ -1,19 +1,32 @@
 CREATE DATABASE Souloxy;
+
 USE Souloxy;
 
 CREATE TABLE usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(50),
 	sobrenome VARCHAR(50),
-	cep CHAR(9),
+    id CHAR(4) PRIMARY KEY,
+	cep CHAR(8),
 	email VARCHAR(50),
 	senha VARCHAR(50)
 );
 
-CREATE TABLE aviso (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	titulo VARCHAR(100),
-	descricao VARCHAR(150),
-	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
-);
+CREATE TABLE viagens (
+	idviagem INT,
+	data DATE,
+	duracao VARCHAR(150),
+	cidade VARCHAR(50),
+	local VARCHAR(15),
+	atividades CHAR(1),
+	satisfacao CHAR(1),
+	comentarios VARCHAR(200),
+	fkusuario CHAR(4),
+	CONSTRAINT fkusuario FOREIGN KEY  (fkusuario) REFERENCES usuario(id),
+	CONSTRAINT pkComposta PRIMARY KEY (fkusuario, idviagem)
+    );
+    
+    SELECT * FROM usuario
+		JOIN viagens ON id = fkusuario;
+        SELECT * FROM usuario;
+		SELECT * FROM viagens;
+    DROP DATABASE Souloxy;
