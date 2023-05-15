@@ -1,0 +1,238 @@
+/* pagina mural */
+
+.janela {
+  height: 100vh;
+  width: 230px;
+  background-color:#BEC4ED;
+  margin-left: -20px;
+  border-radius: 20px;
+  padding-left: 30px;
+
+}
+
+.fundo {
+  display: flex;
+}
+
+*,
+body {
+  font-family: "Exo 2", sans-serif;
+}
+
+.label-captura {
+  display: flex;
+  justify-content: center;
+}
+
+.publicacao-btn-editar {
+  cursor: pointer;
+  font-family: "Exo 2", sans-serif;
+  border: 0;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 5px 8px;
+  color: #BEC4ED;
+  background-color: #e6005a;
+  width: 80px;
+}
+
+.publicacao {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: stretch;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  border-bottom: 3px solid #e6005a;
+  padding: 20px;
+}
+
+.publicacao > *:not(:last-child) {
+  padding: 0 0 10px 0;
+}
+
+.div-results {
+  width: 100%;
+}
+
+.div-results .feed-container {
+  border-radius: 5px;
+  margin-bottom: 80px;
+}
+
+.div-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.div-buttons > * {
+  margin-left: 30px;
+}
+
+/* pagina graficos */
+
+
+.dash {
+  width: 75%;
+  top: 0;
+  left: 20%;
+  height: 100vh;
+}
+
+.regua {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.maismeses {
+  background-color: #69418B;
+  border-radius: 20px;
+  border: 2px solid #BEC4ED;
+  color: #BEC4ED;
+}
+
+.menosmeses {
+  background-color: #69418B;
+  border-radius: 20px;
+  border: 2px solid #BEC4ED;
+  color: #BEC4ED;
+}
+
+.totalviagens {
+  background-color: #69418B;
+  border-radius: 20px;
+  border: 2px solid #BEC4ED;
+  color: #BEC4ED;
+}
+
+.maisvisitados {
+  background-color: #69418B;
+  border-radius: 20px;
+  border: 2px solid #BEC4ED;
+  color: #BEC4ED;
+}
+
+.item-regua {
+  width: 15%;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 450px;
+  width: 100%;
+  align-items: center;
+  color: #BEC4ED;
+}
+
+.card {
+  margin: 2%;
+  width: 40%;
+  flex-wrap: wrap;
+  display: flex;
+  text-align: center;
+  height: 180px;
+  justify-content: right;
+  background-color: #212124;
+  font-size: 20px;
+}
+
+.card p {
+  margin: 0;
+  font-size: 50px;
+  font-weight: lighter;
+  text-align: left;
+}
+
+.cards h1 {
+  font-size: 22px;
+  width: 100%;
+  border-bottom: solid #BEC4ED 1px;
+  text-align: left;
+  font-weight: lighter;
+  margin: 20px;
+}
+
+.temperatura,
+.umidade {
+  margin: 5px;
+  margin-left: 20px;
+  width: 75%;
+}
+
+.btns-dash {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+
+}
+
+.graph {
+  width: 80%;
+  margin: auto;
+  padding-top: 10px;
+}
+
+.tituloGraficos {
+  color: #BEC4ED;
+  display: flex;
+  justify-content: center;
+}
+
+.titulousuario {
+  color: #BEC4ED;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-chart {
+  font-family: "Exo 2", sans-serif;
+  border: 0;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 10px 15px;
+  color: #e6005a;
+  background-color: #BEC4ED;
+  margin: 5px;
+  border-radius: 3px;
+}
+
+.btn-pink {
+  color: #BEC4ED;
+  background-color: #e6005a;
+}
+
+.btn-white {
+  color: #e6005a;
+  background-color: #BEC4ED;
+
+}
+
+.label-captura {
+  height: 80px;
+}
+
+.display-none {
+  display: none;
+}
+
+.display-flex {
+  display: flex;
+}
+
+.display-block {
+  display: block;
+}
+
+canvas {
+  width: 100% !important;
+  height: 100% !important;
+}

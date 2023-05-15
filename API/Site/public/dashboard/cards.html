@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Souloxy | Perfil</title>
+
+    <link rel="stylesheet" href="../css/formulários.css">
+    <link rel="stylesheet" href="../css/perfil.css">
+    <link rel="stylesheet" href="dashboards.css">
+
+    <script src="../js/funcoes.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body onload="validarSessao(), atualizacaoPeriodica()">
+
+    <div class="header">
+        <div class="container">
+
+            <h1 class="titulo">SOULOXY</h1>
+
+            <ul class="navBar">
+                <li> <a href="../Quiz.html">Quiz</a></li>
+                <li> <a href="../dashboard/Simuladores.html">Simuladores</a></li>
+                <li>|</li>
+                <li><a href="./dashboard.html">Gráficos</a></li>
+                <li> <a onclick="limparSessao()" href="../index.html">Sair</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="fundo">
+        <div class="janela">
+
+            <div class="hello">
+                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+            </div>
+
+            <div class="inserir">
+                <li> <a href="Cadastroviagens.html">Cadastrar viagens</a></li>
+            </div>
+
+        </div>
+
+        <div class="dash">
+
+            <div class="regua">
+                <div class="item-regua maismeses">
+                    <h4>Meses do ano que mais viajou</h4>
+                    <h2>Julho e Agosto</h2>
+                </div>
+                <div class="item-regua menosmeses">
+                    <h4>Meses do ano que menos viajou</h4>
+                    <h2>Março e Abril</h2>
+                </div>
+                <div class="item-regua totalviagens">
+                    <h4>Total de Viagens Realizadas: </h4>
+                    <h2>12/14</h2>
+                </div>
+                <div class="item-regua maisvisitados">
+                    <h4>Locais mais visitados:
+                    </h4>
+                    <h2>Cachoeira</h2>
+                </div>
+
+            </div>
+
+            <div class="cards">
+                <div class="card">
+                    <h1>Gráfico Cidade </h1>
+                    <div class="cidade">
+                        <p id="usuario1"></p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h1>Gráfico Duração</h1>
+                    <div class="duracao">
+                        <p id="usuario2"></p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h1>Gráfico Satisfação</h1>
+                    <div class="satisfacao">
+                        <p id="usuario3"></p>
+                    </div>
+
+                </div>
+
+                <div class="card">
+                    <h1>Gráfico Datas</h1>
+                    <div class="data">
+                        <p id="usuario4"></p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+
+    function atualizacaoPeriodica() {
+        obterdados(1);
+   /*     obterdados(2);
+        obterdados(3);
+        obterdados(4);*/
+
+        function sendData() {
+            var http = new XMLHttpRequest();
+            http.open('POST', 'http://localhost:3333/api/sendData', false);
+            http.send(null);
+        }
+
+        setInterval(() => {
+            sendData();
+        }, 2000);
+        setTimeout(atualizacaoPeriodica, 5000);
+    }
+
+    function obterdados(viagens) {
+        fetch(`/viagens/ultimasviagens/${fkusuario}`)
+            .then(resposta => {
+
+                if (resposta.ok) {
+                    resposta.json().then(resposta => {
+
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                        var dados = {
+                            cidade: resposta[0],
+                        }
+
+                        alertar(resposta[0]. cidade, fkusuario);
+                    });
+                } else {
+
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados das viagens p/ gráfico: ${error.message}`);
+            });
+
+
+
+        var card;
+
+        if (fkusuario == fkusuario) {
+            usuario1.innerHTML = cidade ;
+            card = card_1
+        } else if (fkusuario == fkusuario) {
+            tusuario2.innerHTML = cidade ;
+            card = card_2
+        }
+
+    }
+
+</script>
+
+</html>

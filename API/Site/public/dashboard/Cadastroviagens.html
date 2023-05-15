@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CADASTRO DE VIAGENS - Souloxy</title>
+    <script src="../js/funcoes.js"></script>
+
+    <!-- Aqui colocamos o link para o arquivo de estilização-->
+    <link rel="stylesheet" href="../css/perfil.css">
+    <link rel="stylesheet" href="../css/formulários.css">
+</head>
+
+<body>
+    <!-- Nosso cabeçalho -->
+
+    <div class="header">
+        <div class="container">
+            <h1 class="titulo">SOULOXY</h1>
+            <ul class="navBar">
+                <li> <a href="../Quiz.html">Quiz</a></li>
+                <li> <a href="../dashboard/Simuladores.html">Simuladores</a></li>
+                <li>|</li>
+                <li><a href="./dashboard.html">Gráficos</a></li>
+                <li> <a onclick="limparSessao()" href="../index.html">Sair</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Começo do Banner -->
+
+    <div class="cadastro">
+        <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
+
+            <div id="div_aguardar"></div>
+
+            <div class="banner">
+                <div class="container">
+                    <div class="caixa_formulario">
+                        <div class="formulario">
+
+                            <span>Número (Insira a posição da viagem)</span>
+                            <input id="numero_input" type="number">
+
+                            <span>Quando a viagem ocorreu?:</span>
+                            <input id="data_input" type="date">
+
+                            <span>Quantos dias ela durou?:</span>
+                            <input id="duracao_input" type="number">
+
+                            <span>Para qual cidade/estado você viajou? :</span>
+                            <input id="cidade_input" type="cidade">
+
+                            <span> Qual o local de Viagem:</span>
+                            <select id="select_locais">
+                                <option value="Cachoeira">Cachoeira</option>
+                                <option value="Praia">Praia</option>
+                                <option value="Cidade">Cidade </option>
+                                <option value="Montanha">Montanhas</option>
+                            </select>
+
+                            <span>Quais atividades mais se encaixam com a viagem?:</span>
+                            <select id="select_atividades">
+                                <option value="1">Gastronomia / Esportes ao ar livre / Ecoturismo / Praias / Cavernas
+                                </option>
+                                <option value="2">Jardins temáticos / Feira de artesanato / Atrações para família /
+                                    Parques
+                                </option>
+                                <option value="3">Festival / Gastronomia / Bares / Paisagem / Cultivos e Flores /
+                                    Arquitetura
+                                </option>
+                                <option value="4">Atividades Culturais / Atividades Radicais / Aventuras / Paisagem /
+                                    Cachoeiras
+                                </option>
+                            </select>
+
+                            <span>Qual seu Nível de Satisfação?</span>
+                            <select id="select_satisfacao">
+                                <option value="0">0%
+                                </option>
+                                <option value="2">20%
+                                </option>
+                                <option value="3">40%
+                                </option>
+                                <option value="4">60%
+                                </option>
+                                <option value="4">80%
+                                </option>
+                                <option value="5">100%
+                                </option>
+                            </select>
+
+                            <span>Diga mais sobre a viagem</span>
+                            <input id="comentarios_input" type="text">
+
+                            <span>Qual seu número de identificação? (4 números)</span>
+                            <input id="id_input" type="number">
+                        </div>
+                    </div>
+
+                    <div class="caixa_formulario2">
+                        <div>
+                            <center>
+                                </br>
+                                <div class="Confirme">
+                                    <p>SEJA BEM-VINDO(A) </br> AO CADASTRO DE VIAGENS</p>
+                                    <img id="logo" src="../css/imgs/LogoRoxo.png" alt="">
+                                    <button onclick="cadastrarviagem()" id="botão"> Confirmar Cadastro da viagem</button>
+                                </div>
+                            </center>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fim do Banner -->
+
+
+            <!-- Começo do footer -->
+            <div class="footer">
+                <div class="container">
+                    <p>
+                        Direitos Reservados a Souloxy 2023 ©
+                    </p>
+                </div>
+            </div>
+</body>
+
+</html>
+
+<script>
+    function cadastrarviagem() {
+        aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+
+        var idviagemVar = Number(numero_input.value);
+        var dataVar = data_input.value;
+        var duracaoVar = Number(duracao_input.value);
+        var cidadeVar = cidade_input.value;
+        var localVar = select_locais.value;
+        var atividadesVar = Number(select_atividades.value);
+        var satisfacaoVar = Number(select_satisfacao.value);
+        var comentariosVar = comentarios_input.value;
+        var fkusuarioVar = Number(id_input.value);
+
+        if (idviagemVar == "" || dataVar == "" || duracaoVar == "" || cidadeVar == "" || localVar == "" || atividadesVar == "" || satisfacaoVar == "" || comentariosVar == "" || fkusuarioVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Preencha os campos em branco";
+
+            finalizarAguardar();
+            return false;
+        } else if (fkusuarioVar > 9999) {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Por favor confira seus numeros de identificação";
+            
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrarviagem", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                idviagemServer: idviagemVar,
+                dataServer: dataVar,
+                duracaoServer: duracaoVar,
+                cidadeServer: cidadeVar,
+                localServer: localVar,
+                atividadesServer: atividadesVar,
+                satisfacaoServer: satisfacaoVar,
+                comentariosServer: comentariosVar,
+                fkusuarioServer: fkusuarioVar
+            })
+
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+
+                mensagem_erro.innerHTML = "Cadastro de viagem realizado com sucesso! Redirecionando para tela de Perfil...";
+
+                setTimeout(() => {
+                    window.location = "cards.html";
+                }, "2000")
+
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+            
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN - Souloxy</title>
+
+    <!-- Aqui colocamos o link para o arquivo de estilização-->
+    <link rel="stylesheet" href="css/perfil.css">
+    <link rel="stylesheet" href="css/formulários.css">
+</head>
+
+<body>
+    <!-- Nosso cabeçalho -->
+    <div class="header">
+        <div class="container">
+            <h1 class="titulo">SOULOXY</h1>
+            <ul class="navBar">
+                <li><a href="index.html">Home</a></li>
+                <li> <a href="Quiz.html">Quiz</a></li>
+                <li>|</li>
+                <li id="aqui">Login</li>
+                <li><a href="Cadastro.html">Cadastro</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="cadastro">
+        <div class="alerta_erro">
+            <div class="card_erro" id="cardErro">
+                <span id="mensagem_erro"></span>
+            </div>
+        </div>
+
+
+    <!-- Começo do Banner -->
+    <div class="banner">
+        <div class="container">
+            <div class="caixa_formulario">
+                </br></br></br></br></br>
+                <div class="formulario">
+                    <span>E-mail:</span>
+                    <input id="email_input" type="email">
+
+                    <span>Senha:</span>
+                    <input id="senha_input" type="password">
+
+                    <div id="div_result"></div>
+
+                </div>
+            </div>
+            <div class="caixa_formulario2">
+                <div>
+                    <center>
+                        <div class="Confirme">
+                            <p>SEJA BEM-VINDO(A) </br> AO LOGIN</p>
+                            <img id="logo" src="css/imgs/LogoRoxo.png" alt="">
+                            <button onclick="entrar()" id="botão"> Confirmar Login</button>
+                        </div>
+
+                        <div id="div_erros_login"></div>
+                    </center>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fim do Banner -->
+
+    <!-- Começo do footer -->
+
+    <div class="footer">
+        <div class="container">
+            <p>
+                Direitos Reservados a Souloxy 2023 ©
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+
+    function entrar() {
+    //    aguardar();
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Por favor preencha os campos em branco";
+            finalizarAguardar();
+            return false;
+        }else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.SENHA_USUARIO = json.senha;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "./dashboard/cards.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>
