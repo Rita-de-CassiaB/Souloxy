@@ -46,48 +46,89 @@
                     <div class="caixa_formulario">
                         <div class="formulario">
 
+                            <h1>Simulador de Distância</h1>
+
                             <span>Qual seu nome?</span>
                             <input id="nome_input" type="text">
 
-                            <span>Qual seu sobrenome?</span>
-                            <input id="sobrenome_input" type="text">
-
-                            <span>Defina um Número de identificação (insira 4 números)
-                            </span>
+                            <span>Insira seu Número de identificação (insira 4 números)</span>
                             <input id="id_input" type="number">
 
-                            <span>Insira seu CEP</span>
+                            <span>Qual seu CEP?</span>
                             <input id="cep_input" type="number">
 
-                            <span>Qual seu e-mail</span>
-                            <input id="email_input" type="email">
+                            <span>Selecione um desses locais</span>
+                            <select id="select_locais">
+                                <option value="Cachoeira">Cachoeira</option>
+                                <option value="Praia">Praia</option>
+                                <option value="Cidade">Cidade </option>
+                                <option value="Montanha">Montanhas</option>
+                            </select>
+                        </div>
+                        <div id="div_frase"></div>
+                    </div>
 
-                            <span>Defina uma senha</span>
-                            <input id="senha_input" type="password">
+                    <div class="caixa_formulario2">
+                        <div>
 
-                            <span>Confirme a senha:</span>
-                            <input id="confirmacao_senha_input" type="password">
+                            <center>
+                                </br>
+                                <div class="Confirme">
+                                    <p>SEJA BEM-VINDO(A) </br> AO SIMULADOR DE DISTÂNCIA</p>
+                                    <img id="logo" src="../css/imgs/LogoRoxo.png" alt="">
+                                    <button onclick="SimularD()" id="botão"> Simular Distância</button>
+                                </div>
+                            </center>
 
                         </div>
-
                     </div>
+                </div>
+            </div>
+
+
+
+            <div class="banner2">
+                <div class="container">
 
                     <div class="caixa_formulario2">
                         <div>
                             <center>
                                 </br>
                                 <div class="Confirme">
-                                    <p>SEJA BEM-VINDO(A) </br> AOS SIMULADORES</p>
+                                    <p>SEJA BEM-VINDO(A) </br> O SIMULADOR DE GASOLINA</p>
                                     <img id="logo" src="../css/imgs/LogoRoxo.png" alt="">
-                                    <button onclick="Simular()" id="botão"> Simular</button>
+                                    <button onclick="SimularG()" id="botão"> Simular Gasolina</button>
                                 </div>
                             </center>
 
                         </div>
 
                     </div>
+
+                    <div class="caixa_formulario3">
+                        <div class="formulario">
+
+                            <h1>Simulador de Gasolina</h1>
+
+                            <span>Qual seu nome?</span>
+                            <input id="nome_input" type="text">
+
+                            <span>Insira seu Número de identificação (insira 4 números)
+                            </span>
+                            <input id="id_input" type="number">
+
+                            <span>Qual a distância em km?</span>
+                            <input id="cep_input" type="number">
+
+                            <span>Qual a média do valor atual da gasolina em litro?</span>
+                            <input id="gasolina_input" type="number">
+
+                        </div>
+                        <div id="div_frase2"></div>
+                    </div>
                 </div>
             </div>
+
 
             <!-- Fim do Banner -->
 
@@ -105,57 +146,51 @@
 </html>
 
 <script>
-    function cadastrar() {
-        aguardar();
 
-        //Recupere o valor da nova input pelo nome do id
-        // Agora vá para o método fetch logo abaixo
+    function SimularD() {
+    //    aguardar();
+
         var nomeVar = nome_input.value;
-        var sobrenomeVar = sobrenome_input.value;
         var idVar = Number(id_input.value);
         var cepVar = Number(cep_input.value);
-        var emailVar = email_input.value;
-        var senhaVar = Number(senha_input.value);
-        var confirmacaoSenhaVar = Number(confirmacao_senha_input.value);
+        var locaisVar = select_locais.value;
 
-        if (nomeVar == "" || sobrenomeVar == "" || idVar == "" || cepVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+        if (nomeVar == "" || idVar == "" || cepVar == "" || locaisVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "Preencha os campos em branco";
 
-            finalizarAguardar();
-            return false;
+  //          finalizarAguardar();
+ //           return false;
 
-        } else if (confirmacaoSenhaVar != senhaVar ){
-            mensagem_erro.innerHTML = "Suas senhas não estão iguais";
-            finalizarAguardar();
-            return false;
-            
         } else {
             setInterval(sumirMensagem, 5000)
         }
 
-            console.log("resposta: ", resposta);
+        div_frase.innerHTML = `Não era eu, não era eu. Confundiram o meu carro, minha roupa, meu sapato te juro não era eu`
+    }
 
-            if (resposta.ok) {
-                cardErro.style.display = "block";
 
-                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+    function SimularG() {
+   //     aguardar();
 
-                setTimeout(() => {
-                    window.location = "login.html";
-                }, "2000")
+        var nomeVar = nome_input.value;
+        var idVar = Number(id_input.value);
+        var cepVar = Number(cep_input.value);
+        var GasolinaVar = Number(gasolina_input.value);
 
-                limparFormulario();
-                finalizarAguardar();
-            } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
-        });
+        if (nomeVar == "" || idVar == "" || cepVar == "" || GasolinaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "Preencha os campos em branco";
 
-        return false;
+ //           finalizarAguardar();
+ //           return false;
+
+        } else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        div_frase2.innerHTML = `Você foi a culpada desse amor se acabar, você quem destruiu a minha vida`
+    }
 
     function sumirMensagem() {
         cardErro.style.display = "none"
