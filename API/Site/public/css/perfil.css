@@ -5,11 +5,31 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
+
 .container {
     width: 80%;
     margin: auto;
     display: flex;
     height: 80px;
+    align-items: baseline;
+}
+
+.container2 {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    height: 80px;
+
+}
+
+.container3 {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    height: 80px;
+    align-items:flex-start;
+
 }
 
 .header .container {
@@ -54,11 +74,28 @@ p {
 /* Começo do Social */
 
 .banner {
-    height: 730px;
+    height: 600px;
+    padding-right: 50px;
+    padding-left: 50px;
 }
 .banner2 {
-    height: 600px;
-    margin-top: -100px;
+    height: 520px;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+.banner3 {
+    height: 780px;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+.banner4 {
+    height: 700px;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+.Confirme{
+align-items: baseline;
+margin-top: -100px;
 }
 
 /* Final do Social */

@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
+    <link rel="shortcut icon" href="../css/imgs/logosem.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CADASTRO - Souloxy</title>
+    <title>Cadastro | Souloxy</title>
     <script src="js/funcoes.js"></script>
 
     <!-- Aqui colocamos o link para o arquivo de estilização-->
@@ -34,16 +35,15 @@
     <div class="cadastro">
         <div class="alerta_erro">
             <div class="card_erro" id="cardErro">
+
                 <span id="mensagem_erro"></span>
-            </div>
-
+                
             <div id="div_aguardar"></div>
-
-            <div class="banner">
+            <div class="banner4">
                 <div class="container">
                     <div class="caixa_formulario">
                         <div class="formulario">
-
+                            <h1>SEJA BEM-VINDO(A) AO CADASTRO</h1>
                             <span>Qual seu nome?</span>
                             <input id="nome_input" type="text">
 
@@ -75,11 +75,14 @@
                             <center>
                                 </br>
                                 <div class="Confirme">
-                                    <p>SEJA BEM-VINDO(A) </br> AO CADASTRO</p>
+                                    
                                     <img id="logo" src="css/imgs/LogoRoxo.png" alt="">
                                     <button onclick="cadastrar()" id="botão"> Confirmar Cadastro</button>
                                 </div>
+                                <div id="div_aguardar" class="loading-div">
+                                </div>
                             </center>
+
 
                         </div>
 
@@ -123,11 +126,6 @@
             finalizarAguardar();
             return false;
 
-        } else if (confirmacaoSenhaVar != senhaVar ){
-            mensagem_erro.innerHTML = "Suas senhas não estão iguais";
-            finalizarAguardar();
-            return false;
-            
         } else {
             setInterval(sumirMensagem, 5000)
         }

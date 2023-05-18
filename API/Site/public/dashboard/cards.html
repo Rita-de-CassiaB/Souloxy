@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../css/imgs/logosem.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +19,7 @@
         rel="stylesheet">
 </head>
 
-<body onload="validarSessao(), atualizacaoPeriodica()">
+<body onload="validarSessao()">
 
     <div class="header">
         <div class="container">
@@ -41,13 +41,16 @@
 
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+                <h3>Seu Identificador <span id="b_id">ID</span></h3>
+                <h3>Seu Email <span id="b_email">ID</span></h3>
             </div>
 
             <div class="inserir">
                 <li> <a href="Cadastroviagens.html">Cadastrar viagens</a></li>
             </div>
 
-        </div>
+        </div>  
+         <a href="cards copy.html">aaaaaaaaaaaaaaaa</a></li>
 
         <div class="dash">
 
@@ -75,15 +78,16 @@
             <div class="cards">
                 <div class="card">
                     <h1>Gráfico Cidade </h1>
-                    <div class="cidade">
-                        <p id="usuario1"></p>
+                    <div class="graph">
+                        <canvas id="exibirCidadeUsuario">Gráfico Cidade</canvas>
                     </div>
+
                 </div>
 
                 <div class="card">
                     <h1>Gráfico Duração</h1>
-                    <div class="duracao">
-                        <p id="usuario2"></p>
+                    <div class="graph">
+                        <canvas id="exibirDuracaoUsuario">Gráfico Cidade</canvas>
                     </div>
                 </div>
 
@@ -109,62 +113,131 @@
 
 <script>
 
-    function atualizacaoPeriodica() {
-        obterdados(1);
-   /*     obterdados(2);
-        obterdados(3);
-        obterdados(4);*/
+        b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+        b_id.innerHTML = sessionStorage.ID;
+        b_email.innerHTML = sessionStorage.EMAIL_USUARIO;        
 
-        function sendData() {
-            var http = new XMLHttpRequest();
-            http.open('POST', 'http://localhost:3333/api/sendData', false);
-            http.send(null);
+        function atualizacaoPeriodica() {
+            exibirCidadeUsuario(id);
+            // obterdados(2);
+            // obterdados(3);
+            // obterdados(4);
+
+            function sendData() {
+                var http = new XMLHttpRequest();
+                http.open('POST', 'http://localhost:3000/api/sendData', false);
+                http.send(null);
+            // }
+
+            //  setInterval(() => {
+            //  	sendData();
+            //  }, 2000);
+            //  setTimeout(atualizacaoPeriodica, 5000);
         }
 
-        setInterval(() => {
-            sendData();
-        }, 2000);
-        setTimeout(atualizacaoPeriodica, 5000);
-    }
-
-    function obterdados(viagens) {
-        fetch(`/viagens/ultimasviagens/${fkusuario}`)
-            .then(resposta => {
-
-                if (resposta.ok) {
-                    resposta.json().then(resposta => {
-
-                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-
-                        var dados = {
-                            cidade: resposta[0],
-                        }
-
-                        alertar(resposta[0]. cidade, fkusuario);
-                    });
-                } else {
-
-                    console.error('Nenhum dado encontrado ou erro na API');
-                }
+        function exibirCidadeUsuario(id) {
+            fetch(`/viagens/exibirCidadeUsuario`, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    fkusuario: id
+                })
             })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos dados das viagens p/ gráfico: ${error.message}`);
-            });
+                .then(resposta => {
+                    console.log(resposta)
+                    if (resposta.ok) {
 
+                        resposta.json().then(json => {
+                            console.log(json);
+                            console.log(JSON.stringify(json));
 
+                            sessionStorage.EMAIL_USUARIO = json.email;
+                            sessionStorage.SENHA_USUARIO = json.senha;
+                            sessionStorage.NOME_USUARIO = json.nome;
+                            sessionStorage.ID = json.id;
 
-        var card;
+                            setTimeout(function () {
+                                window.location = "./dashboard/cards.html";
+                            }, 1000); // apenas para exibir o loading
 
-        if (fkusuario == fkusuario) {
-            usuario1.innerHTML = cidade ;
-            card = card_1
-        } else if (fkusuario == fkusuario) {
-            tusuario2.innerHTML = cidade ;
-            card = card_2
+                        });
+
+                        resposta.json().then(resposta => {
+
+                            console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                            var dados = {
+                                cidade: resposta[0].cidade,
+                            }
+
+                            alertar(resposta[0].cidade, idviagem);
+                        });
+                    } else {
+
+                        console.error('Nenhum dado encontrado ou erro na API');
+                    }
+                })
+                .catch(function (error) {
+                    console.error(`Erro na obtenção dos dados do aquario p/ gráfico: ${error.message}`);
+                });
+
         }
 
-    }
+        // function alertar(cidade, idviagem) {
+        //     var limites = {
+        //         muito_quente: 23,
+        //         quente: 22,
+        //         ideal: 20,
+        //         frio: 10,
+        //         muito_frio: 5
+        //     };
 
+        //     var classe_temperatura = 'cor-alerta';
+
+        //     if (temperatura >= limites.muito_quente) {
+        //         classe_temperatura = 'cor-alerta perigo-quente';
+        //         console.log("caiu no 1")
+        //     }
+        //     else if (temperatura < limites.muito_quente && temperatura >= limites.quente) {
+        //         classe_temperatura = 'cor-alerta alerta-quente';
+        //         console.log("caiu no 2")
+        //     }
+        //     else if (temperatura < limites.quente && temperatura > limites.frio) {
+        //         classe_temperatura = 'cor-alerta ideal';
+        //         console.log("caiu no 3")
+        //     }
+        //     else if (temperatura <= limites.frio && temperatura > limites.muito_frio) {
+        //         classe_temperatura = 'cor-alerta alerta-frio';
+        //         console.log("caiu no 4")
+        //     }
+        //     else if (temperatura < limites.min_temperatura) {
+        //         classe_temperatura = 'cor-alerta perigo-frio';
+        //         console.log("caiu no 5")
+        //     }
+
+        //     var card;
+
+        //     if (idviagem == 1) {
+        //         temp_aquario_1.innerHTML = temperatura + "°C";
+        //         card = card_1
+        //     } else if (idviagem == 2) {
+        //         temp_aquario_2.innerHTML = temperatura + "°C";
+        //         card = card_2
+        //     } else if (idviagem == 3) {
+        //         temp_aquario_3.innerHTML = temperatura + "°C";
+        //         card = card_3
+        //     } else if (idviagem == 4) {
+        //         temp_aquario_4.innerHTML = temperatura + "°C";
+        //         card = card_4
+        //     }
+
+        //     // alterando
+        //     card.className = classe_temperatura;
+
+        // }
+    }
 </script>
 
 </html>

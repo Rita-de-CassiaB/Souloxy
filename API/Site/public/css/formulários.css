@@ -1,4 +1,4 @@
-#cadastro{
+#cadastro {
     background-color: #BEC4ED;
     width: 162px;
     margin: 10px;
@@ -9,7 +9,6 @@
     height: 450px;
     display: flex;
     flex-direction: column;
-    justify-content: left;
     align-items: center;
     padding: 20px;
     margin-right: 50px;
@@ -34,109 +33,181 @@
     justify-content: left;
     align-items: center;
     padding: 20px;
+    margin-top: 50px;
     margin-right: 50px;
 }
 
 .caixa_formulario h1 {
-    font-size: 40px;
+    font-size: 30px;
     text-align: center;
+    text-transform: capitalize;
+    color: #69418B;
 }
 
 .caixa_formulario2 h1 {
-    font-size: 40px;
+    font-size: 30px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #BEC4ED;
 }
 
 .caixa_formulario3 h1 {
-    font-size: 40px;
+    font-size: 30px;
     text-align: center;
+    text-transform: capitalize;
+    color: #69418B;
+}
+
+.caixa_formulario5 {
+    width: 440px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -100px;
+}
+
+#apresentacao{
+    width: 100%;
+    font-size: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #BEC4ED;  
+    opacity: .4;
+
 }
 
 .formulario {
     display: flex;
     flex-direction: column;
     width: 700px;
-    padding: 50px;
     justify-content: space-evenly;
-    border: 2px solid #BEC4ED;
+    padding: 30px;
+    margin-bottom: 50px;
+    background-color: #BEC4ED;
+    border-radius: 10px;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 .formulario .button {
     margin-top: 10px;
-    background: #1C3720;
-    color: #BEC4ED;
+    background: #BEC4ED;
+
     padding: 15px;
     border: none;
     border-radius: 10px;
     font-size: 20px;
     width: 120px;
     align-self: center;
+    justify-content: center;
 }
 
+#div_b {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .formulario span {
     font-size: 20px;
     text-align: center;
-    margin: 4px;
+    margin: 6px;
+    color: #69418B;
+}
+
+
+#logo {
+    width: 400px;
+    margin-top: 50px;
 }
 
 .formulario input {
     padding: 10px;
     text-align: center;
-    background-color: #1C3720;
+    background-color: #BEC4ED;
+    border-color: #1C3720;
     border-radius: 20px;
-    color: #BEC4ED;
-}
-
-#logo {
-    width: 400px;
+    color: #1C3720;
+    border-style: solid;
+    border-width: 1px;
 }
 
 
 #botão {
-    background-color: #1C3720;
-    border-radius: 20px;
-    width: 300px;
+    background-color: #69418B;
+    width: 200px;
     margin-top: 10px;
     color: #BEC4ED;
     padding: 15px;
+    border: 1px solid rgb(190, 196, 237);
     text-align: center;
+    border-radius: 10px;
     font-size: 20px;
+
+}
+
+#botão:hover {
+    background-color: #69418B;
+    width: 200px;
+    margin-top: 10px;
+    color: #BEC4ED;
+    padding: 15px;
+    border: 1px solid rgb(190, 196, 237);
+    text-align: center;
+    border-radius: 10px;
+    font-size: 20px;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 #select_atividades {
     padding: 10px;
     text-align: center;
-    background-color: #1C3720;
+    background-color: #BEC4ED;
+    border-color: #1C3720;
     border-radius: 20px;
-    color: #BEC4ED;
+    color: #1C3720;
+    border-style: solid;
+    border-width: 1px;
 }
 
 #select_estacaoano {
     padding: 10px;
     text-align: center;
-    background-color: #1C3720;
+    background-color: #BEC4ED;
+    border-color: #1C3720;
     border-radius: 20px;
-    color: #BEC4ED;
+    color: #1C3720;
+    border-style: solid;
+    border-width: 1px;
 }
 
 #select_locais {
     padding: 10px;
     text-align: center;
-    background-color: #1C3720;
+    background-color: #BEC4ED;
+    border-color: #1C3720;
     border-radius: 20px;
-    color: #BEC4ED;
+    color: #1C3720;
+    border-style: solid;
+    border-width: 1px;
 }
 
 #select_satisfacao {
     padding: 10px;
     text-align: center;
-    background-color: #1C3720;
+    background-color: #BEC4ED;
+    border-color: #1C3720;
     border-radius: 20px;
-    color: #BEC4ED;
+    color: #1C3720;
+    border-style: solid;
+    border-width: 1px;
 }
 
 #div_result {
     color: #BEC4ED;
     font-size: 30px;
     text-align: center;
+
 }

@@ -2,11 +2,12 @@
 <html lang="en">
 
 <head>
+    <link rel="shortcut icon" href="../css/imgs/logosem.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIMULADORES - Souloxy</title>
-    <script src="js/funcoes.js"></script>
+    <title>Simuladores | Souloxy</title>
+    <script src="../js/funcoes.js"></script>
 
     <!-- Aqui colocamos o link para o arquivo de estilização-->
     <link rel="stylesheet" href="../css/formulários.css">
@@ -41,31 +42,47 @@
 
             <div id="div_aguardar"></div>
 
-            <div class="banner">
+            <div class="banner2">
+                <div id="apresentacao">Nossos Simuladores:</div>
                 <div class="container">
+
                     <div class="caixa_formulario">
+
                         <div class="formulario">
 
-                            <h1>Simulador de Distância</h1>
+
+                            <h1>Simulador de gasolina</h1>
+
 
                             <span>Qual seu nome?</span>
                             <input id="nome_input" type="text">
 
-                            <span>Insira seu Número de identificação (insira 4 números)</span>
-                            <input id="id_input" type="number">
+                            <span>Insira seu Número de identificação (insira 4 números)
+                            </span>
+                            <input id="id_input" type="number" max="9999">
 
-                            <span>Qual seu CEP?</span>
-                            <input id="cep_input" type="number">
+                            <span>Qual a distância em km?</span>
+                            <input id="km_input" type="number">
 
-                            <span>Selecione um desses locais</span>
-                            <select id="select_locais">
-                                <option value="Cachoeira">Cachoeira</option>
-                                <option value="Praia">Praia</option>
-                                <option value="Cidade">Cidade </option>
-                                <option value="Montanha">Montanhas</option>
-                            </select>
+                            <span>Qual a média do valor atual da gasolina em litro?</span>
+                            <input id="gasolina_input" type="number">
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            
+                            <div id="div_frase"></div>
                         </div>
-                        <div id="div_frase"></div>
+
                     </div>
 
                     <div class="caixa_formulario2">
@@ -74,7 +91,6 @@
                             <center>
                                 </br>
                                 <div class="Confirme">
-                                    <p>SEJA BEM-VINDO(A) </br> AO SIMULADOR DE DISTÂNCIA</p>
                                     <img id="logo" src="../css/imgs/LogoRoxo.png" alt="">
                                     <button onclick="SimularD()" id="botão"> Simular Distância</button>
                                 </div>
@@ -87,45 +103,80 @@
 
 
 
-            <div class="banner2">
-                <div class="container">
+            <div class="banner">
+                <div class="container3">
 
                     <div class="caixa_formulario2">
                         <div>
                             <center>
-                                </br>
                                 <div class="Confirme">
-                                    <p>SEJA BEM-VINDO(A) </br> O SIMULADOR DE GASOLINA</p>
                                     <img id="logo" src="../css/imgs/LogoRoxo.png" alt="">
                                     <button onclick="SimularG()" id="botão"> Simular Gasolina</button>
                                 </div>
                             </center>
-
                         </div>
-
                     </div>
 
                     <div class="caixa_formulario3">
                         <div class="formulario">
-
-                            <h1>Simulador de Gasolina</h1>
+                            <h1>Gostaria de saber o CEP do local para simular a Gasolina?</h1>
 
                             <span>Qual seu nome?</span>
                             <input id="nome_input" type="text">
 
-                            <span>Insira seu Número de identificação (insira 4 números)
-                            </span>
-                            <input id="id_input" type="number">
+                            <span>Insira seu Número de identificação (insira 4 números)</span>
+                            <input id="id_input" type="number" max="9999">
 
-                            <span>Qual a distância em km?</span>
+                            <span>Qual seu CEP?</span>
                             <input id="cep_input" type="number">
 
-                            <span>Qual a média do valor atual da gasolina em litro?</span>
-                            <input id="gasolina_input" type="number">
+                            <span>Selecione um desses locais</span>
+                            <select id="select_locais">
+                                <option value="18130200">São Roque</option>
+                                <option value="17380000">Brotas</option>
+                                <option value="11750000">Peruíbe </option>
+                                <option value="12450000">Santo Antonio do Pinhal</option>
+                                <option value="11960970">Eldorado</option>
+                                <option value="13930970">Serra Negra</option>
+                                <option value="19275970">Cunha</option>
+                                <option value="813300169">Itu</option>
+                                <option value="12460000">Campos do Jordão</option>
+                                <option value="18190000">Araçoiaba da Serra</option>
+                                <option value="11680000">Ubatuba</option>
+                                <option value="12940100">Atibaia</option>
+                                <option value="12490000">São Bento do Sapucaí</option>
+                                <option value="13890">Águas de Prata</option>
+                                <option value="13960000">Socorro</option>
+                            </select>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            
+                            <div id="div_frase2"></div>
                         </div>
-                        <div id="div_frase2"></div>
+
                     </div>
+
                 </div>
             </div>
 
@@ -148,7 +199,7 @@
 <script>
 
     function SimularD() {
-    //    aguardar();
+        aguardar();
 
         var nomeVar = nome_input.value;
         var idVar = Number(id_input.value);
@@ -157,39 +208,73 @@
 
         if (nomeVar == "" || idVar == "" || cepVar == "" || locaisVar == "") {
             cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "Preencha os campos em branco";
+            alert("Preencha os campos em branco");
 
-  //          finalizarAguardar();
- //           return false;
+            finalizarAguardar();
+            return false;
 
         } else {
             setInterval(sumirMensagem, 5000)
+
+
+            var service = new google.maps.DistanceMatrixService();
+        //executar o DistanceMatrixService
+        service.getDistanceMatrix(
+          {
+              //Origem
+              origins: [$("cepVar").val()],
+              //Destino
+              destinations: [$("locaisVar").val()],
+              //Modo (DRIVING | WALKING | BICYCLING)
+              travelMode: google.maps.TravelMode.DRIVING,
+              //Sistema de medida (METRIC | IMPERIAL)
+              unitSystem: google.maps.UnitSystem.METRIC
+              //Vai chamar o callback
+          }, callback);
+
+
+
+
+
+            div_frase.innerHTML += `${nomeVar},</br>
+        Levando em consideração que seu CEP é ${cepVar}, e o destino de viagem é ${locaisVar}. </br>
+        A distância em kms é de 
+        um carro faz 7,7km com um litro de gasolina, com essa Viagem você gastará cerca de ${kmlitro} litros de gasolina.</br>
+        De acordo com a gasolina de R$${GasolinaVar}, você gastará cerca de R$${valortotal} reais </br></br>`
+
         }
 
-        div_frase.innerHTML = `Não era eu, não era eu. Confundiram o meu carro, minha roupa, meu sapato te juro não era eu`
+
     }
 
 
     function SimularG() {
-   //     aguardar();
+        aguardar();
 
         var nomeVar = nome_input.value;
         var idVar = Number(id_input.value);
-        var cepVar = Number(cep_input.value);
+        var kmVar = Number(km_input.value);
         var GasolinaVar = Number(gasolina_input.value);
 
-        if (nomeVar == "" || idVar == "" || cepVar == "" || GasolinaVar == "") {
+
+        if (nomeVar == "" || idVar == "" || kmVar == "" || GasolinaVar == "") {
             cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "Preencha os campos em branco";
+            alert("Preencha os campos em branco");
 
- //           finalizarAguardar();
- //           return false;
-
+            finalizarAguardar();
+            return false;
         } else {
             setInterval(sumirMensagem, 5000)
-        }
 
-        div_frase2.innerHTML = `Você foi a culpada desse amor se acabar, você quem destruiu a minha vida`
+            var GasolinakmVar = (7.7);
+            var kmlitro = Math.round(kmVar / GasolinakmVar);
+            var valortotal = (kmlitro * GasolinaVar);
+
+            div_frase2.innerHTML += `
+        ${nomeVar},</br>
+        Levando em consideração que um carro faz 7,7km com um litro de gasolina, com essa Viagem você gastará cerca de ${kmlitro} litros de gasolina.</br>
+        De acordo com a gasolina de R$${GasolinaVar}, você gastará cerca de R$${valortotal} reais </br></br>`
+        }
     }
 
     function sumirMensagem() {

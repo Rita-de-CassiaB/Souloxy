@@ -235,4 +235,5 @@ body {
 canvas {
   width: 100% !important;
   height: 100% !important;
+  background-color: #e6005a;
 }

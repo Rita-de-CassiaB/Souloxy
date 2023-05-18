@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
+    <link rel="shortcut icon" href="../css/imgs/logosem.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CADASTRO DE VIAGENS - Souloxy</title>
+    <title>Cadastro de Viagens | Souloxy</title>
     <script src="../js/funcoes.js"></script>
 
     <!-- Aqui colocamos o link para o arquivo de estilização-->
@@ -37,100 +38,104 @@
                 <span id="mensagem_erro"></span>
             </div>
 
-            <div id="div_aguardar"></div>
+            <div id="div_aguardar">
 
-            <div class="banner">
-                <div class="container">
-                    <div class="caixa_formulario">
-                        <div class="formulario">
+                <div class="banner3">
+                    <div class="container">
+                        <div class="caixa_formulario">
 
-                            <span>Número (Insira a posição da viagem)</span>
-                            <input id="numero_input" type="number">
+                            <div class="formulario">
 
-                            <span>Quando a viagem ocorreu?:</span>
-                            <input id="data_input" type="date">
+                                <span>Número (Insira a posição da viagem)</span>
+                                <input id="numero_input" type="number">
 
-                            <span>Quantos dias ela durou?:</span>
-                            <input id="duracao_input" type="number">
+                                <span>Quando a viagem ocorreu?</span>
+                                <input id="data_input" type="date">
 
-                            <span>Para qual cidade/estado você viajou? :</span>
-                            <input id="cidade_input" type="cidade">
+                                <span>Quantos dias ela durou?</span>
+                                <input id="duracao_input" type="number">
 
-                            <span> Qual o local de Viagem:</span>
-                            <select id="select_locais">
-                                <option value="Cachoeira">Cachoeira</option>
-                                <option value="Praia">Praia</option>
-                                <option value="Cidade">Cidade </option>
-                                <option value="Montanha">Montanhas</option>
-                            </select>
+                                <span>Para qual cidade/estado você viajou? </span>
+                                <input id="cidade_input" type="cidade">
 
-                            <span>Quais atividades mais se encaixam com a viagem?:</span>
-                            <select id="select_atividades">
-                                <option value="1">Gastronomia / Esportes ao ar livre / Ecoturismo / Praias / Cavernas
-                                </option>
-                                <option value="2">Jardins temáticos / Feira de artesanato / Atrações para família /
-                                    Parques
-                                </option>
-                                <option value="3">Festival / Gastronomia / Bares / Paisagem / Cultivos e Flores /
-                                    Arquitetura
-                                </option>
-                                <option value="4">Atividades Culturais / Atividades Radicais / Aventuras / Paisagem /
-                                    Cachoeiras
-                                </option>
-                            </select>
+                                <span> Qual o local de Viagem:</span>
+                                <select id="select_locais">
+                                    <option value="Cachoeira">Cachoeira</option>
+                                    <option value="Praia">Praia</option>
+                                    <option value="Cidade">Cidade </option>
+                                    <option value="Montanha">Montanhas</option>
+                                </select>
 
-                            <span>Qual seu Nível de Satisfação?</span>
-                            <select id="select_satisfacao">
-                                <option value="0">0%
-                                </option>
-                                <option value="2">20%
-                                </option>
-                                <option value="3">40%
-                                </option>
-                                <option value="4">60%
-                                </option>
-                                <option value="4">80%
-                                </option>
-                                <option value="5">100%
-                                </option>
-                            </select>
+                                <span>Quais atividades mais se encaixam com a viagem?</span>
+                                <select id="select_atividades">
+                                    <option value="1">Gastronomia / Esportes ao ar livre / Ecoturismo / Praias /
+                                        Cavernas
+                                    </option>
+                                    <option value="2">Jardins temáticos / Feira de artesanato / Atrações para família /
+                                        Parques
+                                    </option>
+                                    <option value="3">Festival / Gastronomia / Bares / Paisagem / Cultivos e Flores /
+                                        Arquitetura
+                                    </option>
+                                    <option value="4">Atividades Culturais / Atividades Radicais / Aventuras / Paisagem
+                                        /
+                                        Cachoeiras
+                                    </option>
+                                </select>
 
-                            <span>Diga mais sobre a viagem</span>
-                            <input id="comentarios_input" type="text">
+                                <span>Qual seu Nível de Satisfação?</span>
+                                <select id="select_satisfacao">
+                                    <option value="0">0%
+                                    </option>
+                                    <option value="2">20%
+                                    </option>
+                                    <option value="3">40%
+                                    </option>
+                                    <option value="4">60%
+                                    </option>
+                                    <option value="4">80%
+                                    </option>
+                                    <option value="5">100%
+                                    </option>
+                                </select>
 
-                            <span>Qual seu número de identificação? (4 números)</span>
-                            <input id="id_input" type="number">
-                        </div>
-                    </div>
+                                <span>Diga mais sobre a viagem</span>
+                                <input id="comentarios_input" type="text">
 
-                    <div class="caixa_formulario2">
-                        <div>
-                            <center>
-                                </br>
-                                <div class="Confirme">
-                                    <p>SEJA BEM-VINDO(A) </br> AO CADASTRO DE VIAGENS</p>
-                                    <img id="logo" src="../css/imgs/LogoRoxo.png" alt="">
-                                    <button onclick="cadastrarviagem()" id="botão"> Confirmar Cadastro da viagem</button>
-                                </div>
-                            </center>
-
+                                <span>Qual seu número de identificação? (4 números)</span>
+                                <input id="id_input" type="number">
+                            </div>
                         </div>
 
+                        <div class="caixa_formulario2">
+                            <div>
+                                <center>
+
+                                    <div class="Confirme">
+                                        <h1>SEJA BEM-VINDO(A) </br> AO CADASTRO DE VIAGENS</h1>
+                                        <img id="logo" src="../css/imgs/LogoRoxo.png" alt="">
+                                        <button onclick="cadastrarviagem()" id="botão"> Confirmar Cadastro de
+                                            viagem</button>
+                                    </div>
+                                </center>
+
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Fim do Banner -->
+                <!-- Fim do Banner -->
 
 
-            <!-- Começo do footer -->
-            <div class="footer">
-                <div class="container">
-                    <p>
-                        Direitos Reservados a Souloxy 2023 ©
-                    </p>
+                <!-- Começo do footer -->
+                <div class="footer">
+                    <div class="container">
+                        <p>
+                            Direitos Reservados a Souloxy 2023 ©
+                        </p>
+                    </div>
                 </div>
-            </div>
 </body>
 
 </html>
@@ -161,63 +166,73 @@
         } else if (fkusuarioVar > 9999) {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "Por favor confira seus numeros de identificação";
-            
+
             finalizarAguardar();
             return false;
         }
         else {
             setInterval(sumirMensagem, 5000)
+
+
+            // Enviando o valor da nova input
+            fetch("/usuarios/cadastrarviagem", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    idviagemServer: idviagemVar,
+                    dataServer: dataVar,
+                    duracaoServer: duracaoVar,
+                    cidadeServer: cidadeVar,
+                    localServer: localVar,
+                    atividadesServer: atividadesVar,
+                    satisfacaoServer: satisfacaoVar,
+                    comentariosServer: comentariosVar,
+                    fkusuarioServer: fkusuarioVar
+                })
+
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    cardErro.style.display = "block";
+
+                    mensagem_erro.innerHTML = "Cadastro de viagem realizado com sucesso! Redirecionando para tela de Perfil...";
+
+                    setTimeout(() => {
+                        window.location = "cards.html";
+                    }, "2000")
+
+                    console.log(resposta);
+
+                    resposta.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+
+                        sessionStorage.EMAIL_USUARIO = json.email;
+                        sessionStorage.SENHA_USUARIO = json.senha;
+                        sessionStorage.NOME_USUARIO = json.nome;
+                        sessionStorage.IDVIAGEM = json.id;
+
+                    });
+
+                    limparFormulario();
+                    finalizarAguardar();
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!")
+
+                    return false;
+                }
+            })
+        };
+        function sumirMensagem() {
+            cardErro.style.display = "none"
         }
 
-        // Enviando o valor da nova input
-        fetch("/usuarios/cadastrarviagem", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                // crie um atributo que recebe o valor recuperado aqui
-                // Agora vá para o arquivo routes/usuario.js
-                idviagemServer: idviagemVar,
-                dataServer: dataVar,
-                duracaoServer: duracaoVar,
-                cidadeServer: cidadeVar,
-                localServer: localVar,
-                atividadesServer: atividadesVar,
-                satisfacaoServer: satisfacaoVar,
-                comentariosServer: comentariosVar,
-                fkusuarioServer: fkusuarioVar
-            })
 
-        }).then(function (resposta) {
-
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-                cardErro.style.display = "block";
-
-                mensagem_erro.innerHTML = "Cadastro de viagem realizado com sucesso! Redirecionando para tela de Perfil...";
-
-                setTimeout(() => {
-                    window.location = "cards.html";
-                }, "2000")
-
-                limparFormulario();
-                finalizarAguardar();
-            } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
-            
-        });
-
-        return false;
     }
-
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    }
-
 </script>

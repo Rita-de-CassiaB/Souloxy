@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
+    <link rel="shortcut icon" href="../css/imgs/logosem.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGIN - Souloxy</title>
+    <title>Login - Souloxy</title>
 
     <!-- Aqui colocamos o link para o arquivo de estilização-->
     <link rel="stylesheet" href="css/perfil.css">
@@ -36,50 +37,59 @@
         </div>
 
 
-    <!-- Começo do Banner -->
-    <div class="banner">
-        <div class="container">
-            <div class="caixa_formulario">
-                </br></br></br></br></br>
-                <div class="formulario">
-                    <span>E-mail:</span>
-                    <input id="email_input" type="email">
+        <!-- Começo do Banner -->
+        <div class="banner">
+            <div class="container2">
+                <div class="caixa_formulario">
+                    <div class="formulario">
+                        <h1>SEJA BEM-VINDO(A) AO LOGIN</h1>
+                        <span>E-mail:</span>
+                        <input id="email_input" type="email">
 
-                    <span>Senha:</span>
-                    <input id="senha_input" type="password">
+                        <span>Senha:</span>
+                        <input id="senha_input" type="password">
 
-                    <div id="div_result"></div>
+                        <div id="div_result"></div>
 
-                </div>
-            </div>
-            <div class="caixa_formulario2">
-                <div>
-                    <center>
-                        <div class="Confirme">
-                            <p>SEJA BEM-VINDO(A) </br> AO LOGIN</p>
-                            <img id="logo" src="css/imgs/LogoRoxo.png" alt="">
-                            <button onclick="entrar()" id="botão"> Confirmar Login</button>
+                    </div>
+
+                    <div class="formulario">
+                        <span>Caso não seja cadastrado, clique no botão</span>
+                        <br/>
+                        <div id="div_b">
+                            <button onclick="Cadastro()" id="botão"> Ir para o Cadastro</button>
                         </div>
+                    </div>
+                </div>
+                <div class="caixa_formulario2">
+                    <div>
+                        <center>
+                            <div class="Confirme">
 
-                        <div id="div_erros_login"></div>
-                    </center>
+                                <img id="logo" src="css/imgs/LogoRoxo.png" alt="">
+                                <button onclick="entrar()" id="botão"> Confirmar Login</button>
 
+                            </div>
+
+                            <div id="div_erros_login"></div>
+                        </center>
+
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Fim do Banner -->
+        <!-- Fim do Banner -->
 
-    <!-- Começo do footer -->
+        <!-- Começo do footer -->
 
-    <div class="footer">
-        <div class="container">
-            <p>
-                Direitos Reservados a Souloxy 2023 ©
-            </p>
+        <div class="footer">
+            <div class="container">
+                <p>
+                    Direitos Reservados a Souloxy 2023 ©
+                </p>
+            </div>
         </div>
-    </div>
 </body>
 
 </html>
@@ -88,7 +98,7 @@
 
 
     function entrar() {
-    //    aguardar();
+        //    aguardar();
 
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
@@ -98,7 +108,7 @@
             mensagem_erro.innerHTML = "Por favor preencha os campos em branco";
             finalizarAguardar();
             return false;
-        }else {
+        } else {
             setInterval(sumirMensagem, 5000)
         }
 
@@ -112,7 +122,7 @@
             },
             body: JSON.stringify({
                 emailServer: emailVar,
-                senhaServer: senhaVar
+                senhaServer: senhaVar,
             })
         }).then(function (resposta) {
             console.log("ESTOU NO THEN DO entrar()!")
@@ -127,11 +137,12 @@
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.SENHA_USUARIO = json.senha;
                     sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
-
+                    sessionStorage.ID = json.id;
+                    console.log("Session id ", sessionStorage.ID)
+                    alert("Você esta logado")
                     setTimeout(function () {
                         window.location = "./dashboard/cards.html";
-                    }, 1000); // apenas para exibir o loading
+                    }, 2000); // apenas para exibir o loading
 
                 });
 
