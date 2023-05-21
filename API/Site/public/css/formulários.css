@@ -16,13 +16,14 @@
 }
 
 .caixa_formulario2 {
-    width: 440px;
+    width: 400px;
     height: 450px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 60px;
+    margin-left: 10px;
 }
 
 .caixa_formulario3 {
@@ -68,12 +69,12 @@
     margin-top: -100px;
 }
 
-#apresentacao{
+#apresentacao {
     width: 100%;
     font-size: 50px;
     text-align: center;
     text-transform: uppercase;
-    color: #BEC4ED;  
+    color: #BEC4ED;
     opacity: .4;
 
 }
@@ -93,7 +94,6 @@
 .formulario .button {
     margin-top: 10px;
     background: #BEC4ED;
-
     padding: 15px;
     border: none;
     border-radius: 10px;
@@ -103,6 +103,73 @@
     justify-content: center;
 }
 
+.formulario span {
+    font-size: 20px;
+    text-align: center;
+    margin: 6px;
+    color: #69418B;
+}
+
+.formulario5 {
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    margin-top: -100px;
+    justify-content: space-evenly;
+    padding: 30px;
+    margin-bottom: 50px;
+    background-color: #BEC4ED;
+    border-radius: 10px;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.formulario5 .button {
+    margin-top: 10px;
+    background: #BEC4ED;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    width: 120px;
+    align-self: center;
+    justify-content: center;
+}
+
+.formulario5 span {
+    font-size: 20px;
+    text-align: center;
+    margin: 6px;
+    color: #69418B;
+}
+
+.Confirme button {
+    background-color: #69418B;
+    width: 200px;
+    margin-top: 10px;
+    color: #BEC4ED;
+    padding: 15px;
+    border: 1px solid rgb(190, 196, 237);
+    text-align: center;
+    border-radius: 10px;
+    font-size: 20px;
+
+}
+
+.Confirme button:hover {
+    background-color: #69418B;
+    width: 200px;
+    margin-top: 10px;
+    color: #BEC4ED;
+    padding: 15px;
+    border: 1px solid rgb(190, 196, 237);
+    text-align: center;
+    border-radius: 10px;
+    font-size: 20px;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
 #div_b {
     width: 100%;
     display: flex;
@@ -110,12 +177,6 @@
     justify-content: center;
 }
 
-.formulario span {
-    font-size: 20px;
-    text-align: center;
-    margin: 6px;
-    color: #69418B;
-}
 
 
 #logo {
@@ -134,6 +195,16 @@
     border-width: 1px;
 }
 
+#input_pesquisa {
+    padding: 10px;
+    text-align: center;
+    background-color: #BEC4ED;
+    border-color: #1C3720;
+    border-radius: 20px;
+    color: #1C3720;
+    border-style: solid;
+    border-width: 1px;
+}
 
 #botão {
     background-color: #69418B;
@@ -161,6 +232,21 @@
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
+
+#buscaCEP {
+    margin-top: 60px;
+    margin-right: 80px;
+    margin-left: -100px;
+    border-radius: 10px;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+#img_sorteada {
+    margin-right: 80px;
+    border-radius: 10px;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
 #select_atividades {
     padding: 10px;
     text-align: center;
@@ -171,6 +257,7 @@
     border-style: solid;
     border-width: 1px;
 }
+
 
 #select_estacaoano {
     padding: 10px;
@@ -206,7 +293,14 @@
 }
 
 #div_result {
-    color: #BEC4ED;
+    color: #1C3720;
+    font-size: 30px;
+    text-align: center;
+
+}
+
+#div_result {
+    color: #1C3720;
     font-size: 30px;
     text-align: center;
 

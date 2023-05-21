@@ -34,251 +34,302 @@
 
     <!-- Começo do Banner -->
 
-    <div class="cadastro">
-        <div class="alerta_erro">
-            <div class="card_erro" id="cardErro">
-                <span id="mensagem_erro"></span>
-            </div>
+    <div class="alerta_erro">
+        <div class="card_erro" id="cardErro">
+            <span id="mensagem_erro"></span>
+        </div>
 
-            <div id="div_aguardar"></div>
+        <div id="div_aguardar"></div>
 
-            <div class="banner2">
-                <div id="apresentacao">Nossos Simuladores:</div>
-                <div class="container">
+        <div class="banner4">
+            <div id="apresentacao">Nossos Simuladores:</div>
+            <div class="container">
 
-                    <div class="caixa_formulario">
+                <div class="caixa_formulario">
 
-                        <div class="formulario">
-
-
-                            <h1>Simulador de gasolina</h1>
+                    <div class="formulario">
 
 
-                            <span>Qual seu nome?</span>
-                            <input id="nome_input" type="text">
-
-                            <span>Insira seu Número de identificação (insira 4 números)
-                            </span>
-                            <input id="id_input" type="number" max="9999">
-
-                            <span>Qual a distância em km?</span>
-                            <input id="km_input" type="number">
-
-                            <span>Qual a média do valor atual da gasolina em litro?</span>
-                            <input id="gasolina_input" type="number">
+                        <h1>Simulador de gasolina</h1>
 
 
+                        <span>Qual seu nome?</span>
+                        <input id="nome_input1" type="text">
+
+                        <span>Qual a distância em km?</span>
+                        <input id="km_input" type="number">
+
+                        <span>Quantos KMs seu carro faz com 1l de gasolina? (Se não souber deixe em branco)</span>
+                        <input id="carrokml_input" type="number" min="8">
+
+                        <span>Qual a média do valor atual da gasolina em litro?</span>
+                        <input id="gasolina_input" type="number">
 
 
-
-
-
-
-
-
-
-
-
-                            
-                            <div id="div_frase"></div>
-                        </div>
-
-                    </div>
-
-                    <div class="caixa_formulario2">
-                        <div>
-
-                            <center>
-                                </br>
-                                <div class="Confirme">
-                                    <img id="logo" src="../css/imgs/LogoRoxo.png" alt="">
-                                    <button onclick="SimularD()" id="botão"> Simular Distância</button>
-                                </div>
-                            </center>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div class="banner">
-                <div class="container3">
-
-                    <div class="caixa_formulario2">
-                        <div>
-                            <center>
-                                <div class="Confirme">
-                                    <img id="logo" src="../css/imgs/LogoRoxo.png" alt="">
-                                    <button onclick="SimularG()" id="botão"> Simular Gasolina</button>
-                                </div>
-                            </center>
-                        </div>
-                    </div>
-
-                    <div class="caixa_formulario3">
-                        <div class="formulario">
-                            <h1>Gostaria de saber o CEP do local para simular a Gasolina?</h1>
-
-                            <span>Qual seu nome?</span>
-                            <input id="nome_input" type="text">
-
-                            <span>Insira seu Número de identificação (insira 4 números)</span>
-                            <input id="id_input" type="number" max="9999">
-
-                            <span>Qual seu CEP?</span>
-                            <input id="cep_input" type="number">
-
-                            <span>Selecione um desses locais</span>
-                            <select id="select_locais">
-                                <option value="18130200">São Roque</option>
-                                <option value="17380000">Brotas</option>
-                                <option value="11750000">Peruíbe </option>
-                                <option value="12450000">Santo Antonio do Pinhal</option>
-                                <option value="11960970">Eldorado</option>
-                                <option value="13930970">Serra Negra</option>
-                                <option value="19275970">Cunha</option>
-                                <option value="813300169">Itu</option>
-                                <option value="12460000">Campos do Jordão</option>
-                                <option value="18190000">Araçoiaba da Serra</option>
-                                <option value="11680000">Ubatuba</option>
-                                <option value="12940100">Atibaia</option>
-                                <option value="12490000">São Bento do Sapucaí</option>
-                                <option value="13890">Águas de Prata</option>
-                                <option value="13960000">Socorro</option>
-                            </select>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                            
-                            <div id="div_frase2"></div>
-                        </div>
-
+                        <div id="div_frase1"></div>
+                        <div id="div_frase10"></div>
                     </div>
 
                 </div>
-            </div>
 
+                <div class="caixa_formulario2">
+                    <div>
 
-            <!-- Fim do Banner -->
+                        <center>
+                            </br>
+                            <div class="Confirme">
+                                <img id="logo" src="../css/imgs/LogoRoxo.png" alt="">
+                                <button onclick="SimularG()"> Simular Gasolina</button>
+                            </div>
+                        </center>
 
-
-            <!-- Começo do footer -->
-            <div class="footer">
-                <div class="container">
-                    <p>
-                        Direitos Reservados a Souloxy 2023 ©
-                    </p>
+                    </div>
                 </div>
             </div>
+        </div>
+
+
+
+        <div class="banner2">
+            <div class="container3">
+
+                <div class="caixa_formulario2">
+                    <div>
+                        <center>
+                            <div class="Confirme">
+                                <img style=height:300px width="auto" src="" alt="" id="buscaCEP">
+                                <button onclick="SimularD()"> Buscar CEP</button>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+
+                <div class="caixa_formulario3">
+                    <div class="formulario">
+                        <h1>Gostaria de saber o CEP do local para simular a Gasolina?</h1>
+
+                        Como utilizar?</br>
+                        Selecione o local desejado, clique em Buscar CEP, copie e cole no <a
+                            href="https://www.google.com.br/maps"> Google Maps </a> </br> Após isso, clique com o
+                        botão direito na tela, vá em medir distância, selecione a área do local no mapa e depois
+                        busque por sua
+                        residência, ou o local de saída </br>
+                        <span>Selecione um desses locais</span></br>
+                        <select id="input_pesquisa">
+                            <option value="0">São Roque</option>
+                            <option value="1">Brotas</option>
+                            <option value="2">Peruíbe </option>
+                            <option value="3">Santo Antonio do Pinhal</option>
+                            <option value="4">Eldorado</option>
+                            <option value="5">Serra Negra</option>
+                            <option value="6">Cunha</option>
+                            <option value="7">Itu</option>
+                            <option value="8">Campos do Jordão</option>
+                            <option value="9">Araçoiaba da Serra</option>
+                            <option value="10">Ubatuba</option>
+                            <option value="11">Atibaia</option>
+                            <option value="12">São Bento do Sapucaí</option>
+                            <option value="13">Águas de Prata</option>
+                            <option value="14">Socorro</option>
+                        </select>
+
+                        </br></br>
+                        <center>
+                            <div id="div_frase2"></div></br>
+                        </center>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="banner">
+            <div class="container">
+
+                <div class="caixa_formulario">
+
+                    <div class="formulario">
+                        <h1>Sorteador aleatório de Viagens</h1>
+
+                        <span>Qual seu nome?</span>
+                        <input id="nome_input2" type="text">
+
+
+                        <div id="div_frase3"></div>
+                    </div>
+
+                </div>
+
+                <div class="caixa_formulario2">
+                    <div>
+
+                        <center>
+                            </br>
+                            <div class="Confirme">
+                                <img style=height:300px width="auto" src="" alt="" id="img_sorteada">
+                                <button onclick="SimularV()"> Sortear viagem aleatoriamente</button>
+                            </div>
+                        </center>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fim do Banner -->
+
+
+        <!-- Começo do footer -->
+        <div class="footer">
+            <div class="container">
+                <p>
+                    Direitos Reservados a Souloxy 2023 ©
+                </p>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>
 
 <script>
 
-    function SimularD() {
-        aguardar();
-
-        var nomeVar = nome_input.value;
-        var idVar = Number(id_input.value);
-        var cepVar = Number(cep_input.value);
-        var locaisVar = select_locais.value;
-
-        if (nomeVar == "" || idVar == "" || cepVar == "" || locaisVar == "") {
-            cardErro.style.display = "block"
-            alert("Preencha os campos em branco");
-
-            finalizarAguardar();
-            return false;
-
-        } else {
-            setInterval(sumirMensagem, 5000)
-
-
-            var service = new google.maps.DistanceMatrixService();
-        //executar o DistanceMatrixService
-        service.getDistanceMatrix(
-          {
-              //Origem
-              origins: [$("cepVar").val()],
-              //Destino
-              destinations: [$("locaisVar").val()],
-              //Modo (DRIVING | WALKING | BICYCLING)
-              travelMode: google.maps.TravelMode.DRIVING,
-              //Sistema de medida (METRIC | IMPERIAL)
-              unitSystem: google.maps.UnitSystem.METRIC
-              //Vai chamar o callback
-          }, callback);
-
-
-
-
-
-            div_frase.innerHTML += `${nomeVar},</br>
-        Levando em consideração que seu CEP é ${cepVar}, e o destino de viagem é ${locaisVar}. </br>
-        A distância em kms é de 
-        um carro faz 7,7km com um litro de gasolina, com essa Viagem você gastará cerca de ${kmlitro} litros de gasolina.</br>
-        De acordo com a gasolina de R$${GasolinaVar}, você gastará cerca de R$${valortotal} reais </br></br>`
-
-        }
-
-
-    }
-
-
     function SimularG() {
         aguardar();
 
-        var nomeVar = nome_input.value;
-        var idVar = Number(id_input.value);
+        var nomeVar = nome_input1.value;
         var kmVar = Number(km_input.value);
+        var carrokmlVar =Number(carrokml_input.value);
         var GasolinaVar = Number(gasolina_input.value);
 
 
-        if (nomeVar == "" || idVar == "" || kmVar == "" || GasolinaVar == "") {
+        if (nomeVar == "" || kmVar == "" || GasolinaVar == "") {
             cardErro.style.display = "block"
             alert("Preencha os campos em branco");
 
             finalizarAguardar();
             return false;
+
+        }
+        else if (carrokmlVar < 7.7) {
+
+            var GasolinakmVar = Number(7.7);
+            var kmlitro1 = Number(Math.round(kmVar / GasolinakmVar).toFixed(2));
+            var valortotal1 = Number(Math.round(kmlitro1 * GasolinaVar).toFixed(2));
+
+            div_frase1.innerHTML += `
+            ${nomeVar},</br> 
+         Levando em consideração que um carro faz 7,7km com um litro de gasolina, com essa Viagem você gastará cerca de ${kmlitro1} litros de gasolina.</br>
+            De acordo com a gasolina a R$${GasolinaVar} reais o litro, você gastará cerca de R$${valortotal1} reais em ${kmlitro1} litros </br>
+            Para valores muito baixos de KMs por litro de gasolina, são usados como base 7.7KMs</br>
+            *Os valores foram arredondados para uma melhor compreensão</br>`
+
+
         } else {
             setInterval(sumirMensagem, 5000)
 
-            var GasolinakmVar = (7.7);
-            var kmlitro = Math.round(kmVar / GasolinakmVar);
-            var valortotal = (kmlitro * GasolinaVar);
+            var kmlitro = Number(Math.round(kmVar / carrokmlVar));  
+            var valortotal = Number(Math.round(kmlitro * GasolinaVar));
 
-            div_frase2.innerHTML += `
-        ${nomeVar},</br>
-        Levando em consideração que um carro faz 7,7km com um litro de gasolina, com essa Viagem você gastará cerca de ${kmlitro} litros de gasolina.</br>
-        De acordo com a gasolina de R$${GasolinaVar}, você gastará cerca de R$${valortotal} reais </br></br>`
+            div_frase10.innerHTML += `
+            ${nomeVar},</br> 
+            Levando em consideração que um carro faz ${carrokmlVar}km com um litro de gasolina, com essa Viagem você gastará cerca de ${kmlitro} litros de gasolina.</br>
+            De acordo com a gasolina a R$${GasolinaVar} o litro, você gastará cerca de R$${valortotal} reais em ${kmlitro} litros </br>
+            *Os valores foram arredondados para uma melhor compreensão</br>
+            `
         }
-    }
+    };
 
     function sumirMensagem() {
         cardErro.style.display = "none"
-    }
+    };
+
+    Lista_local = ['São Roque', 'Brotas', 'Peruíbe', 'Santo Antonio do Pinhal', 'Eldorado', 'Serra Negra', 'Cunha', 'Itu', 'Campos do Jordão', 'Araçoiaba da Serra', 'Ubatuba', 'Atibaia', 'São Bento do Sapucaí,', 'Águas de Prata', 'Socorro'];
+    Lista_CEP = ['18130-200', '17380-000', '11750-000', '12450-000', '11960-970', '13930-000', '12530-000', '13300-169', '12460-000', '18190-000', '11680-000', '12940-100', '12490-000', '13890-000', '13960-000'];
+    Lista_imagens = ['https://img.nsctotal.com.br/wp-content/uploads/legacy/s3fs-public/graphql-upload-files/shutterstock_2109747965%20%281%29.jpg',
+        'https://brotasonline.com.br/wp-content/uploads/2022/10/chegada-grupo-boia-cross-brotas.jpg',
+        'https://tireabundadosofa.com.br/wp-content/uploads/2019/03/centro-de-peruibe-sp-1024x681.jpg',
+        'https://www.viagenscinematograficas.com.br/wp-content/uploads/2020/02/Santo-Antonio-do-Pinhal-O-que-Fazer-SP-18-e1664502182493.jpg',
+        'https://www.refugiosnointerior.com.br/sistema/_lib/file/img/fotos_cidade/9108/1442494363.jpg',
+        'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/05/fb/bf/e7/teleferico-serra-negra.jpg?w=500&h=400&s=1',
+        'https://viagemeturismo.abril.com.br/wp-content/uploads/2016/10/02-bia-copy.jpg?quality=90&strip=info&w=767&w=636',
+        'https://www.qualviagem.com.br/wp-content/uploads/2017/10/p-102-ITU_11_9759_P.jpg',
+        'https://blog.123milhas.com/wp-content/uploads/2021/11/banner-3-1.jpg',
+        'https://www.guiadoturismobrasil.com/up/img/1434062229.jpg',
+        'https://imgmd.net/images/v1/guia/1609506/ilha-das-couves.jpg',
+        'https://www.viagensecaminhos.com/wp-content/uploads/2023/03/o-que-fazer-em-atibaia.jpg',
+        'https://spcity.com.br/wp-content/uploads/2017/11/igreja-matriz-sao-bento-do-sapucai.jpg',
+        'https://static.wixstatic.com/media/a6b6a5_c49c494ddaf44df980bfe31d3070a209~mv2.jpg/v1/fill/w_640,h_480,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/a6b6a5_c49c494ddaf44df980bfe31d3070a209~mv2.jpg',
+        'https://socorro.tur.br/wp-content/uploads/2021/04/Design-sem-nome2.png'
+    ];
+    function SimularD() {
+        aguardar();
+
+        var pesquisa = input_pesquisa.value
+
+        Lista_local.push;
+        Lista_CEP.push;
+        length
+
+        var tamanhoL = Lista_local.length
+        var tamanhoC = Lista_CEP.length
+
+        console.log(tamanhoC);
+        console.log(tamanhoL);
+
+        for (var i = 0; i < Lista_local.length; i++) {
+            if (Lista_local[i] == pesquisa) {
+
+            };
+            div_frase2.innerHTML = `${Lista_local[pesquisa]} tem como CEP ${Lista_CEP[pesquisa]}`
+        };
+
+        if (Lista_imagens.length > 0) {
+
+            buscaCEP.src = Lista_imagens[pesquisa];
+
+        }
+
+    };
+
+    function SimularV() {
+        aguardar();
+
+        var nomeVar = nome_input2.value;
+
+        if (nomeVar == "") {
+            cardErro.style.display = "block"
+            alert("Preencha os campos em branco");
+
+            finalizarAguardar();
+            return false;
+        } else if (Lista_local.length > 0) {
+            var aleatorio = parseInt(Math.random() * Lista_local.length);
+            var localsorteado = Lista_local[aleatorio];
+            var CEPsorteado = Lista_CEP[aleatorio]
+            console.log(aleatorio)
+
+            img_sorteada.src = Lista_imagens[aleatorio];
+
+        } else {
+
+            alert('Não há imagens para exibir');
+        }
+        div_frase3.innerHTML += `</br>
+        ${nomeVar},</br>
+        Sua viagem escolhida aleatoriamente, foi ${localsorteado} de CEP ${CEPsorteado}`
+
+
+
+        setInterval(sumirMensagem, 5000)
+    };
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    };
+
+
+
 
 </script>

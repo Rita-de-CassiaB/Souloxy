@@ -96,6 +96,8 @@ p {
 .Confirme{
 align-items: baseline;
 margin-top: -100px;
+width: 500px;
+height: 300px;
 }
 
 /* Final do Social */
