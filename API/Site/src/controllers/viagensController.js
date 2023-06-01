@@ -4,11 +4,11 @@ function buscarUltimasviagens(req, res) {
     console.log("Entrou no Controller");
     const limite_linhas = 7;
 
-    var id = req.body.id;
+    var idUsuario = req.body.idUsuario;
 
     console.log(`Recuperando as ultimas ${limite_linhas} viagens`);
 
-    viagensModel.buscarUltimasviagens(id, limite_linhas).then(function (resultado) {
+    viagensModel.buscarUltimasviagens(idUsuario, limite_linhas).then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -22,31 +22,31 @@ function buscarUltimasviagens(req, res) {
 }
 
 
-// function buscarviagenssEmTempoReal(req, res) {
+function buscarviagenssEmTempoReal(req, res) {
 
-//     var idViagem = req.params.idViagem;
+    var idViagem = req.params.idViagem;
 
-//     console.log(`Recuperando viagens em tempo real`);
+    console.log(`Recuperando viagens em tempo real`);
 
-//     viagensModel.buscarviagenssEmTempoReal(idViagem).then(function (resultado) {
-//         if (resultado.length > 0) {
-//             res.status(200).json(resultado);
-//         } else {
-//             res.status(204).send("Nenhum resultado encontrado!")
-//         }
-//     }).catch(function (erro) {
-//         console.log(erro);
-//         console.log("Houve um erro ao buscar as ultimas viagens.", erro.sqlMessage);
-//         res.status(500).json(erro.sqlMessage);
-//     });
-// }
+    viagensModel.buscarviagenssEmTempoReal(idViagem).then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar as ultimas viagens.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
 
 function exibirCidadeUsuario(req, res) {
-    var id = req.params.id;
+    var idUsuario = req.params.idUsuario;
 
     console.log(`exibindo cidades`);
 
-    viagensModel.exibirCidadeUsuario(id)
+    viagensModel.exibirCidadeUsuario(idUsuario)
     .then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
@@ -60,12 +60,12 @@ function exibirCidadeUsuario(req, res) {
     });
 }
 
-function exibirDuracaoUsuario(req, res) {
-    var id = req.params.id;
+function exibirSatisfacaoUsuario(req, res) {
+    var idUsuario = req.params.idUsuario;
 
     console.log(`exibindo cidades`);
 
-    viagensModel.exibirDuracaoUsuario(id)
+    viagensModel.exibirSatisfacaoUsuario(idUsuario)
     .then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
@@ -77,10 +77,12 @@ function exibirDuracaoUsuario(req, res) {
         console.log("Houve um erro ao buscar as durações das viagens.", erro.sqlMessage);
         res.status(500).json(erro.sqlMessage);
     });
+
 }
 
 module.exports = {
     buscarUltimasviagens,
+    buscarviagenssEmTempoReal,
     exibirCidadeUsuario,
-    exibirDuracaoUsuario
+    exibirSatisfacaoUsuario
 }

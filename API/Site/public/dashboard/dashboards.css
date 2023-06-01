@@ -1,13 +1,26 @@
 /* pagina mural */
 
-.janela {
-  height: 100vh;
-  width: 230px;
-  background-color:#BEC4ED;
-  margin-left: -20px;
-  border-radius: 20px;
-  padding-left: 30px;
+.header .container h2 {
+  font-size: 30px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #BEC4ED;
+  opacity: .4;
+}
 
+.janela {
+  height: 90vh;
+  width: 300px;
+  padding-left: 30px;
+}
+
+.hello {
+  background-color: #BEC4ED;
+  border-radius: 10px;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  padding: 18px;
+  margin-bottom: 13%;
+  margin-top: 7%;
 }
 
 .fundo {
@@ -77,7 +90,13 @@ body {
   width: 75%;
   top: 0;
   left: 20%;
-  height: 100vh;
+  height: 90vh;
+  background-color: #BEC4ED;
+  border-radius: 10px;
+  margin-right: 3%;
+  margin-left: 3%;
+  margin-top: 1%;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 .regua {
@@ -120,6 +139,7 @@ body {
   width: 15%;
   text-align: center;
   padding-top: 15px;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 .cards {
@@ -138,9 +158,10 @@ body {
   flex-wrap: wrap;
   display: flex;
   text-align: center;
-  height: 180px;
+  height: 280px;
   justify-content: right;
   background-color: #212124;
+  padding: 2px;
   font-size: 20px;
 }
 
@@ -235,5 +256,11 @@ body {
 canvas {
   width: 100% !important;
   height: 100% !important;
-  background-color: #e6005a;
+  background-color: #d8dc19;
 }
+
+.inserir{
+  padding-bottom: 7px;
+  margin: 10px;
+}
+

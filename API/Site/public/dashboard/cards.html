@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../public/css/imgs/logosem.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../css/imgs/logosem.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,9 +14,7 @@
 
     <script src="../js/funcoes.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+
 </head>
 
 <body onload="validarSessao()">
@@ -25,10 +23,11 @@
         <div class="container">
 
             <h1 class="titulo">SOULOXY</h1>
+            <h2>MEU PERFIL</h2>
 
             <ul class="navBar">
                 <li> <a href="../Quiz.html">Quiz</a></li>
-                <li> <a href="../dashboard/Simuladores.html">Simuladores</a></li>
+                <li id="aqui"> <a href="cards.html">Perfil</a></li>
                 <li>|</li>
                 <li><a href="./dashboard.html">Gráficos</a></li>
                 <li> <a onclick="limparSessao()" href="../index.html">Sair</a></li>
@@ -40,20 +39,37 @@
         <div class="janela">
 
             <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-                <h3>Seu Identificador <span id="b_id">ID</span></h3>
-                <h3>Seu Email <span id="b_email">ID</span></h3>
+                <h3>Olá, <span id="b_usuario">usuário</span>! Seja Bem Vindo(a)</h3>
+                <h3>Seu Identificador é <span id="b_id">ID</span></h3>
+                <h3>Seu Email é <span id="b_email">ID</span></h3>
+            </div>
+            <div class="hello">
+                <div class="inserir">
+                    <li> <a id="botão" href="Cadastroviagens.html">Cadastrar Viagens</a></li></br>
+                </div>
+                <div class="inserir">
+                    <li> <a id="botão" href="Simuladores.html">Simuladores</a></li></br>
+                </div>
+                <div class="inserir">
+                    <li> <a id="botão"
+                            href="http://localhost:3333/dashboard/Simuladores.html#:~:text=Salvar%20Viagem-,Planejando%20Viagens,-Selecione%20um%20desses">Planejar
+                            Viagens</a></li></br>
+                </div>
+                <div class="inserir">
+                    <li> <a id="botão"
+                            href="http://localhost:3333/dashboard/Simuladores.html#:~:text=Gostaria%20De%20Saber%20O%20CEP%20Do%20Local%20Para%20Simular%20A%20Gasolina%3F">Buscar
+                            CEP</a></li></br>
+                </div>
+                <div class="inserir">
+                    <li> <a id="botão"
+                            href="http://localhost:3333/dashboard/Simuladores.html#:~:text=DE%20NOVAS%20VIAGENS-,Simulador%20De%20Gasolina,-Qual%20seu%20nome">Simular
+                            Gasolina</a></li></br>
+                </div>
             </div>
 
-            <div class="inserir">
-                <li> <a href="Cadastroviagens.html">Cadastrar viagens</a></li>
-            </div>
-
-        </div>  
-         <a href="cards copy.html">aaaaaaaaaaaaaaaa</a></li>
-
+        </div>
         <div class="dash">
-
+<a href="cards copy.html" >Copia</a>
             <div class="regua">
                 <div class="item-regua maismeses">
                     <h4>Meses do ano que mais viajou</h4>
@@ -85,159 +101,253 @@
                 </div>
 
                 <div class="card">
-                    <h1>Gráfico Duração</h1>
-                    <div class="graph">
-                        <canvas id="exibirDuracaoUsuario">Gráfico Cidade</canvas>
-                    </div>
-                </div>
-
-                <div class="card">
                     <h1>Gráfico Satisfação</h1>
-                    <div class="satisfacao">
-                        <p id="usuario3"></p>
-                    </div>
-
-                </div>
-
-                <div class="card">
-                    <h1>Gráfico Datas</h1>
-                    <div class="data">
-                        <p id="usuario4"></p>
+                    <div class="graph">
+                        <canvas id="exibirSatisfacaoUsuario">Gráfico Satisfação</canvas>
                     </div>
 
                 </div>
             </div>
         </div>
-    </div>
 </body>
 
 <script>
 
-        b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-        b_id.innerHTML = sessionStorage.ID;
-        b_email.innerHTML = sessionStorage.EMAIL_USUARIO;        
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    b_id.innerHTML = sessionStorage.ID;
+    b_email.innerHTML = sessionStorage.EMAIL_USUARIO;
 
-        function atualizacaoPeriodica() {
-            exibirCidadeUsuario(id);
-            // obterdados(2);
-            // obterdados(3);
-            // obterdados(4);
+    function atualizacaoPeriodica() {
+        exibirCidadeUsuario(id);
+        exibirSatisfacaoUsuario(id);
+        // obterdados(3);
+        // obterdados(4);
 
-            function sendData() {
-                var http = new XMLHttpRequest();
-                http.open('POST', 'http://localhost:3000/api/sendData', false);
-                http.send(null);
-            // }
-
-            //  setInterval(() => {
-            //  	sendData();
-            //  }, 2000);
-            //  setTimeout(atualizacaoPeriodica, 5000);
+        function sendData() {
+            var http = new XMLHttpRequest();
+            http.open('POST', 'http://localhost:3000/api/sendData', false);
+            http.send(null);
         }
 
-        function exibirCidadeUsuario(id) {
-            fetch(`/viagens/exibirCidadeUsuario`, {
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    fkusuario: id
-                })
-            })
-                .then(resposta => {
-                    console.log(resposta)
-                    if (resposta.ok) {
-
-                        resposta.json().then(json => {
-                            console.log(json);
-                            console.log(JSON.stringify(json));
-
-                            sessionStorage.EMAIL_USUARIO = json.email;
-                            sessionStorage.SENHA_USUARIO = json.senha;
-                            sessionStorage.NOME_USUARIO = json.nome;
-                            sessionStorage.ID = json.id;
-
-                            setTimeout(function () {
-                                window.location = "./dashboard/cards.html";
-                            }, 1000); // apenas para exibir o loading
-
-                        });
-
-                        resposta.json().then(resposta => {
-
-                            console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-
-                            var dados = {
-                                cidade: resposta[0].cidade,
-                            }
-
-                            alertar(resposta[0].cidade, idviagem);
-                        });
-                    } else {
-
-                        console.error('Nenhum dado encontrado ou erro na API');
-                    }
-                })
-                .catch(function (error) {
-                    console.error(`Erro na obtenção dos dados do aquario p/ gráfico: ${error.message}`);
-                });
-
-        }
-
-        // function alertar(cidade, idviagem) {
-        //     var limites = {
-        //         muito_quente: 23,
-        //         quente: 22,
-        //         ideal: 20,
-        //         frio: 10,
-        //         muito_frio: 5
-        //     };
-
-        //     var classe_temperatura = 'cor-alerta';
-
-        //     if (temperatura >= limites.muito_quente) {
-        //         classe_temperatura = 'cor-alerta perigo-quente';
-        //         console.log("caiu no 1")
-        //     }
-        //     else if (temperatura < limites.muito_quente && temperatura >= limites.quente) {
-        //         classe_temperatura = 'cor-alerta alerta-quente';
-        //         console.log("caiu no 2")
-        //     }
-        //     else if (temperatura < limites.quente && temperatura > limites.frio) {
-        //         classe_temperatura = 'cor-alerta ideal';
-        //         console.log("caiu no 3")
-        //     }
-        //     else if (temperatura <= limites.frio && temperatura > limites.muito_frio) {
-        //         classe_temperatura = 'cor-alerta alerta-frio';
-        //         console.log("caiu no 4")
-        //     }
-        //     else if (temperatura < limites.min_temperatura) {
-        //         classe_temperatura = 'cor-alerta perigo-frio';
-        //         console.log("caiu no 5")
-        //     }
-
-        //     var card;
-
-        //     if (idviagem == 1) {
-        //         temp_aquario_1.innerHTML = temperatura + "°C";
-        //         card = card_1
-        //     } else if (idviagem == 2) {
-        //         temp_aquario_2.innerHTML = temperatura + "°C";
-        //         card = card_2
-        //     } else if (idviagem == 3) {
-        //         temp_aquario_3.innerHTML = temperatura + "°C";
-        //         card = card_3
-        //     } else if (idviagem == 4) {
-        //         temp_aquario_4.innerHTML = temperatura + "°C";
-        //         card = card_4
-        //     }
-
-        //     // alterando
-        //     card.className = classe_temperatura;
-
-        // }
+        setInterval(() => {
+            sendData();
+        }, 2000);
+        setTimeout(atualizacaoPeriodica, 5000);
     }
+
+    function exibirCidadeUsuario(id) {
+        fetch(`/viagens/exibirCidadeUsuario`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                fkusuario: id
+            })
+        })
+            .then(resposta => {
+                console.log(resposta)
+                if (resposta.ok) {
+
+                    resposta.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+
+                        sessionStorage.EMAIL_USUARIO = json.email;
+                        sessionStorage.SENHA_USUARIO = json.senha;
+                        sessionStorage.NOME_USUARIO = json.nome;
+                        sessionStorage.ID = json.id;
+
+                        setTimeout(function () {
+                            window.location = "./dashboard/cards.html";
+                        }, 1000); // apenas para exibir o loading
+
+                    });
+
+                    resposta.json().then(resposta => {
+
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                        var dados = {
+                            cidade: resposta[0].cidade,
+                        }
+                    });
+                } else {
+
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados da cidade p/ gráfico: ${error.message}`);
+            });
+
+    }
+
+
+
+    function exibirCidadeUsuario(idUsuario) {
+
+        if (proximaAtualizacao != undefined) {
+            clearTimeout(proximaAtualizacao);
+        }
+
+        fetch(`/viagens/exibirCidadeUsuario`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                id: idUsuario
+            })
+        }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGrafico(resposta, 1);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+
+
+
+
+
+
+    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+    function plotarGrafico(resposta, id) {
+
+        console.log('iniciando plotagem do gráfico...');
+
+        // Criando estrutura para plotar gráfico - labels
+        let labels = [];
+
+        // Criando estrutura para plotar gráfico - dados
+        let dados = {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'cidade',
+                    data: [],
+                    fill: false,
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                },
+                {
+                    label: 'duracao',
+                    data: [],
+                    fill: false,
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                }
+                , {
+                    label: 'satisfacao',
+                    data: [],
+                    fill: false,
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                }
+            ]
+        };
+
+        console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        console.log(resposta)
+
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            console.log(registro);
+            dados.datasets[0].data.push(registro.duracao);
+            dados.datasets[1].data.push(registro.cidade);
+            dados.datasets[2].data.push(registro.satisfacao);
+
+        }
+
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dados.datasets)
+        console.log('----------------------------------------------')
+
+        // Criando estrutura para plotar gráfico - config
+        const config = {
+            type: 'bar',
+            data: dados
+        };
+
+        // Adicionando gráfico criado em div na tela
+        let myChart = new Chart(
+            document.getElementById(`myChartCanvas${id}`),
+            config
+        );
+
+        setTimeout(() => atualizarGrafico(id, dados, myChart), 2000);
+    }
+
+
+
+
+    function exibirSatisfacaoUsuario(id) {
+        fetch(`/viagens/exibirSatisfacaoUsuario`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                fkusuario: id
+            })
+        })
+            .then(resposta => {
+                console.log(resposta)
+                if (resposta.ok) {
+
+                    resposta.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+
+                        sessionStorage.EMAIL_USUARIO = json.email;
+                        sessionStorage.SENHA_USUARIO = json.senha;
+                        sessionStorage.NOME_USUARIO = json.nome;
+                        sessionStorage.ID = json.id;
+
+                        setTimeout(function () {
+                            window.location = "./dashboard/cards.html";
+                        }, 1000); // apenas para exibir o loading
+
+                    });
+
+                    resposta.json().then(resposta => {
+
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                        var dados = {
+                            cidade: resposta[0].cidade,
+                        }
+                    });
+                } else {
+
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados da satisfação p/ gráfico: ${error.message}`);
+            });
+
+    }
+
 </script>
 
 </html>

@@ -1,11 +1,17 @@
 /* Começo do cabeçalho */
 body {
     margin: 0;
-    background: #69418B;
+    background-image: url(file:///C:/Users/ritad/Desktop/Faculdade/Souloxy/API/Site/public/css/imgs/gif%20estrela.gif);
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
+.container5 {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    height: 30px;
+    align-items: baseline;
+}
 
 .container {
     width: 80%;
@@ -18,6 +24,7 @@ body {
 .container2 {
     width: 80%;
     margin: auto;
+    margin-top: 20px;
     display: flex;
     height: 80px;
 
@@ -28,7 +35,7 @@ body {
     margin: auto;
     display: flex;
     height: 80px;
-    align-items:flex-start;
+    align-items: flex-start;
 
 }
 
@@ -70,49 +77,205 @@ p {
     text-align: center;
     color: #BEC4ED;
 }
-/* Final do Cabeçalho */
-/* Começo do Social */
 
-.banner {
-    height: 600px;
+body::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background-image:url(file:///C:/Users/ritad/Desktop/Faculdade/Souloxy/API/Site/public/css/imgs/gif%20estrela.gif) ;
+    /* color of the tracking area */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background:  #69418B;      /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 1px solid #BEC4ED;  /* creates padding around scroll thumb */
+  }
+
+
+/* Final do Cabeçalho */
+/* Começo do Banner */
+
+
+.bannerCad {
+    height: 780px;
     padding-right: 50px;
     padding-left: 50px;
 }
+
+.bannerLog {
+    height: 700px;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
 .banner2 {
     height: 520px;
     padding-right: 50px;
     padding-left: 50px;
 }
-.banner3 {
-    height: 780px;
-    padding-right: 50px;
-    padding-left: 50px;
-}
+
 .banner4 {
     height: 700px;
     padding-right: 50px;
     padding-left: 50px;
 }
-.Confirme{
-align-items: baseline;
-margin-top: -100px;
-width: 500px;
-height: 300px;
+
+.bannerAuto {
+    height: auto;
 }
+
+.fundo1 {
+    height: 800px;
+    margin-right: 10%;
+    margin-left: 10%;
+    background-color: #69418B;
+}
+.fundo2 {
+    height: 600px;
+    margin-right: 10%;
+    margin-left: 10%;
+    background-color: #69418B;
+}
+
+.fundo3T {
+    height: 150px;
+    margin-right: 10%;
+    margin-left: 10%;
+    background-color: #69418B;
+}
+
+
+.ConfirmeD {
+    align-items: center;
+    width: auto;
+    padding: 5px;
+    display: flex;
+    height: auto;
+    justify-content: space-evenly;
+}
+
+.ConfirmeDB {
+    align-items: center;
+    width: auto;
+    padding: 5px;
+    display: flex;
+    height: auto;
+    justify-content: space-evenly;
+    margin-left: 40px;
+}
+
+.ConfirmeD button {
+    background-color: #69418B;
+    width: 200px;
+    margin-top: 10px;
+    color: #BEC4ED;
+    padding: 15px;
+    border: 1px solid rgb(190, 196, 237);
+    text-align: center;
+    border-radius: 10px;
+    font-size: 20px;
+    display: block;
+}
+
+.ConfirmeD button:hover {
+    background-color: #69418B;
+    width: 200px;
+    margin-top: 10px;
+    color: #BEC4ED;
+    padding: 15px;
+    border: 1px solid rgb(190, 196, 237);
+    text-align: center;
+    border-radius: 10px;
+    font-size: 20px;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.ConfirmeDB button {
+    background-color: #69418B;
+    width: 200px;
+    margin-top: 10px;
+    color: #BEC4ED;
+    padding: 15px;
+    border: 1px solid rgb(190, 196, 237);
+    text-align: center;
+    border-radius: 10px;
+    font-size: 20px;
+    display: block;
+}
+
+.ConfirmeDB button:hover {
+    background-color: #69418B;
+    width: 200px;
+    margin-top: 10px;
+    color: #BEC4ED;
+    padding: 15px;
+    border: 1px solid rgb(190, 196, 237);
+    text-align: center;
+    border-radius: 10px;
+    font-size: 20px;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
+.ConfirmeE {
+    align-items: center;
+    justify-content: space-evenly;
+    width: auto;
+    padding: 20px;
+    height: 400px;
+    margin-left: -70px;
+    display: flex;
+}
+
+.ConfirmeE button {
+    background-color: #69418B;
+    width: 200px;
+    margin-top: 10px;
+    color: #BEC4ED;
+    padding: 15px;
+    border: 1px solid rgb(190, 196, 237);
+    text-align: center;
+    border-radius: 10px;
+    font-size: 20px;
+    display: block;
+
+}
+
+.ConfirmeE button:hover {
+    background-color: #69418B;
+    width: 200px;
+    margin-top: 10px;
+    color: #BEC4ED;
+    padding: 15px;
+    border: 1px solid rgb(190, 196, 237);
+    text-align: center;
+    border-radius: 10px;
+    font-size: 20px;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
 
 /* Final do Social */
 /* Começo do Footer */
 
+.fundo2F {
+    height: 200px;
+}
+
 .footer {
-    height: 50px;
+    height: auto;
     color: #BEC4ED;
     display: flex;
     font-size: 15px;
     width: 100%;
-    background-color:#1C3720 ;
+    background-color: #1C3720;
 }
 
 .footer .container {
+    height: auto;
     justify-content: center;
 }
-

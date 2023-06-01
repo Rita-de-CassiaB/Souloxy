@@ -7,10 +7,11 @@ function validarSessao() {
     var nome = sessionStorage.NOME_USUARIO;
 
     var b_usuario = document.getElementById("b_usuario");
+    var b_email = document.getElementById("b_email");
 
     if (email != null && nome != null && senha != null) {
-        // window.alert(`Seja bem-vindo, ${nome}!`);
         b_usuario.innerHTML = nome;
+        b_email.innerHTML = none;
 
         finalizarAguardar();
     } else {
@@ -28,29 +29,18 @@ function limparSessao() {
  //carregamento (loading)
 function aguardar() {
     var divAguardar = document.getElementById("div_aguardar");
-   // divAguardar.style.display = "flex";
+    divAguardar.style.display = "flex";
 }
 
 function finalizarAguardar(texto) {
     var divAguardar = document.getElementById("div_aguardar");
-  //  divAguardar.style.display = "none";
+    divAguardar.style.display = "none";
 
     var divErrosLogin = document.getElementById("div_erros_login");
     if (texto) {
-  //      divErrosLogin.style.display = "flex";
+        divErrosLogin.style.display = "flex";
         divErrosLogin.innerHTML = texto;
     }
 }
 
-
-// modal
-function mostrarModal() {
-    var divModal = document.getElementById("div_modal");
-  //  divModal.style.display = "flex";
-}
-
-function fecharModal() {
-    var divModal = document.getElementById("div_modal");
-  //  divModal.style.display = "none";
-}
 

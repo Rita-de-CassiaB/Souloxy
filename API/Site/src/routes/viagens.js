@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 var viagensController = require("../controllers/viagensController");
 
-router.post("/ultimas", function (req, res, next) {
+router.post("/Ultimasviagens", function (req, res, next) {
     viagensController.buscarUltimasviagens(req, res);
 });
 

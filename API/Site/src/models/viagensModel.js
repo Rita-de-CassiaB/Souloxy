@@ -1,7 +1,7 @@
 var database = require("../database/config");
 
-function buscarUltimasviagens(id, limite_linhas) {
-    var id = id;
+function buscarUltimasviagens(idUsuario, limite_linhas) {
+    var idUsuario = req.params.idUsuario;
 
 
     instrucaoSql = ''
@@ -17,21 +17,17 @@ function buscarUltimasviagens(id, limite_linhas) {
                     from viagens
                     join usuario
                     on fkusuario = id
-                    where fkusuario = ${id}
-                   order by nome desc by ${limite_linhas}`;
+                    where fkusuario = ${idUsuario}
+                   order by nome desc by ${limite_linhas};`;
 
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
         instrucaoSql = `select          
-        cidade,
-        duracao,
-        satisfacao,
-        fkusuario,
-		data, 
-        nome
+        duracao as duracao,
+		data as momento_grafico
                     from viagens
                     join usuario
                     on fkusuario = id
-                    where fkusuario = ${id}
+                    where fkusuario = ${idUsuario}
                    order by nome desc`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
@@ -42,49 +38,46 @@ function buscarUltimasviagens(id, limite_linhas) {
     return database.executar(instrucaoSql);
 }
 
-// function buscarviagenssEmTempoReal(id) {
+ function buscarviagenssEmTempoReal(idUsuario) {
 
-//     instrucaoSql = ''
+     instrucaoSql = ''
 
-//     if (process.env.AMBIENTE_PROCESSO == "producao") {
-//         instrucaoSql = `select          
-//         cidade,
-//         duracao,
-//         satisfacao,
-//         fkusuario,
-// 		data, 
-//         nome
-//                     from viagens
-//                     join usuario
-//                     on fkusuario = id
-//                     where fkusuario = ${id}
-//                    order by nome desc`;
+     if (process.env.AMBIENTE_PROCESSO == "producao") {
+   instrucaoSql = `select     
+		nome as 'nome do usuário',
+        cidade as 'cidade viajada',
+        duracao as 'duração em dias',
+        satisfacao as 'satisfação',
+        fkusuario as 'identificação',
+		data
+                    from viagens
+                    join usuario
+                    on fkusuario = id
+                    where fkusuario = ${idUsuario}
+                   order by nome desc by desc;`;
 
-//     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-//         instrucaoSql = `select          
-//         cidade,
-//         duracao,
-//         satisfacao,
-//         fkusuario,
-// 		data, 
-//         nome
-//                     from viagens
-//                     join usuario
-//                     on fkusuario = id
-//                     where fkusuario = ${id}
-//                    order by nome desc limit 1`;
-//     } else {
-//         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
-//         return
-//     }
 
-//     console.log("Executando a instrução SQL: \n" + instrucaoSql);
-//     return database.executar(instrucaoSql);
-// }
+    } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
+         instrucaoSql = `select          
+        duracao as duracao,
+		data as momento_grafico
+                    from viagens
+                    join usuario
+                    on fkusuario = id
+                    where fkusuario = ${idUsuario}
+                   order by nome desc`;
+    } else {
+        console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
+        return
+    }
 
-function exibirCidadeUsuario(id) {
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
 
-    var id = req.params.id;
+function exibirCidadeUsuario(idUsuario) {
+
+    var idUsuario = req.params.idUsuario;
 
     instrucaoSql = ''
 
@@ -92,13 +85,13 @@ function exibirCidadeUsuario(id) {
         instrucaoSql = `        SELECT 
 		cidade
 		FROM usuario
-			JOIN viagens ON id = ${id} where id = ${id} ORDER BY id desc`;
+			JOIN viagens ON id = ${idUsuario} where id = ${idUsuario} ORDER BY id desc`;
 
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
         instrucaoSql = `    SELECT 
 		cidade as Duração
 		FROM usuario
-			JOIN viagens ON id = ${id} where id = ${id} ORDER BY id desc limit 1`;
+			JOIN viagens ON id = ${idUsuario} where id = ${idUsuario} ORDER BY id desc limit 1`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return
@@ -110,23 +103,26 @@ function exibirCidadeUsuario(id) {
 
 
 
-function exibirDuracaoUsuario(id) {
+function exibirSatisfacaoUsuario(idUsuario) {
 
-    var id = req.params.id;
+    var idUsuario = req.params.idUsuario;
+    
 
     instrucaoSql = ''
 
     if (process.env.AMBIENTE_PROCESSO == "producao") {
-        instrucaoSql = `    SELECT 
-		duracao as Duração,
+        instrucaoSql = `     SELECT 
+		satisfacao as Satisfação,
+        nome
 		FROM usuario
-			JOIN viagens ON id = ${id} where id = ${id} ORDER BY id desc`;
+			JOIN viagens ON id = ${idUsuario} ORDER BY ${idUsuario} desc`;
 
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `    SELECT 
-		duracao as Duração,
+        instrucaoSql = `     SELECT 
+		satisfacao as Satisfação,
+        nome
 		FROM usuario
-			JOIN viagens ON id = ${id} where id = ${id} ORDER BY id desc limit 1`;
+			JOIN viagens ON id = ${idUsuario} ORDER BY ${idUsuario} desc limit 1`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return
@@ -138,6 +134,7 @@ function exibirDuracaoUsuario(id) {
 
 module.exports = {
     buscarUltimasviagens,
+    buscarviagenssEmTempoReal,
     exibirCidadeUsuario,
-    exibirDuracaoUsuario
+    exibirSatisfacaoUsuario
 }

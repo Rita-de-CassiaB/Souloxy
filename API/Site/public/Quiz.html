@@ -15,73 +15,85 @@
 
 <body>
     <!-- Nosso cabeçalho -->
-    <div class="header">
-        <div class="container">
-            <h1 class="titulo">SOULOXY</h1>
-            <ul class="navBar">
-                <li> <a href="index.html">Home</a></li>
-                <li id="aqui">Quiz</li>
-                <li>|</li>
-                <li> <a href="login.html">Login</a></li>
-                <li> <a href="Cadastro.html">Cadastro</a></li>
-            </ul>
-        </div>
+    <div class="fundo3T">
+        <div class="header">
+            <div class="container">
 
+                <h1 class="titulo">SOULOXY</h1>
+
+                <ul class="navBar">
+                    <li> <a href="index.html">Home</a></li>
+                    <li id="aqui">Quiz</li>
+                    <li>|</li>
+                    <li> <a href="login.html">Login</a></li>
+                    <li> <a href="Cadastro.html">Cadastro</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
     <!-- Começo do Banner -->
+    <div id="div_aguardar"></div>
+    <div class="bannerAuto">
+        <div class="fundo1">
+            <div class="apresentacao">Qual viagem mais combina com você?</div>
+            <div class="container">
+                    <div class="caixa_formulario">
 
-    <div class="banner4">
-        <div id="apresentacao">Qual viagem mais combina com você?</div>
-        <div class="container">
+                        <div class="formulario5">
+                            </br>
+                            <h1>SEJA BEM-VINDO(A) AO QUIZ</h1>
 
-            <div class="caixa_formulario">
+                            <span>Qual sua estação do ano preferida?:</span>
+                            <select id="select_estacaoano">
+                                <option value="iv">Inverno</option>
+                                <option value="vr">Verão</option>
+                                <option value="ot">Outono</option>
+                                <option value="pm">Primavera</option>
+                            </select>
+                            </br>
+                            <span>Selecione um desses locais</span>
+                            <select id="select_locais">
+                                <option value="Cachoeira">Cachoeira</option>
+                                <option value="Praia">Praia</option>
+                                <option value="Cidade">Cidade </option>
+                                <option value="Montanha">Montanhas</option>
+                            </select>
+                            </br>
+                            <span>Escolha uma opção:</span>
 
-                <div class="formulario5">
-                    </br>
-                    <span>Qual sua estação do ano preferida?:</span>
-                    <select id="select_estacaoano">
-                        <option value="iv">Inverno</option>
-                        <option value="vr">Verão</option>
-                        <option value="ot">Outono</option>
-                        <option value="pm">Primavera</option>
-                    </select>
-                    </br>
-                    <span>Selecione um desses locais</span>
-                    <select id="select_locais">
-                        <option value="Cachoeira">Cachoeira</option>
-                        <option value="Praia">Praia</option>
-                        <option value="Cidade">Cidade </option>
-                        <option value="Montanha">Montanhas</option>
-                    </select>
-                    </br>
-                    <span>Escolha uma opção:</span>
-
-                    <select id="select_atividades">
-                        <option value="1">Gastronomia / Esportes ao ar livre / Ecoturismo / Praias / Cavernas</option>
-                        <option value="2">Jardins temáticos / Feira de artesanato / Atrações para família / Parques
-                        </option>
-                        <option value="3">Festival / Gastronomia / Bares / Paisagem / Cultivos e Flores / Arquitetura
-                        </option>
-                        <option value="4">Atividades Culturais / Atividades Radicais / Aventuras / Paisagem / Cachoeiras
-                        </option>
-                    </select>
-                    </br>
-                    <div id="div_result"></div>
-                </div>
-            </div>
-            <div class="caixa_formulario2">
-                </br>
-                <div>
-                    <center>
-                        <div class="Confirme">
-                            <p>SEJA BEM-VINDO(A) </br> AO QUIZ</p>
-                            <img id="logo" src="css/imgs/LogoRoxo.png" alt="">
-                            <button onclick="analisar_viagem()" id="botão"> Analisar Viagem</button>
+                            <select id="select_atividades">
+                                <option value="1">Gastronomia / Esportes ao ar livre / Ecoturismo / Praias / Cavernas
+                                </option>
+                                <option value="2">Jardins temáticos / Feira de artesanato / Atrações para família /
+                                    Parques
+                                </option>
+                                <option value="3">Festival / Gastronomia / Bares / Paisagem / Cultivos e Flores /
+                                    Arquitetura
+                                </option>
+                                <option value="4">Atividades Culturais / Atividades Radicais / Aventuras / Paisagem /
+                                    Cachoeiras
+                                </option>
+                            </select>
+                            </br>
+                            <div id="div_result"></div>
+                        </div>
+                    </div>
+                    <div class="caixa_formulario4">
+                        <div>
+                            <center>
+                                </br>
+                                <div class="ConfirmeD">
+                                    <img id="logo2" src="css/imgs/LogoRoxo.png" alt="">
+                                </div>
+                                <div class="ConfirmeDB">
+                                    <button onclick="analisar_viagem()" id="botão"> Analisar Viagem</button>
+                                </div>
+                            </center>
 
                         </div>
-                    </center>
-
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>

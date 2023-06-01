@@ -9,8 +9,8 @@ var PORTA = process.env.AMBIENTE_PROCESSO == "desenvolvimento" ? 3333 : 8080;
 var app = express();
 
 var indexRouter = require("./src/routes/index");
-var usuarioRouter = require("./src/routes/usuarios");
-var avisosRouter = require("./src/routes/avisos");
+var usuarioRouter = require("./src/routes/usuario");
+var usuarioRouter2 = require("./src/routes/usuario2");
 var viagensRouter = require("./src/routes/viagens");
 
 app.use(express.json());
@@ -20,8 +20,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
 
 app.use("/", indexRouter);
-app.use("/usuarios", usuarioRouter);
-app.use("/avisos", avisosRouter);
+app.use("/usuario", usuarioRouter);
+app.use("/usuario2", usuarioRouter2);
 app.use("/viagens", viagensRouter)
 
 app.listen(PORTA, function () {

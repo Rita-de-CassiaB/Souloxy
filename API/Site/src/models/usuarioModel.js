@@ -31,22 +31,9 @@ function cadastrar(nome, sobrenome, id, cep, email, senha) {
     return database.executar(instrucao);
 }
 
-function cadastrarviagem(idviagem, data, duracao, cidade, local, atividades, satisfacao, comentarios, fkusuario) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", idviagem, data, duracao, cidade, local, atividades, satisfacao, comentarios, fkusuario);
-
-    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
-    //  e na ordem de inserção dos dados.
-    var instrucao = `
-        INSERT INTO viagens (idviagem, data, duracao, cidade, local, atividades, satisfacao, comentarios, fkusuario) VALUES ( '${idviagem}', '${data}', '${duracao}', '${cidade}', '${local}', ${atividades}, '${satisfacao}', '${comentarios}', '${fkusuario}');
-    `;
-    console.log("Executando a instrução SQL: \n" + instrucao);
-    return database.executar(instrucao);
-}
-
 
 module.exports = {
     entrar,
     cadastrar,
-    cadastrarviagem,
     listar,
 };

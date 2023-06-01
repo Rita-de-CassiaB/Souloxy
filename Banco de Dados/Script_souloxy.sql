@@ -53,8 +53,7 @@ CREATE TABLE viagens (
     SELECT * FROM usuario
 		JOIN viagens ON id = fkusuario;
         
-	SELECT * FROM usuario;
-	SELECT * FROM viagens;
+
     
     
   -- Exibindo Viagem de acordo com o id do usuário
@@ -105,4 +104,8 @@ select
             
     
     SELECT * FROM Locais;
+	SELECT * FROM usuario;
+	SELECT * FROM viagens;
+    desc viagens;
+    
     DROP DATABASE Souloxy;

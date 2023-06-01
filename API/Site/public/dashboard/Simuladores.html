@@ -16,33 +16,49 @@
 
 <body>
     <!-- Nosso cabeçalho -->
+    <div class="fundo3T">
+        <div class="header">
+            <div class="container">
 
-    <div class="header">
-        <div class="container">
+                <h1 class="titulo">SOULOXY</h1>
 
-            <h1 class="titulo">SOULOXY</h1>
-
-            <ul class="navBar">
-                <li> <a href="../Quiz.html">Quiz</a></li>
-                <li> <a href="cards.html">Perfil</a></li>
-                <li>|</li>
-                <li><a href="./dashboard.html">Gráficos</a></li>
-                <li> <a onclick="limparSessao()" href="../index.html">Sair</a></li>
-            </ul>
+                <ul class="navBar">
+                    <li> <a href="../Quiz.html">Quiz</a></li>
+                    <li> <a href="cards.html">Perfil</a></li>
+                    <li>|</li>
+                    <li><a href="./dashboard.html">Gráficos</a></li>
+                    <li> <a onclick="limparSessao()" href="../index.html">Sair</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 
     <!-- Começo do Banner -->
 
-    <div class="alerta_erro">
-        <div class="card_erro" id="cardErro">
-            <span id="mensagem_erro"></span>
-        </div>
 
-        <div id="div_aguardar"></div>
-
-        <div class="banner4">
-            <div id="apresentacao">Nossos Simuladores:</div>
+    <div id="div_aguardar"></div>
+    <div class="bannerAuto">
+        <div class="fundo1">
+            <div class="apresentacao">Nossos Simuladores:
+                <div class="caixa_conteinerB"> </br>
+                    <a id="botão"
+                        href="http://localhost:3333/dashboard/Simuladores.html#:~:text=DE%20NOVAS%20VIAGENS-,Simulador%20De%20Gasolina,-Qual%20seu%20nome">Simulador
+                        de Gasolina</a>
+                    <a id="botão"
+                        href="http://localhost:3333/dashboard/Simuladores.html#:~:text=Gostaria%20De%20Saber%20O%20CEP%20Do%20Local%20Para%20Simular%20A%20Gasolina%3F">Busca
+                        CEP</a>
+                </div>
+                <div class="apresentacao">
+                    <div class="caixa_conteinerB"> </br>
+                        <a id="botão"
+                            href="http://localhost:3333/dashboard/Simuladores.html#:~:text=Sorteador%20Aleat%C3%B3rio%20De%20Viagens">Sorteador
+                            aleatório de viagem</a>
+                        <a id="botão"
+                            href="http://localhost:3333/dashboard/Simuladores.html#:~:text=Salvar%20Viagem-,Planejando%20Viagens,-Selecione%20um%20desses">Planejamento
+                            de viagens</a>
+                    </div>
+                </div>
+            </div>
             <div class="container">
 
                 <div class="caixa_formulario">
@@ -50,7 +66,7 @@
                     <div class="formulario">
 
 
-                        <h1>Simulador de gasolina</h1>
+                        <h1>SIMULADOR DE GASOLINA</h1>
 
 
                         <span>Qual seu nome?</span>
@@ -74,44 +90,45 @@
 
                 <div class="caixa_formulario2">
                     <div>
-
                         <center>
                             </br>
-                            <div class="Confirme">
+                            <div class="ConfirmeD">
                                 <img id="logo" src="../css/imgs/LogoRoxo.png" alt="">
+                            </div>
+                            <div class="ConfirmeDB">
                                 <button onclick="SimularG()"> Simular Gasolina</button>
                             </div>
                         </center>
-
                     </div>
                 </div>
             </div>
         </div>
 
-
-
-        <div class="banner2">
+        <div class="fundo2">
             <div class="container3">
 
                 <div class="caixa_formulario2">
-                    <div>
-                        <center>
-                            <div class="Confirme">
-                                <img style=height:300px width="auto" src="" alt="" id="buscaCEP">
-                                <button onclick="SimularD()"> Buscar CEP</button>
-                            </div>
-                        </center>
+
+                    <div class="ConfirmeE">
+                        <img style=height:190px width="auto" src="" alt="" id="buscaCEP">
                     </div>
+                    <div class="ConfirmeE">
+                        <button onclick="SimularD()"> Buscar CEP</button>
+                    </div>
+
                 </div>
 
                 <div class="caixa_formulario3">
                     <div class="formulario">
-                        <h1>Gostaria de saber o CEP do local para simular a Gasolina?</h1>
+                        <h1>BUSCACEP</h1>
 
                         Como utilizar?</br>
                         Selecione o local desejado, clique em Buscar CEP, copie e cole no <a
-                            href="https://www.google.com.br/maps"> Google Maps </a> </br> Após isso, clique com o
-                        botão direito na tela, vá em medir distância, selecione a área do local no mapa e depois
+                            href="https://www.google.com.br/maps"> Google Maps </a> </br> Após isso, clique
+                        com
+                        o
+                        botão direito na tela, vá em medir distância, selecione a área do local no mapa e
+                        depois
                         busque por sua
                         residência, ou o local de saída </br>
                         <span>Selecione um desses locais</span></br>
@@ -140,52 +157,116 @@
                     </div>
 
                 </div>
-
             </div>
         </div>
-        <div class="banner">
-            <div class="container">
+        <div class="fundo3T">
+            <div class="game">
+                <center>
+                    <span>Você gosta de Viajar??</span>
+                    <div class="yes-or-no">
+                        <button class="yes" onclick="tanks()">Sim :)</button>
+                        <button class="no" onclick="not()">Não :(</button>
+                </center>
+            </div>
+        </div>
+    </div>
 
-                <div class="caixa_formulario">
-
-                    <div class="formulario">
-                        <h1>Sorteador aleatório de Viagens</h1>
-
-                        <span>Qual seu nome?</span>
-                        <input id="nome_input2" type="text">
 
 
-                        <div id="div_frase3"></div>
-                    </div>
+    <div class="fundo2">
+        <div class="container">
 
+            <div class="caixa_formulario">
+
+                <div class="formulario">
+                    <h1>SORTEADOR ALEATÓRIO DE VIAGENS</h1>
+
+                    <span>Qual seu nome?</span>
+                    <input id="nome_input2" type="text">
+
+                    <div id="div_frase3"></div>
                 </div>
 
-                <div class="caixa_formulario2">
-                    <div>
+            </div>
 
-                        <center>
-                            </br>
-                            <div class="Confirme">
-                                <img style=height:300px width="auto" src="" alt="" id="img_sorteada">
-                                <button onclick="SimularV()"> Sortear viagem aleatoriamente</button>
-                            </div>
-                        </center>
+            <div class="caixa_formulario2">
 
+                <center>
+                    </br>
+                    <div class="ConfirmeD">
+                        <img style=height:200px width="auto" src="" alt="" id="img_sorteada">
                     </div>
+                    <div class="ConfirmeD">
+                        <button onclick="SimularV()"> Sortear viagem aleatoriamente</button>
+                    </div>
+                </center>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="fundo1">
+        <div class="container3">
+            <div class="caixa_formulario2B">
+                <center>
+                    <div class="ConfirmeE">
+                        <img style=height:300px width="auto" src="" alt="" id="planejando">
+                        <button onclick="planejarViagem()"> Salvar Planejamento de Viagem</button>
+                    </div>
+                </center>
+            </div>
+            <div class="caixa_formulario">
+                <div class="formulario">
+                    <h1>PLANEJANDO VIAGENS</h1>
+                    <span>Selecione um desses locais</span></br>
+                    <select id="input_fkLocal">
+                        <option value="1">São Roque</option>
+                        <option value="2">Brotas</option>
+                        <option value="3">Peruíbe </option>
+                        <option value="4">Santo Antonio do Pinhal</option>
+                        <option value="5">Eldorado</option>
+                        <option value="6">Serra Negra</option>
+                        <option value="7">Cunha</option>
+                        <option value="8">Itu</option>
+                        <option value="9">Campos do Jordão</option>
+                        <option value="10">Araçoiaba da Serra</option>
+                        <option value="11">Ubatuba</option>
+                        <option value="12">Atibaia</option>
+                        <option value="13">São Bento do Sapucaí</option>
+                        <option value="14">Águas de Prata</option>
+                        <option value="15">Socorro</option>
+                    </select>
+                    <span>Qual seu número de identificação? (4 números)</span>
+                    <input id="id_input" type="number" placeholder="9999">
+                    <span>Quando a viagem irá ocorrer?</span>
+                    <input id="data_input" type="date">
+                    <span>Quantos dias ela durará?</span>
+                    <input id="duracao_input" type="number" placeholder=" 3">
+                    <span>Diga mais sobre a viagem</span>
+                    <input id="comentarios_input" type="text"
+                        placeholder="Estou muito ansiosa, nunca conheci esse lugar">
+                    </br></br>
+                    <center>
+                        <div id="div_frase4"></div></br>
+                    </center>
                 </div>
             </div>
         </div>
+    </div>
+    </div>
 
-        <!-- Fim do Banner -->
+    </div>
+
+    <!-- Fim do Banner -->
 
 
-        <!-- Começo do footer -->
-        <div class="footer">
-            <div class="container">
-                <p>
-                    Direitos Reservados a Souloxy 2023 ©
-                </p>
-            </div>
+    <!-- Começo do footer -->
+
+    <div class="footer">
+        <div class="container">
+            <p>
+                Direitos Reservados a Souloxy 2023 ©
+            </p>
         </div>
     </div>
 
@@ -200,12 +281,11 @@
 
         var nomeVar = nome_input1.value;
         var kmVar = Number(km_input.value);
-        var carrokmlVar =Number(carrokml_input.value);
+        var carrokmlVar = Number(carrokml_input.value);
         var GasolinaVar = Number(gasolina_input.value);
 
 
         if (nomeVar == "" || kmVar == "" || GasolinaVar == "") {
-            cardErro.style.display = "block"
             alert("Preencha os campos em branco");
 
             finalizarAguardar();
@@ -218,7 +298,7 @@
             var kmlitro1 = Number(Math.round(kmVar / GasolinakmVar).toFixed(2));
             var valortotal1 = Number(Math.round(kmlitro1 * GasolinaVar).toFixed(2));
 
-            div_frase1.innerHTML += `
+            div_frase1.innerHTML = `
             ${nomeVar},</br> 
          Levando em consideração que um carro faz 7,7km com um litro de gasolina, com essa Viagem você gastará cerca de ${kmlitro1} litros de gasolina.</br>
             De acordo com a gasolina a R$${GasolinaVar} reais o litro, você gastará cerca de R$${valortotal1} reais em ${kmlitro1} litros </br>
@@ -227,12 +307,11 @@
 
 
         } else {
-            setInterval(sumirMensagem, 5000)
 
-            var kmlitro = Number(Math.round(kmVar / carrokmlVar));  
+            var kmlitro = Number(Math.round(kmVar / carrokmlVar));
             var valortotal = Number(Math.round(kmlitro * GasolinaVar));
 
-            div_frase10.innerHTML += `
+            div_frase10.innerHTML = `
             ${nomeVar},</br> 
             Levando em consideração que um carro faz ${carrokmlVar}km com um litro de gasolina, com essa Viagem você gastará cerca de ${kmlitro} litros de gasolina.</br>
             De acordo com a gasolina a R$${GasolinaVar} o litro, você gastará cerca de R$${valortotal} reais em ${kmlitro} litros </br>
@@ -241,9 +320,6 @@
         }
     };
 
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    };
 
     Lista_local = ['São Roque', 'Brotas', 'Peruíbe', 'Santo Antonio do Pinhal', 'Eldorado', 'Serra Negra', 'Cunha', 'Itu', 'Campos do Jordão', 'Araçoiaba da Serra', 'Ubatuba', 'Atibaia', 'São Bento do Sapucaí,', 'Águas de Prata', 'Socorro'];
     Lista_CEP = ['18130-200', '17380-000', '11750-000', '12450-000', '11960-970', '13930-000', '12530-000', '13300-169', '12460-000', '18190-000', '11680-000', '12940-100', '12490-000', '13890-000', '13960-000'];
@@ -263,6 +339,7 @@
         'https://static.wixstatic.com/media/a6b6a5_c49c494ddaf44df980bfe31d3070a209~mv2.jpg/v1/fill/w_640,h_480,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/a6b6a5_c49c494ddaf44df980bfe31d3070a209~mv2.jpg',
         'https://socorro.tur.br/wp-content/uploads/2021/04/Design-sem-nome2.png'
     ];
+
     function SimularD() {
         aguardar();
 
@@ -293,13 +370,34 @@
 
     };
 
+
+    var btn = document.querySelector(".no");
+    var position
+    btn.addEventListener("click", function () {
+        position ? (position = 0) : (position = 500);
+        btn.style.transform = `translate(${position}px,60px)`;
+        btn.style.transition = "all 0.1s ease";
+    });
+
+    var btn = document.querySelector(".no");
+    var position
+    btn.addEventListener("mouseover", function () {
+        position ? (position = 0) : (position = 500);
+        btn.style.transform = `translate(${position}px,60px)`;
+        btn.style.transition = "all 0.1s ease";
+    });
+
+    function tanks() {
+        alert("Que bom! Você está no site certo");
+    }
+
+
     function SimularV() {
         aguardar();
 
         var nomeVar = nome_input2.value;
 
         if (nomeVar == "") {
-            cardErro.style.display = "block"
             alert("Preencha os campos em branco");
 
             finalizarAguardar();
@@ -318,16 +416,109 @@
         }
         div_frase3.innerHTML += `</br>
         ${nomeVar},</br>
-        Sua viagem escolhida aleatoriamente, foi ${localsorteado} de CEP ${CEPsorteado}`
+        Sua viagem escolhida aleatoriamente é ${localsorteado} de CEP ${CEPsorteado}`
 
 
-
-        setInterval(sumirMensagem, 5000)
     };
 
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    };
+    function planejarViagem() {
+        aguardar();
+
+        var fkLocalVar = Number(input_fkLocal.value);
+        var fkusuarioVar2 = Number(id_input.value);
+        var dataVar = data_input.value;
+        var duracaoVar = Number(duracao_input.value);
+        var comentariosVar = comentarios_input.value;
+
+
+        if (fkLocalVar == "" || fkusuarioVar2 == "" || dataVar == "" || duracaoVar == "" || comentariosVar == "") {
+            alert("Preencha os campos em branco");
+
+            finalizarAguardar();
+            return false;
+        } else if (fkusuarioVar2 > 9999) {
+            alert("Por favor confira seus numeros de identificação");
+
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            Lista_local.push;
+
+            Lista_CEP.push;
+            length
+
+            var tamanhoL = Lista_local.length
+            var tamanhoC = Lista_CEP.length
+
+            console.log(tamanhoC);
+            console.log(tamanhoL);
+
+            for (var i = 1; i < Lista_local.length; i++) {
+                if (Lista_local[i] == fkLocalVar) {
+
+                };
+                div_frase4.innerHTML = `Sua viagem foi Cadastrada`
+            };
+
+            if (Lista_imagens.length > 0) {
+
+                planejando.src = Lista_imagens[fkLocalVar];
+
+            }
+            // Enviando o valor da nova input
+            fetch("/usuario2/planejarViagem", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario2.js
+                    fkLocalServer: fkLocalVar,
+                    fkusuarioServer2: fkusuarioVar2,
+                    dataServer: dataVar,
+                    duracaoServer: duracaoVar,
+                    comentariosServer: comentariosVar
+
+                })
+
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+
+                    alert("Cadastro de viagem planejada realizado com sucesso! Redirecionando para tela de Perfil...");
+
+                    setTimeout(() => {
+                        window.location = "cards.html";
+                    }, "2000")
+
+                    console.log(resposta);
+
+                    resposta.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+
+                        sessionStorage.EMAIL_USUARIO = json.email;
+                        sessionStorage.SENHA_USUARIO = json.senha;
+                        sessionStorage.NOME_USUARIO = json.nome;
+                        sessionStorage.IDVIAGEM = json.id;
+
+                    });
+
+                }
+                else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!")
+
+                    return false;
+                }
+            })
+        };
+
+
+    }
 
 
 

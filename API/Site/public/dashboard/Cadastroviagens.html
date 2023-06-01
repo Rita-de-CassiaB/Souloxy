@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="shortcut icon" href="../public/css/imgs/logosem.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../css/imgs/logosem.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +22,7 @@
             <h1 class="titulo">SOULOXY</h1>
             <ul class="navBar">
                 <li> <a href="../Quiz.html">Quiz</a></li>
-                <li> <a href="../dashboard/Simuladores.html">Simuladores</a></li>
+                <li> <a href="cards.html">Perfil</a></li>
                 <li>|</li>
                 <li><a href="./dashboard.html">Gráficos</a></li>
                 <li> <a onclick="limparSessao()" href="../index.html">Sair</a></li>
@@ -46,17 +46,17 @@
 
                             <div class="formulario">
 
-                                <span>Número (Insira a posição da viagem)</span>
-                                <input id="numero_input" type="number">
+                                <span>Número (Insira a posição da viagem + sua identificação)</span>
+                                <input id="numero_input" type="number" placeholder="019999">
 
                                 <span>Quando a viagem ocorreu?</span>
                                 <input id="data_input" type="date">
 
                                 <span>Quantos dias ela durou?</span>
-                                <input id="duracao_input" type="number">
+                                <input id="duracao_input" type="number" placeholder=" 3">
 
                                 <span>Para qual cidade/estado você viajou? </span>
-                                <input id="cidade_input" type="cidade">
+                                <input id="cidade_input" type="cidade" placeholder="São Paulo">
 
                                 <span> Qual o local de Viagem:</span>
                                 <select id="select_locais">
@@ -100,10 +100,11 @@
                                 </select>
 
                                 <span>Diga mais sobre a viagem</span>
-                                <input id="comentarios_input" type="text">
+                                <input id="comentarios_input" type="text"
+                                    placeholder="Adorei! Amo conhecer lugares diferentes, O MASP é lindo">
 
                                 <span>Qual seu número de identificação? (4 números)</span>
-                                <input id="id_input" type="number">
+                                <input id="id_input" type="number" placeholder="9999">
                             </div>
                         </div>
 
@@ -175,7 +176,7 @@
 
 
             // Enviando o valor da nova input
-            fetch("/usuarios/cadastrarviagem", {
+            fetch("/usuario2/cadastrarviagem", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

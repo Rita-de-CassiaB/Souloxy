@@ -2,83 +2,84 @@
 <html lang="en">
 
 <head>
-    <link rel="shortcut icon" href="../public/css/imgs/logosem.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../css/imgs/logosem.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Souloxy</title>
 
-    <!-- Aqui colocamos o link para o arquivo de estilização-->
     <link rel="stylesheet" href="css/perfil.css">
     <link rel="stylesheet" href="css/formulários.css">
 </head>
 
 <body>
-    <!-- Nosso cabeçalho -->
-    <div class="header">
-        <div class="container">
-            <h1 class="titulo">SOULOXY</h1>
-            <ul class="navBar">
-                <li><a href="index.html">Home</a></li>
-                <li> <a href="Quiz.html">Quiz</a></li>
-                <li>|</li>
-                <li id="aqui">Login</li>
-                <li><a href="Cadastro.html">Cadastro</a></li>
-            </ul>
-        </div>
-    </div>
-
-
-    <div class="cadastro">
-        <div class="alerta_erro">
-            <div class="card_erro" id="cardErro">
-                <span id="mensagem_erro"></span>
+    <div class="fundo1">
+        <div class="header">
+            <div class="container">
+                <h1 class="titulo">SOULOXY</h1>
+                <ul class="navBar">
+                    <li><a href="index.html">Home</a></li>
+                    <li> <a href="Quiz.html">Quiz</a></li>
+                    <li>|</li>
+                    <li id="aqui">Login</li>
+                    <li><a href="Cadastro.html">Cadastro</a></li>
+                </ul>
             </div>
         </div>
 
 
-        <!-- Começo do Banner -->
-        <div class="banner">
-            <div class="container2">
-                <div class="caixa_formulario">
-                    <div class="formulario">
-                        <h1>SEJA BEM-VINDO(A) AO LOGIN</h1>
-                        <span>E-mail:</span>
-                        <input id="email_input" type="email">
+        <div class="cadastro">
+            <div class="alerta_erro">
+                <div class="card_erro" id="cardErro">
+                    <span id="mensagem_erro"></span>
+                </div>
+            </div>
 
-                        <span>Senha:</span>
-                        <input id="senha_input" type="password">
 
-                        <div id="div_result"></div>
+            <!-- Começo do Banner -->
+            <div class="bannerLog">
+                <div class="container2">
+                    <div class="caixa_formulario">
+                        <div class="formulario">
+                            <h1>SEJA BEM-VINDO(A) AO LOGIN</h1>
+                            <span>E-mail:</span>
+                            <input id="email_input" type="email">
 
+                            <span>Senha:</span>
+                            <input id="senha_input" type="password">
+
+                            <div id="div_result"></div>
+
+                        </div>
+
+                        <div class="formulario">
+                            <span>Caso não seja cadastrado, clique no botão</span>
+                            <br />
+                            <div id="div_b">
+                                <a href="Cadastro.html" id="botão"> Ir para o Cadastro</a>
+                            </div>
+                        </div>
                     </div>
+                    <div class="caixa_formulario2">
+                        <div>
+                            <center>
+                                <div class="ConfirmeD">
 
-                    <div class="formulario">
-                        <span>Caso não seja cadastrado, clique no botão</span>
-                        <br/>
-                        <div id="div_b">
-                            <a href="Cadastro.html" id="botão"> Ir para o Cadastro</a>
+                                    <img id="logo" src="css/imgs/LogoRoxo.png" alt="">
+                                </div>
+                                <div class="ConfirmeD">
+                                    <button onclick="entrar()" id="botão"> Confirmar Login</button>
+
+                                </div>
+
+                                <div id="div_erros_login"></div>
+                            </center>
+
                         </div>
                     </div>
                 </div>
-                <div class="caixa_formulario2">
-                    <div>
-                        <center>
-                            <div class="Confirme">
-
-                                <img id="logo" src="css/imgs/LogoRoxo.png" alt="">
-                                <button onclick="entrar()" id="botão"> Confirmar Login</button>
-
-                            </div>
-
-                            <div id="div_erros_login"></div>
-                        </center>
-
-                    </div>
-                </div>
             </div>
         </div>
-
         <!-- Fim do Banner -->
 
         <!-- Começo do footer -->
@@ -106,16 +107,16 @@
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "Por favor preencha os campos em branco";
-            finalizarAguardar();
+            //  finalizarAguardar();
             return false;
         } else {
             setInterval(sumirMensagem, 5000)
         }
 
-        console.log("FORM LOGIN: ", emailVar);
-        console.log("FORM SENHA: ", senhaVar);
+        // console.log("FORM LOGIN: ", emailVar);
+        // console.log("FORM SENHA: ", senhaVar);
 
-        fetch("/usuarios/autenticar", {
+        fetch("/usuario/autenticar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -125,7 +126,7 @@
                 senhaServer: senhaVar,
             })
         }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
+            // console.log("ESTOU NO THEN DO entrar()!");
 
             if (resposta.ok) {
                 console.log(resposta);
@@ -138,8 +139,8 @@
                     sessionStorage.SENHA_USUARIO = json.senha;
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID = json.id;
-                    console.log("Session id ", sessionStorage.ID)
-                    alert("Você esta logado")
+                    // console.log("Session id ", sessionStorage.ID);
+                    alert("Você esta logado");
                     setTimeout(function () {
                         window.location = "./dashboard/cards.html";
                     }, 2000); // apenas para exibir o loading
@@ -152,7 +153,7 @@
 
                 resposta.text().then(texto => {
                     console.error(texto);
-                    finalizarAguardar(texto);
+                    // finalizarAguardar(texto);
                 });
             }
 

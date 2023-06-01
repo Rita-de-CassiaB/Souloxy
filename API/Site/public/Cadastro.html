@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="shortcut icon" href="../public/css/imgs/logosem.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../css/imgs/logosem.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,91 +16,96 @@
 
 <body>
     <!-- Nosso cabeçalho -->
+    <div class="fundo1">
+        <div class="header">
+            <div class="container">
+                <h1 class="titulo">SOULOXY</h1>
+                <ul class="navBar">
+                    <li> <a href="index.html">Home</a></li>
+                    <li> <a href="Quiz.html">Quiz</a></li>
+                    <li>|</li>
+                    <li> <a href="login.html">Login</a></li>
+                    <li id="aqui">Cadastro</li>
+                </ul>
+            </div>
+        </div>
 
-    <div class="header">
-        <div class="container">
-            <h1 class="titulo">SOULOXY</h1>
-            <ul class="navBar">
-                <li> <a href="index.html">Home</a></li>
-                <li> <a href="Quiz.html">Quiz</a></li>
-                <li>|</li>
-                <li> <a href="login.html">Login</a></li>
-                <li id="aqui">Cadastro</li>
-            </ul>
+        <!-- Começo do Banner -->
+
+        <div class="cadastro">
+            <div class="alerta_erro">
+                <div class="card_erro" id="cardErro">
+
+                    <span id="mensagem_erro"></span>
+
+                    <div id="div_aguardar"></div>
+                    <div class="bannerCad">
+                        <div class="container5">
+                            <div class="caixa_formulario">
+                                <div class="formulario">
+                                    <h1>SEJA BEM-VINDO(A) AO CADASTRO</h1>
+                                    <span>Qual seu nome?</span>
+                                    <input id="nome_input" type="text">
+
+                                    <span>Qual seu sobrenome?</span>
+                                    <input id="sobrenome_input" type="text">
+
+                                    <span>Defina um Número de identificação (insira 4 números)
+                                    </span>
+                                    <input id="id_input" type="number">
+
+                                    <span>Insira seu CEP</span>
+                                    <input id="cep_input" type="number">
+
+                                    <span>Qual seu e-mail</span>
+                                    <input id="email_input" type="email">
+
+                                    <span>Defina uma senha</span>
+                                    <input id="senha_input" type="password">
+
+                                    <span>Confirme a senha:</span>
+                                    <input id="confirmacao_senha_input" type="password">
+
+                                </div>
+
+                            </div>
+
+                            <div class="caixa_formulario2">
+                                <div>
+                                    <center>
+                                        </br>
+                                        <div class="ConfirmeD">
+
+                                            <img id="logo" src="css/imgs/LogoRoxo.png" alt="">
+                                        </div>
+                                        <div class="ConfirmeD">
+                                            <button onclick="cadastrar()" id="botão"> Confirmar Cadastro</button>
+                                        </div>
+                                        <div id="div_aguardar" class="loading-div">
+                                        </div>
+                                    </center>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
-    <!-- Começo do Banner -->
-
-    <div class="cadastro">
-        <div class="alerta_erro">
-            <div class="card_erro" id="cardErro">
-
-                <span id="mensagem_erro"></span>
-                
-            <div id="div_aguardar"></div>
-            <div class="banner4">
-                <div class="container">
-                    <div class="caixa_formulario">
-                        <div class="formulario">
-                            <h1>SEJA BEM-VINDO(A) AO CADASTRO</h1>
-                            <span>Qual seu nome?</span>
-                            <input id="nome_input" type="text">
-
-                            <span>Qual seu sobrenome?</span>
-                            <input id="sobrenome_input" type="text">
-
-                            <span>Defina um Número de identificação (insira 4 números)
-                            </span>
-                            <input id="id_input" type="number">
-
-                            <span>Insira seu CEP</span>
-                            <input id="cep_input" type="number">
-
-                            <span>Qual seu e-mail</span>
-                            <input id="email_input" type="email">
-
-                            <span>Defina uma senha</span>
-                            <input id="senha_input" type="password">
-
-                            <span>Confirme a senha:</span>
-                            <input id="confirmacao_senha_input" type="password">
-
-                        </div>
-
-                    </div>
-
-                    <div class="caixa_formulario2">
-                        <div>
-                            <center>
-                                </br>
-                                <div class="Confirme">
-                                    
-                                    <img id="logo" src="css/imgs/LogoRoxo.png" alt="">
-                                    <button onclick="cadastrar()" id="botão"> Confirmar Cadastro</button>
-                                </div>
-                                <div id="div_aguardar" class="loading-div">
-                                </div>
-                            </center>
+    <!-- Fim do Banner -->
 
 
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- Fim do Banner -->
-
-
-            <!-- Começo do footer -->
-            <div class="footer">
-                <div class="container">
-                    <p>
-                        Direitos Reservados a Souloxy 2023 ©
-                    </p>
-                </div>
-            </div>
+    <!-- Começo do footer -->
+    <div class="footer">
+        <div class="container">
+            <p>
+                Direitos Reservados a Souloxy 2023 ©
+            </p>
+        </div>
+    </div>
 </body>
 
 </html>
@@ -116,8 +121,8 @@
         var idVar = Number(id_input.value);
         var cepVar = Number(cep_input.value);
         var emailVar = email_input.value;
-        var senhaVar = Number(senha_input.value);
-        var confirmacaoSenhaVar = Number(confirmacao_senha_input.value);
+        var senhaVar = senha_input.value;
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
 
         if (nomeVar == "" || sobrenomeVar == "" || idVar == "" || cepVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
             cardErro.style.display = "block"
@@ -131,7 +136,7 @@
         }
 
         // Enviando o valor da nova input
-        fetch("/usuarios/cadastrar", {
+        fetch("/usuario/cadastrar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
