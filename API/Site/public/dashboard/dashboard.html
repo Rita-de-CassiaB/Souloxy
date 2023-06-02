@@ -56,19 +56,27 @@
                     <li> <a id="botão" href="Cadastroviagens.html">Cadastrar Viagens</a></li></br>
                 </div>
                 <div class="inserir">
+                    <li> <a id="botão" href="Simuladores.html">Simuladores</a></li></br>
+                </div>
+                <div class="inserir">
                     <li> <a id="botão"
-                            href="http://localhost:3333/dashboard/Simuladores.html#:~:text=Salvar%20Viagem-,Planejando%20Viagens,-Selecione%20um%20desses">Planejar
+                            href="http://localhost:3333/dashboard/Simuladores.html#:~:text=Quantos%20dias%20ela%20durar%C3%A1%3F">Planejar
                             Viagens</a></li></br>
                 </div>
                 <div class="inserir">
                     <li> <a id="botão"
-                            href="http://localhost:3333/dashboard/Simuladores.html#:~:text=Gostaria%20De%20Saber%20O%20CEP%20Do%20Local%20Para%20Simular%20A%20Gasolina%3F">Buscar
+                            href="http://localhost:3333/dashboard/Simuladores.html#:~:text=por%20sua%20resid%C3%AAncia%2C-,ou%20o%20local%20de%20sa%C3%ADda,-Selecione%20um%20desses">Buscar
                             CEP</a></li></br>
                 </div>
                 <div class="inserir">
                     <li> <a id="botão"
-                            href="http://localhost:3333/dashboard/Simuladores.html#:~:text=DE%20NOVAS%20VIAGENS-,Simulador%20De%20Gasolina,-Qual%20seu%20nome">Simular
+                            href="http://localhost:3333/dashboard/Simuladores.html#:~:text=com%201l%20de-,gasolina,-%3F%20(Se%20n%C3%A3o%20souber">Simular
                             Gasolina</a></li></br>
+                </div>
+                <div class="inserir">
+                    <li> <a id="botão"
+                            href="http://localhost:3333/dashboard/Simuladores.html#:~:text=SORTEADOR%20ALEAT%C3%93RIO%20DE%20VIAGENS">Sorteador
+                            de viagem</a></li></br>
                 </div>
             </div>
 
@@ -76,24 +84,22 @@
 
         <div class="dash">
 
-            <div class="btns-dash">
-                <!-- O gráfico é chamado de acordo com o id (idviagem) do banco  -->
+            <!-- <div class="btns-dash">
+                O gráfico é chamado de acordo com o id (idviagem) do banco 
                 <button class="btn-chart btn-pink" onclick="exibirviagem(id)" id="btnusuario1">viagem 1</button>
                 <button class="btn-chart btn-white" onclick="exibirviagem(id)" id="btnusuario2">viagem 2</button>
-            </div>
+            </div> -->
 
             <div id="graficos">
-
-                <div id="titulousuario"></div>
 
                 <div id="grafico1" class="display-block">
 
                     <h3 class="tituloGraficos">
-                        <span id="titulousuario">123</span>
+                        <span id="titulousuario1">123</span>
                     </h3>
 
                     <div class="graph">
-                        <canvas id="myChartCanvas1">3333</canvas>
+                        <canvas id="myChartCanvas1" ></canvas>
                     </div>
 
                     <div class="label-captura">
@@ -104,7 +110,7 @@
                 <div id="grafico2" class="display-none">
 
                     <h3 class="tituloGraficos">
-                        <span id="titulousuario1"></span>
+                        <span id="titulousuario2"></span>
                     </h3>
 
                     <div class="graph">
@@ -138,21 +144,18 @@
     console.log("Session ID: ", idUsuario);
     console.log("Session ID ", sessionStorage.ID)
 
-    var id = 1;
-
     let proximaAtualizacao;
 
     window.onload = obterDadosGraficos();
 
     function obterDadosGraficos() {
-        obterDadosGrafico(id)
-        obterDadosGrafico(id + 1)
+        obterDadosGrafico(idUsuario)
     }
 
 
-    function exibirviagem(id) {
-        let todosOsGraficos = document.getElementById("graficos")
-    }
+    // function exibirviagem(id) {
+    //     let todosOsGraficos = document.getElementById("graficos")
+    // }
 
     // O gráfico é construído com três funções:
     // 1. obterDadosGrafico -> Traz dados do Banco de Dados para montar o gráfico da primeira vez
@@ -165,27 +168,15 @@
 
     //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
     //     Para ajustar o "select", ajuste o comando sql em src/models
+
     function obterDadosGrafico(idUsuario) {
-
-        if (proximaAtualizacao != undefined) {
-            clearTimeout(proximaAtualizacao);
-        }
-
-        fetch(`/viagens/Ultimasviagens`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                id: idUsuario
-            })
-        }).then(function (response) {
+        fetch(`/viagens/Ultimasviagens/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
                     resposta.reverse();
 
-                    plotarGrafico(resposta, 1);
+                    plotarGrafico(resposta, idUsuario);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
@@ -197,11 +188,10 @@
     }
 
 
-
     // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
     // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
     // A função *plotarGrafico* também invoca a função *atualizarGrafico*
-    function plotarGrafico(resposta, id) {
+    function plotarGrafico(resposta, idUsuario) {
 
         console.log('iniciando plotagem do gráfico...');
 
@@ -212,7 +202,7 @@
         let dados = {
             labels: labels,
             datasets: [
-                    {
+                {
                     label: 'cidade',
                     data: [],
                     fill: false,
@@ -223,10 +213,10 @@
                     label: 'duracao',
                     data: [],
                     fill: false,
-                    borderColor: 'rgb(75, 192, 192)',
+                    borderColor: 'rgb(100, 192, 200)',
                     tension: 0.1
                 }
-                ,{
+                , {
                     label: 'satisfacao',
                     data: [],
                     fill: false,
@@ -243,12 +233,11 @@
         // Inserindo valores recebidos em estrutura para plotar o gráfico
         for (i = 0; i < resposta.length; i++) {
             var registro = resposta[i];
-            console.log(registro);
-            dados.datasets[0].data.push(registro.duracao);
-            dados.datasets[1].data.push(registro.cidade);
+            labels.push(registro.cidade);
+            dados.datasets[1].data.push(registro.duracao);
             dados.datasets[2].data.push(registro.satisfacao);
-
         }
+
 
         console.log('----------------------------------------------')
         console.log('O gráfico será plotado com os respectivos valores:')
@@ -266,11 +255,11 @@
 
         // Adicionando gráfico criado em div na tela
         let myChart = new Chart(
-            document.getElementById(`myChartCanvas${id}`),
+            document.getElementById(`myChartCanvas1`),
             config
         );
 
-        setTimeout(() => atualizarGrafico(id, dados, myChart), 2000);
+        setTimeout(() => atualizarGrafico(idUsuario, dados, myChart), 1000);
     }
 
 
@@ -280,25 +269,26 @@
     //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
     //     Para ajustar o "select", ajuste o comando sql em src/models
 
-    function atualizarGrafico(id, dados, myChart) {
+    function atualizarGrafico(idUsuario, dados, myChart) {
 
-        fetch(`/viagens/tempo-real/`, { cache: 'no-store' }).then(function (response) {
+        fetch(`/viagens/tempo-real/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (novoRegistro) {
 
+                    obterDados(idUsuario);
                     console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
                     console.log(`Dados atuais do gráfico:`);
                     console.log(dados);
 
-                    let avisoCaptura = document.getElementById(`avisoCaptura${id}`)
+                    let avisoCaptura = document.getElementById(`avisoCaptura${idUsuario}`)
                     avisoCaptura.innerHTML = ""
 
-                    if (novoRegistro[0].momento_grafico == dados.labels[dados.labels.length - 1]) {
+                    if (novoRegistro[0].cidade == dados.labels[dados.labels.length - 1]) {
                         console.log("---------------------------------------------------------------")
                         console.log("Como não há dados novos para captura, o gráfico não atualizará.")
                         avisoCaptura.innerHTML = "<i class='fa-solid fa-triangle-exclamation'></i> Foi trazido o dado mais atual capturado pelo sensor. <br> Como não há dados novos a exibir, o gráfico não atualizará."
                         console.log("Horário do novo dado capturado:")
-                        console.log(novoRegistro[0].momento_grafico)
+                        console.log(novoRegistro[0].duracao)
                         console.log("Horário do último dado capturado:")
                         console.log(dados.labels[dados.labels.length - 1])
                         console.log("---------------------------------------------------------------")
@@ -318,12 +308,12 @@
                     }
 
                     // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                    proximaAtualizacao = setTimeout(() => atualizarGrafico(id, dados, myChart), 2000);
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idUsuario, dados, myChart), 2000);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
                 // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                proximaAtualizacao = setTimeout(() => atualizarGrafico(id, dados, myChart), 2000);
+                proximaAtualizacao = setTimeout(() => atualizarGrafico(idUsuario, dados, myChart), 2000);
             }
         })
             .catch(function (error) {

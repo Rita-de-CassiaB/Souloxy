@@ -4,7 +4,7 @@ function buscarUltimasviagens(req, res) {
     console.log("Entrou no Controller");
     const limite_linhas = 7;
 
-    var idUsuario = req.body.idUsuario;
+    var idUsuario = req.params.idUsuario;
 
     console.log(`Recuperando as ultimas ${limite_linhas} viagens`);
 
@@ -24,11 +24,11 @@ function buscarUltimasviagens(req, res) {
 
 function buscarviagenssEmTempoReal(req, res) {
 
-    var idViagem = req.params.idViagem;
+    var idUsuario = req.params.idUsuario;
 
     console.log(`Recuperando viagens em tempo real`);
 
-    viagensModel.buscarviagenssEmTempoReal(idViagem).then(function (resultado) {
+    viagensModel.buscarviagenssEmTempoReal(idUsuario).then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {

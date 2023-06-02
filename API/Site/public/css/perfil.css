@@ -1,7 +1,7 @@
 /* Começo do cabeçalho */
 body {
     margin: 0;
-    background-image: url(file:///C:/Users/ritad/Desktop/Faculdade/Souloxy/API/Site/public/css/imgs/gif%20estrela.gif);
+    background-image: url(../css/imgs/gif\ estrela.gif);
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -83,8 +83,7 @@ body::-webkit-scrollbar {
   }
   
   body::-webkit-scrollbar-track {
-    background-image:url(file:///C:/Users/ritad/Desktop/Faculdade/Souloxy/API/Site/public/css/imgs/gif%20estrela.gif) ;
-    /* color of the tracking area */
+    background-image: url(../css/imgs/gif\ estrela.gif);
   }
   
   body::-webkit-scrollbar-thumb {
@@ -137,6 +136,12 @@ body::-webkit-scrollbar {
     margin-right: 10%;
     margin-left: 10%;
     background-color: #69418B;
+}
+
+.fundo3 {
+    height: 800px;
+    margin-right: 10%;
+    margin-left: 10%;
 }
 
 .fundo3T {

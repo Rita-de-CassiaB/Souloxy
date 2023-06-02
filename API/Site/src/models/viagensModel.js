@@ -1,29 +1,28 @@
 var database = require("../database/config");
 
 function buscarUltimasviagens(idUsuario, limite_linhas) {
-    var idUsuario = req.params.idUsuario;
-
 
     instrucaoSql = ''
 
     if (process.env.AMBIENTE_PROCESSO == "producao") {
-        instrucaoSql = `select     
-		nome as 'nome do usuário',
-        cidade as 'cidade viajada',
-        duracao as 'duração em dias',
-        satisfacao as 'satisfação',
-        fkusuario as 'identificação',
+        instrucaoSql = `select top ${limite_linhas}    
+		nome, 
+        cidade, 
+        duracao, 
+        satisfacao,
 		data
                     from viagens
                     join usuario
-                    on fkusuario = id
-                    where fkusuario = ${idUsuario}
-                   order by nome desc by ${limite_linhas};`;
+                    on fkusuario = ${idUsuario}
+                    where fkusuario = ${idUsuario}`;
 
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
         instrucaoSql = `select          
-        duracao as duracao,
-		data as momento_grafico
+		nome, 
+        cidade, 
+        duracao, 
+        satisfacao,
+		data
                     from viagens
                     join usuario
                     on fkusuario = id
@@ -43,27 +42,30 @@ function buscarUltimasviagens(idUsuario, limite_linhas) {
      instrucaoSql = ''
 
      if (process.env.AMBIENTE_PROCESSO == "producao") {
-   instrucaoSql = `select     
-		nome as 'nome do usuário',
-        cidade as 'cidade viajada',
-        duracao as 'duração em dias',
-        satisfacao as 'satisfação',
-        fkusuario as 'identificação',
+   instrucaoSql = `select
+		nome
+        cidade 
+        duracao 
+        satisfacao
+
 		data
                     from viagens
                     join usuario
-                    on fkusuario = id
+                    on fkusuario = ${idUsuario}
                     where fkusuario = ${idUsuario}
                    order by nome desc by desc;`;
 
 
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-         instrucaoSql = `select          
-        duracao as duracao,
-		data as momento_grafico
+         instrucaoSql = `select   
+ 		nome 
+        cidade 
+        duracao 
+        satisfacao
+		data
                     from viagens
                     join usuario
-                    on fkusuario = id
+                    on fkusuario = ${idUsuario}
                     where fkusuario = ${idUsuario}
                    order by nome desc`;
     } else {
@@ -77,7 +79,6 @@ function buscarUltimasviagens(idUsuario, limite_linhas) {
 
 function exibirCidadeUsuario(idUsuario) {
 
-    var idUsuario = req.params.idUsuario;
 
     instrucaoSql = ''
 
