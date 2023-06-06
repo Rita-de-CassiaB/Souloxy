@@ -51,6 +51,7 @@
                 <h3>Seu Identificador é <span id="b_id">ID</span></h3>
                 <h3>Seu Email é <span id="b_email">ID</span></h3>
             </div>
+            <br>
             <div class="hello">
                 <div class="inserir">
                     <li> <a id="botão" href="Cadastroviagens.html">Cadastrar Viagens</a></li></br>
@@ -93,35 +94,12 @@
             <div id="graficos">
 
                 <div id="grafico1" class="display-block">
-
-                    <h3 class="tituloGraficos">
-                        <span id="titulousuario1">123</span>
-                    </h3>
+                    <br>
+                    <div class="apresentacao2">ÚLTIMAS VIAGENS</div>
 
                     <div class="graph">
                         <canvas id="myChartCanvas1" ></canvas>
                     </div>
-
-                    <div class="label-captura">
-                    </div>
-
-                </div>
-
-                <div id="grafico2" class="display-none">
-
-                    <h3 class="tituloGraficos">
-                        <span id="titulousuario2"></span>
-                    </h3>
-
-                    <div class="graph">
-                        <canvas id="myChartCanvas2">333333333</canvas>
-                    </div>
-
-                    <div class="label-captura">
-                        <p id="avisoCaptura2" style="color: white"></p>
-                    </div>
-
-
 
                 </div>
             </div>
@@ -151,11 +129,6 @@
     function obterDadosGraficos() {
         obterDadosGrafico(idUsuario)
     }
-
-
-    // function exibirviagem(id) {
-    //     let todosOsGraficos = document.getElementById("graficos")
-    // }
 
     // O gráfico é construído com três funções:
     // 1. obterDadosGrafico -> Traz dados do Banco de Dados para montar o gráfico da primeira vez
@@ -205,22 +178,23 @@
                 {
                     label: 'cidade',
                     data: [],
-                    fill: false,
-                    borderColor: 'rgb(75, 192, 192)',
+                    fill: false,   
+                    backgroundColor: '#69418B',
                     tension: 0.1
                 },
                 {
                     label: 'duracao',
                     data: [],
                     fill: false,
-                    borderColor: 'rgb(100, 192, 200)',
+                    backgroundColor: '#69418B' ,
                     tension: 0.1
                 }
                 , {
                     label: 'satisfacao',
                     data: [],
                     fill: false,
-                    borderColor: 'rgb(75, 192, 192)',
+                    backgroundColor: '#1C3720' ,
+                    borderWidth: 2,
                     tension: 0.1
                 }
             ]

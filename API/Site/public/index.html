@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="shortcut icon" href="../css/imgs/logosem.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../public/css/imgs/logosem.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,7 +58,7 @@
 
                 <div class="box1">
                     <div class="texto">
-                        <p><b> Ao se inscrever no nosso site, você consegue monitorar suas viagens e classificá-las de
+                        <p><b> Ao se inscrever, você consegue monitorar suas viagens e classificá-las de
                                 acordo com sua satisfação </br>
                                 Além de fazer simulações, como a de simular o preço da gasolina de acordo com os kms da
                                 viagem</b></p>
@@ -72,10 +72,10 @@
                 <div class="box2">
                     <img src="css/imgs/Justificativa.svg">
                     <div class="texto">
-                        <p><b>Nosso site existe com o propósito de instigar as pessoas a se permitirem
-                                conhecer e
-                                sentir a natureza, e principalmente a desfrutar dos benefícios que ela fornece,
-                                através de viagens.</b></p>
+                        <p><b>Nosso site existe com o objetivo de motivar as pessoas a viajarem e terem contato real com
+                                a natureza,
+                                permitindo que possam conhecer e sentir os benefícios da natureza nas suas
+                                vidas.</b></p>
                     </div>
                 </div>
 
@@ -91,7 +91,7 @@
                         <div class="boxes">
 
                             <div class="box">
-                                <img src="css/imgs/Objetivo.svg">
+                                <img src="css/imgs/undraw_world_re_768g.svg">
                                 <div class="texto2">
                                     <p><b>Missão:</br></br>
                                             Nossa missão é ajudar as pessoas a se organizarem em viagens e
@@ -135,9 +135,30 @@
                         </div>
                     </div>
                 </div>
+
+            </div>
+
+
+            <div class="Carrossel">
+
+                <div class="pic-ctn">
+                    <img src="css/imgs/InShot_20220816_205825946.jpg" alt="" class="pic" style="width: 500px;">
+                    <img src="css/imgs/Carrosel - amora.jpeg" alt="" class="pic" style="width: 500px;">
+                    <img src="css/imgs/Carrosel - praia mar.jpeg" alt="" class="pic" style="width: 500px;">   
+                    <img src="css/imgs/Carrosel - holambra.jpg" alt="" class="pic" style="width: 500px;">
+                    <img src="css/imgs/Carrosel - holambra sapatao.jpg" alt="" class="pic" style="width: 500px;">
+                    <img src="css/imgs/Carrosel - praia mar.jpeg" alt="" class="pic" style="width: 500px;">                  
+                    <img src="css/imgs/Carrosel - eu e papis.jpg" alt="" class="pic" style="width: 600px;">                   
+
+                </div>
+                <div class="sobre_mim">
+                    <div class="formulario"></div>
+                </div>
             </div>
         </div>
     </div>
+
+
     </div>
     <!-- Fim da Social -->
 
@@ -154,3 +175,35 @@
 </body>
 
 </html>
+
+<Script>
+
+    var index = 1;
+    showSlides(index);
+
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(index += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(index = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides_fade");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) { index = 1 }
+        if (n < 1) { index = slides.length }
+
+        for (i = 1; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 1; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+    }
+
+</Script>

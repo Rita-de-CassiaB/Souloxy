@@ -109,6 +109,17 @@
     opacity: .4;
 }
 
+.apresentacao2 {
+    margin-top:10px ;
+    width: 100%;
+    font-size: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #69418B;
+    opacity: .7;
+}
+
+
 .formulario {
     display: flex;
     flex-direction: column;
