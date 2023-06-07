@@ -221,6 +221,7 @@ a {
 .Carrossel {
     height: 500px;
     display: block;
+    margin-top: 15px;
 }
 
 @keyframes fade {
@@ -259,7 +260,7 @@ a {
         opacity: 0;
     }
 
-    
+
 
     100% {
         transform: translateX(-200px);
@@ -277,34 +278,48 @@ a {
 
 .pic-ctn>img {
     position: absolute;
-    top: 0;
-    height: 500px;
-    left: calc(5%);
+    top: 30px;
+    height: 400px;
+    left: calc(5.5%);
     opacity: 0;
-    animation: display 10s infinite;
+    animation: display 20s infinite;
     border-radius: 10px;
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
+img:nth-child(1) {
+    animation-delay: 1s;
+}
+img:nth-child(2) {
+    animation-delay: 2s;
+}
 
 img:nth-child(2) {
-    animation-delay: 2;
+    animation-delay: 3s;
 }
 
 img:nth-child(3) {
-    animation-delay: 4s;
+    animation-delay: 5s;
 }
 
 img:nth-child(4) {
-    animation-delay: 6s;
-}
-
-img:nth-child(5) {
     animation-delay: 8s;
 }
 
+img:nth-child(5) {
+    animation-delay: 11s;
+}
+
 img:nth-child(6) {
-    animation-delay: 10;
+    animation-delay: 14s;
+}
+
+img:nth-child(7) {
+    animation-delay: 17s;
+}
+
+img:nth-child(8) {
+    animation-delay: 20s;
 }
 
 
