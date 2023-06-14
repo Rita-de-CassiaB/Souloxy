@@ -50,7 +50,7 @@ a {
 
 /* Começo do Banner */
 .a {
-    height: 3000px;
+    height: 2158px;
     width: 100%;
 }
 
@@ -114,7 +114,7 @@ a {
 
 .b {
     background-color: #1C3720;
-    height: 650px;
+    height: 700px;
     padding-right: 20px;
     padding-left: 20px;
 }
@@ -178,6 +178,7 @@ a {
 
 .social {
     display: flex;
+    padding-top: 40px;
 }
 
 .social .container .boxes {
@@ -219,7 +220,7 @@ a {
 /* Começo Carrosel */
 
 .Carrossel {
-    height: 700px;
+    height: 650px;
     display: block;
     margin-top: 15px;
 }
@@ -378,10 +379,10 @@ img:nth-child(10) {
 /* Começo do Footer */
 .footer .container2 {
 
-    background-color: #1C3720;
-    color: #BEC4ED;
+    background-color: #BEC4ED;
+    color: #69418B;
     display: flex;
-    font-size: 20px;
+    font-size: 15px;
     width: 100%;
     justify-content: center;
 }

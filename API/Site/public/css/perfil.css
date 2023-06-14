@@ -19,13 +19,13 @@ body {
 
 .quadro {
     position: relative;
-    width: 55%;
-    height: 60vh;
+    width: 64%;
+    height: 50vh;
     background-color: #BEC4ED;
     border-radius: 10px;
     margin-right: 4%;
-    margin-left: 4%;
-    margin-top: 1%;
+    margin-left: 3%;
+    margin-top: 3%;
     justify-content: center;
     padding: 2%;
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
@@ -38,7 +38,7 @@ body {
 .imagens {
     display: flex;
     flex-flow: row nowrap;
-    gap: 15px;
+    gap: 25px;
 }
 
 .item img {
@@ -48,8 +48,8 @@ body {
 
 
 .item {
-    width: 400px;
-    height: 400px;
+    width: 700px;
+    height: 50vh;
     flex-shrink: 0;
     transition: all 600ms ease-in-out;
     opacity: 0.5;
@@ -79,7 +79,7 @@ body {
 .arrow-right {
     position: absolute;
     top: 0;
-    left: 94.5%;
+    left: 95.3%;
     right: auto;
     bottom: 0;
     font-size: 20px;
@@ -126,12 +126,12 @@ body {
   
 
 .texto {
-    width: 320px;
-    font-size: 20px;
+    width: 280px;
+    font-size: 22px;
     text-align: center;
     align-items: center;
     margin-bottom: 20px;
-    margin-top: 50px;
+    margin-top: 20px;
     color: #BEC4ED
 }
 
@@ -288,9 +288,16 @@ body::-webkit-scrollbar-thumb {
     background-color: #69418B;
 }
 
+.fundo4T {
+    height: 105px;
+    margin-right: 10%;
+    margin-left: 10%;
+    background-color: #69418B;
+}
+
 .fundo4 {
     display: flex;
-    height: 89vb;
+    height: 70vb;
     margin-right: 10%;
     margin-left: 10%;
     background-color: #69418B;
