@@ -7,12 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Souloxy | Dashboards</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/funcoes.js"></script>
 
     <link rel="stylesheet" href="../css/formulários.css">
     <link rel="stylesheet" href="../css/perfil.css">
     <link rel="stylesheet" href="dashboards.css">
-    <script src="../js/funcoes.js"></script>
+
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
@@ -34,7 +34,6 @@
             <h1 class="titulo">SOULOXY</h1>
 
             <ul class="navBar">
-                <li> <a href="../Quiz.html">Quiz</a></li>
                 <li><a href="cards.html">Perfil</a></li>
                 <li>|</li>
                 <li id="aqui"><a href="./dashboard.html">Gráficos</a></li>
@@ -44,46 +43,47 @@
     </div>
 
     <div class="fundo">
-        <div class="janela">
+        <div class="fundo5">
+            <div class="janela">
 
-            <div class="hello">
-                <h3>Olá, <span id="b_usuario">usuário</span>! Seja Bem Vindo(a)</h3>
-                <h3>Seu Identificador é <span id="b_id">ID</span></h3>
-                <h3>Seu Email é <span id="b_email">ID</span></h3>
+                <div class="hello">
+                    <h3>Olá, <span id="b_usuario">usuário</span>! Seja Bem Vindo(a)</h3>
+                    <h3>Seu Identificador é <span id="b_id">ID</span></h3>
+                    <h3>Seu Email é <span id="b_email">ID</span></h3>
+                </div>
+                <br>
+                <div class="hello">
+                    <div class="inserir">
+                        <li> <a id="botão" href="Cadastroviagens.html">Cadastrar Viagens</a></li></br>
+                    </div>
+                    <div class="inserir">
+                        <li> <a id="botão" href="Simuladores.html">Simuladores</a></li></br>
+                    </div>
+                    <div class="inserir">
+                        <li> <a id="botão"
+                                href="http://localhost:3333/dashboard/Simuladores.html#:~:text=Quantos%20dias%20ela%20durar%C3%A1%3F">Planejar
+                                Viagens</a></li></br>
+                    </div>
+                    <div class="inserir">
+                        <li> <a id="botão"
+                                href="http://localhost:3333/dashboard/Simuladores.html#:~:text=por%20sua%20resid%C3%AAncia%2C-,ou%20o%20local%20de%20sa%C3%ADda,-Selecione%20um%20desses">Buscar
+                                CEP</a></li></br>
+                    </div>
+                    <div class="inserir">
+                        <li> <a id="botão"
+                                href="http://localhost:3333/dashboard/Simuladores.html#:~:text=com%201l%20de-,gasolina,-%3F%20(Se%20n%C3%A3o%20souber">Simular
+                                Gasolina</a></li></br>
+                    </div>
+                    <div class="inserir">
+                        <li> <a id="botão"
+                                href="http://localhost:3333/dashboard/Simuladores.html#:~:text=SORTEADOR%20ALEAT%C3%93RIO%20DE%20VIAGENS">Sorteador
+                                de viagem</a></li></br>
+                    </div>
+                </div>
             </div>
-            <br>
-            <div class="hello">
-                <div class="inserir">
-                    <li> <a id="botão" href="Cadastroviagens.html">Cadastrar Viagens</a></li></br>
-                </div>
-                <div class="inserir">
-                    <li> <a id="botão" href="Simuladores.html">Simuladores</a></li></br>
-                </div>
-                <div class="inserir">
-                    <li> <a id="botão"
-                            href="http://localhost:3333/dashboard/Simuladores.html#:~:text=Quantos%20dias%20ela%20durar%C3%A1%3F">Planejar
-                            Viagens</a></li></br>
-                </div>
-                <div class="inserir">
-                    <li> <a id="botão"
-                            href="http://localhost:3333/dashboard/Simuladores.html#:~:text=por%20sua%20resid%C3%AAncia%2C-,ou%20o%20local%20de%20sa%C3%ADda,-Selecione%20um%20desses">Buscar
-                            CEP</a></li></br>
-                </div>
-                <div class="inserir">
-                    <li> <a id="botão"
-                            href="http://localhost:3333/dashboard/Simuladores.html#:~:text=com%201l%20de-,gasolina,-%3F%20(Se%20n%C3%A3o%20souber">Simular
-                            Gasolina</a></li></br>
-                </div>
-                <div class="inserir">
-                    <li> <a id="botão"
-                            href="http://localhost:3333/dashboard/Simuladores.html#:~:text=SORTEADOR%20ALEAT%C3%93RIO%20DE%20VIAGENS">Sorteador
-                            de viagem</a></li></br>
-                </div>
-            </div>
-
         </div>
 
-        <div class="dash">
+        <div class="dash2">
 
             <!-- <div class="btns-dash">
                 O gráfico é chamado de acordo com o id (idviagem) do banco 
@@ -97,13 +97,13 @@
                     <br>
                     <div class="apresentacao2">ÚLTIMAS VIAGENS</div>
 
-                    <div class="graph">
-                        <canvas id="myChartCanvas1" ></canvas>
+                    <div class="graph2">
+                        <canvas id="myChart"></canvas>
                     </div>
 
                 </div>
             </div>
-        </div>
+       
     </div>
 
 
@@ -114,13 +114,15 @@
 
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-    b_id.innerHTML = sessionStorage.ID;
+    b_id.innerHTML = sessionStorage.ID_USUARIO;
     b_email.innerHTML = sessionStorage.EMAIL_USUARIO;
 
     var idViagem = sessionStorage.IDVIAGEM;
-    var idUsuario = sessionStorage.ID;
-    console.log("Session ID: ", idUsuario);
-    console.log("Session ID ", sessionStorage.ID)
+    var idUsuario = sessionStorage.ID_USUARIO;
+
+    console.log("Session ID: ", sessionStorage.ID_USUARIO);
+    console.log("Session EMAIL: ", sessionStorage.EMAIL_USUARIO);
+    console.log("Session NAME ", sessionStorage.NOME_USUARIO)
 
     let proximaAtualizacao;
 
@@ -178,7 +180,7 @@
                 {
                     label: 'cidade',
                     data: [],
-                    fill: false,   
+                    fill: false,
                     backgroundColor: '#69418B',
                     tension: 0.1
                 },
@@ -186,14 +188,14 @@
                     label: 'duracao',
                     data: [],
                     fill: false,
-                    backgroundColor: '#69418B' ,
+                    backgroundColor: '#69418B',
                     tension: 0.1
                 }
                 , {
                     label: 'satisfacao',
                     data: [],
                     fill: false,
-                    backgroundColor: '#1C3720' ,
+                    backgroundColor: '#1C3720',
                     borderWidth: 2,
                     tension: 0.1
                 }
@@ -229,7 +231,7 @@
 
         // Adicionando gráfico criado em div na tela
         let myChart = new Chart(
-            document.getElementById(`myChartCanvas1`),
+            document.getElementById(`myChart`),
             config
         );
 
@@ -273,10 +275,13 @@
                         dados.datasets[0].data.push(novoRegistro[0].cidade); // incluir uma nova medida de cidade
 
                         dados.datasets[1].data.shift();  // apagar o primeiro de duracao
-                        dados.datasets[1].data.push(novoRegistro[0].duracao); // incluir uma nova medida de duracao
+                        dados.datasets[1].data.push(novoRegistro[1].duracao); // incluir uma nova medida de duracao
 
                         dados.datasets[2].data.shift();  // apagar o primeiro de satisfacao
-                        dados.datasets[2].data.push(novoRegistro[0].satisfacao); // incluir uma nova medida de satisfacao
+                        dados.datasets[2].data.push(novoRegistro[2].satisfacao); // incluir uma nova medida de satisfacao
+
+                        dados.datasets[3].data.shift();  // apagar o primeiro de satisfacao
+                        dados.datasets[3].data.push(novoRegistro[3].data);
 
                         myChart.update();
                     }

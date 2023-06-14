@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOULOXY | Nosso site</title>
+
+    <link rel="shortcut icon" href="../public/css/imgs/logosem.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Souloxy | Perfil</title>
+
+    <link rel="stylesheet" href="css/formulários.css">
+    <link rel="stylesheet" href="css/perfil.css">
+    <link rel="stylesheet" href="dashboard/dashboards.css">
+
+</head>
+
+<body>
+
+    <!-- Nosso cabeçalho -->
+    <div class="fundo3T">
+        <div class="header">
+            <div class="container">
+
+                <h1 class="titulo">SOULOXY</h1>
+
+                <ul class="navBar">
+                    <li> <a href="../Quiz.html">Quiz</a></li>
+                    <li> <a href="cards.html">Perfil</a></li>
+                    <li>|</li>
+                    <li><a href="./dashboard.html">Gráficos</a></li>
+                    <li> <a onclick="limparSessao()" href="../index.html">Sair</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Começo do Banner -->
+
+
+    <div id="div_aguardar"></div>
+    <div class="bannerAuto">
+        <div class="fundo3T">
+            <div class="apresentacao">Sobre o Nosso Site: </div>
+            <center><div class="texto">Por que realizar o cadastro?</div>
+        </div>
+        <div class="fundo4">
+            </br>
+            <div class="quadro"> <button class="arrow-left control" aria-label="Previous image">◀</button>
+                <button class="arrow-right control" aria-label="Next Image">▶</button>
+                
+                    <section class="slides">
+
+                        <div class="imagens">
+
+                            <img src="" alt="Beach Image"
+                                class="item current-item">
+                            <img src="https://source.unsplash.com/random/250x250/?animal" alt="Animal Image"
+                                class="item current-item">
+                            <img src="https://source.unsplash.com/random/250x250/?street" alt="Street Image"
+                                class="item current-item">
+                            <img src="https://source.unsplash.com/random/250x250/?zoo" alt="Zoo Image"
+                                class="item current-item">
+                            <img src="https://source.unsplash.com/random/250x250/?model" alt="Model Image"
+                                class="item current-item">
+                        </div>
+                    </section>
+                </center>
+            </div>
+            <div class="texto">Realizando o cadastro você tem acesso a outras telas.
+                Podendo acessar:<br> <br>
+               - Cadastro de viagens; <br>
+               - Gráficos atualizados em tempo real com suas informações; <br>
+               - Simulador de Gasolina; <br>
+               - Busca CEP; <br>
+               - Sorteador aleatório de viagens; <br>
+               - Planejador de viagens; <br> <br>
+
+                Todos de forma gratuita, se nenhuma cobrança adicional!!
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
+<Script>
+    const controls = document.querySelectorAll(".control");
+    let currentItem = 0;
+    const items = document.querySelectorAll(".item");
+    const maxItems = items.length;
+
+    controls.forEach((control) => {
+        control.addEventListener("click", (e) => {
+            isLeft = e.target.classList.contains("arrow-left");
+
+            if (isLeft) {
+                currentItem -= 1;
+            } else {
+                currentItem += 1;
+            }
+
+            if (currentItem >= maxItems) {
+                currentItem = 0;
+            }
+
+            if (currentItem < 0) {
+                currentItem = maxItems - 1;
+            }
+
+            items.forEach((item) => item.classList.remove("current-item"));
+
+            items[currentItem].scrollIntoView({
+                behavior: "smooth",
+                inline: "center"
+            });
+
+            items[currentItem].classList.add("current-item");
+        });
+    });
+
+</Script>

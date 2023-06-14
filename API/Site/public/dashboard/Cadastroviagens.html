@@ -10,143 +10,162 @@
     <script src="../js/funcoes.js"></script>
 
     <!-- Aqui colocamos o link para o arquivo de estilização-->
-    <link rel="stylesheet" href="../css/perfil.css">
     <link rel="stylesheet" href="../css/formulários.css">
+    <link rel="stylesheet" href="../css/perfil.css">
 </head>
 
-<body>
+<body onload="validarSessao()">
     <!-- Nosso cabeçalho -->
-
-    <div class="header">
-        <div class="container">
-            <h1 class="titulo">SOULOXY</h1>
-            <ul class="navBar">
-                <li> <a href="../Quiz.html">Quiz</a></li>
-                <li> <a href="cards.html">Perfil</a></li>
-                <li>|</li>
-                <li><a href="./dashboard.html">Gráficos</a></li>
-                <li> <a onclick="limparSessao()" href="../index.html">Sair</a></li>
-            </ul>
+    <div class="fundo3T">
+        <div class="header">
+            <div class="container">
+                <h1 class="titulo">SOULOXY</h1>
+                <ul class="navBar">
+                    <li> <a href="cards.html">Perfil</a></li>
+                    <li>|</li>
+                    <li><a href="./dashboard.html">Gráficos</a></li>
+                    <li> <a onclick="limparSessao()" href="../index.html">Sair</a></li>
+                </ul>
+            </div>
         </div>
     </div>
-
     <!-- Começo do Banner -->
+    <div class="alerta_erro">
+        <div class="card_erro" id="cardErro">
+            <span id="mensagem_erro"></span>
+        </div>
+        <div id="div_aguardar"></div>
+        <div class="bannerAuto">
+            <div class="fundo3">
+                <div class="apresentacao">SEJA BEM-VINDO(A) AO CADASTRO DE VIAGENS</div>
+                <div class="container">
+                    <div class="caixa_formulario5">
+                        <div class="usuario">
+                            <h3>Olá, <span id="b_usuario">usuário</span>! Seja Bem Vindo(a) aos Simuladores</h3>
 
-    <div class="cadastro">
-        <div class="alerta_erro">
-            <div class="card_erro" id="cardErro">
-                <span id="mensagem_erro"></span>
-            </div>
+                            <h3>Seu Identificador é <span id="b_id">ID</span></h3>
 
-            <div id="div_aguardar">
-                <div class="fundo1">
-                    <div class="bannerAuto">
-                        <div class="container">
-                            <div class="caixa_formulario">
-
-                                <div class="formulario">
-
-                                    <span>Número (Insira a posição da viagem + sua identificação)</span>
-                                    <input id="numero_input" type="number" placeholder="019999">
-
-                                    <span>Quando a viagem ocorreu?</span>
-                                    <input id="data_input" type="date">
-
-                                    <span>Quantos dias ela durou?</span>
-                                    <input id="duracao_input" type="number" placeholder=" 3">
-
-                                    <span>Para qual cidade/estado você viajou? </span>
-                                    <input id="cidade_input" type="cidade" placeholder="São Paulo">
-
-                                    <span> Qual o local de Viagem:</span>
-                                    <select id="select_locais">
-                                        <option value="Cachoeira">Cachoeira</option>
-                                        <option value="Praia">Praia</option>
-                                        <option value="Cidade">Cidade </option>
-                                        <option value="Montanha">Montanhas</option>
-                                    </select>
-
-                                    <span>Quais atividades mais se encaixam com a viagem?</span>
-                                    <select id="select_atividades">
-                                        <option value="1">Gastronomia / Esportes ao ar livre / Ecoturismo / Praias /
-                                            Cavernas
-                                        </option>
-                                        <option value="2">Jardins temáticos / Feira de artesanato / Atrações para
-                                            família /
-                                            Parques
-                                        </option>
-                                        <option value="3">Festival / Gastronomia / Bares / Paisagem / Cultivos e Flores
-                                            /
-                                            Arquitetura
-                                        </option>
-                                        <option value="4">Atividades Culturais / Atividades Radicais / Aventuras /
-                                            Paisagem
-                                            /
-                                            Cachoeiras
-                                        </option>
-                                    </select>
-
-                                    <span>Qual seu Nível de Satisfação?</span>
-                                    <select id="select_satisfacao">
-                                        <option value="00">0%
-                                        </option>
-                                        <option value="02">20%
-                                        </option>
-                                        <option value="04">40%
-                                        </option>
-                                        <option value="06">60%
-                                        </option>
-                                        <option value="08">80%
-                                        </option>
-                                        <option value="10">100%
-                                        </option>
-                                    </select>
-
-                                    <span>Diga mais sobre a viagem</span>
-                                    <input id="comentarios_input" type="text"
-                                        placeholder="Adorei! Amo conhecer lugares diferentes, O MASP é lindo">
-
-                                    <span>Qual seu número de identificação? (4 números)</span>
-                                    <input id="id_input" type="number" placeholder="9999">
-                                </div>
-                            </div>
-
-                            <div class="caixa_formulario2">
-                                <div>
-                                    <center>
-
-                                        <div class="Confirme">
-                                            <h1>SEJA BEM-VINDO(A) </br> AO CADASTRO DE VIAGENS</h1>
-                                            <img id="logo" src="../css/imgs/LogoRoxo.png" alt="">
-                                            <button onclick="cadastrarviagem()" id="botão"> Confirmar Cadastro de
-                                                viagem</button>
-                                        </div>
-                                    </center>
-
-                                </div>
-
-                            </div>
+                            <h3>Seu Email é <span id="b_email">ID</span></h3>
                         </div>
                     </div>
                 </div>
 
 
-                <!-- Fim do Banner -->
 
+                <div class="container">
+                    <div class="caixa_formulario">
 
-                <!-- Começo do footer -->
-                <div class="footer">
-                    <div class="container">
-                        <p>
-                            Direitos Reservados a Souloxy 2023 ©
-                        </p>
+                        <div class="formulario6">
+                            <span>Número (Insira a posição da viagem + sua identificação)</span>
+                            <input id="numero_input" type="number" placeholder="019999">
+
+                            <span>Quando a viagem ocorreu?</span>
+                            <input id="data_input" type="date">
+
+                            <span>Quantos dias ela durou?</span>
+                            <input id="duracao_input" type="number" placeholder=" 3">
+
+                            <span>Para qual cidade/estado você viajou? </span>
+                            <input id="cidade_input" type="cidade" placeholder="São Paulo">
+
+                            <span> Qual o local de Viagem:</span>
+                            <select id="select_locais">
+                                <option value="Cachoeira">Cachoeira</option>
+                                <option value="Praia">Praia</option>
+                                <option value="Cidade">Cidade </option>
+                                <option value="Montanha">Montanhas</option>
+                            </select>
+
+                            <span>Quais atividades mais se encaixam com a viagem?</span>
+                            <select id="select_atividades">
+                                <option value="1">Gastronomia / Esportes ao ar livre / Ecoturismo / Praias /
+                                    Cavernas
+                                </option>
+                                <option value="2">Jardins temáticos / Feira de artesanato / Atrações para
+                                    família /
+                                    Parques
+                                </option>
+                                <option value="3">Festival / Gastronomia / Bares / Paisagem / Cultivos e Flores
+                                    /
+                                    Arquitetura
+                                </option>
+                                <option value="4">Atividades Culturais / Atividades Radicais / Aventuras /
+                                    Paisagem
+                                    /
+                                    Cachoeiras
+                                </option>
+                            </select>
+
+                            <span>Qual seu Nível de Satisfação?</span>
+                            <select id="select_satisfacao">
+                                <option value="00">0%
+                                </option>
+                                <option value="02">20%
+                                </option>
+                                <option value="04">40%
+                                </option>
+                                <option value="06">60%
+                                </option>
+                                <option value="08">80%
+                                </option>
+                                <option value="10">100%
+                                </option>
+                            </select>
+
+                            <span>Diga mais sobre a viagem</span>
+                            <input id="comentarios_input" type="text"
+                                placeholder="Adorei! Amo conhecer lugares diferentes, O MASP é lindo">
+
+                            <span>Qual seu número de identificação? (4 números)</span>
+                            <input id="id_input" type="number" placeholder="9999">
+                            </br>
+                            <div id="div_result"></div>
+                        </div>
+                    </div>
+                    <div class="caixa_formulario4">
+                        <center>
+                            </br>
+                            <div class="ConfirmeD">
+                                <img id="logo2" src="../css/imgs/LogoRoxo.png" alt="">
+                            </div>
+                            <div class="ConfirmeDB">
+                                <button onclick="cadastrarviagem()" id="botão"> Confirmar Cadastro de
+                                    viagem</button>
+                            </div>
+                        </center>
                     </div>
                 </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Fim do Banner -->
+
+    <!-- Começo do footer -->
+
+    <div class="footer">
+        <div class="container">
+            <p>
+                Direitos Reservados a Souloxy 2023 ©
+            </p>
+        </div>
+    </div>
 </body>
 
 </html>
 
 <script>
+
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    b_id.innerHTML = sessionStorage.ID_USUARIO;
+    b_email.innerHTML = sessionStorage.EMAIL_USUARIO;
+    var idUsuario = sessionStorage.ID_USUARIO;
+
+    console.log("Session ID: ", sessionStorage.ID_USUARIO);
+    console.log("Session EMAIL: ", sessionStorage.EMAIL_USUARIO);
+    console.log("Session NAME ", sessionStorage.NOME_USUARIO)
+
     function cadastrarviagem() {
         aguardar();
 
@@ -222,7 +241,7 @@
                         sessionStorage.EMAIL_USUARIO = json.email;
                         sessionStorage.SENHA_USUARIO = json.senha;
                         sessionStorage.NOME_USUARIO = json.nome;
-                        sessionStorage.IDVIAGEM = json.id;
+                        sessionStorage.ID_VIAGEM = json.id;
 
                     });
 
@@ -238,7 +257,6 @@
         function sumirMensagem() {
             cardErro.style.display = "none"
         }
-
 
     }
 </script>

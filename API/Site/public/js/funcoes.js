@@ -5,13 +5,16 @@ function validarSessao() {
     var email = sessionStorage.EMAIL_USUARIO;
     var senha = sessionStorage.SENHA_USUARIO;
     var nome = sessionStorage.NOME_USUARIO;
+    var id = sessionStorage.ID_USUARIO;
 
     var b_usuario = document.getElementById("b_usuario");
     var b_email = document.getElementById("b_email");
+    var b_id = document.getElementById("b_id");
 
-    if (email != null && nome != null && senha != null) {
+    if (email != null && nome != null && senha != null && id != null) {
         b_usuario.innerHTML = nome;
         b_email.innerHTML = none;
+        b_id.innerHTML = none;
 
         finalizarAguardar();
     } else {

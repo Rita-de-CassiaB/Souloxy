@@ -12,9 +12,10 @@
     <!-- Aqui colocamos o link para o arquivo de estilização-->
     <link rel="stylesheet" href="../css/formulários.css">
     <link rel="stylesheet" href="../css/perfil.css">
+
 </head>
 
-<body>
+<body onload="validarSessao()">
     <!-- Nosso cabeçalho -->
     <div class="fundo3T">
         <div class="header">
@@ -23,7 +24,6 @@
                 <h1 class="titulo">SOULOXY</h1>
 
                 <ul class="navBar">
-                    <li> <a href="../Quiz.html">Quiz</a></li>
                     <li> <a href="cards.html">Perfil</a></li>
                     <li>|</li>
                     <li><a href="./dashboard.html">Gráficos</a></li>
@@ -39,7 +39,9 @@
     <div id="div_aguardar"></div>
     <div class="bannerAuto">
         <div class="fundo1">
+
             <div class="apresentacao">Nossos Simuladores:
+
                 <div class="caixa_conteinerB"> </br>
                     <a id="botão"
                         href="http://localhost:3333/dashboard/Simuladores.html#:~:text=DE%20NOVAS%20VIAGENS-,Simulador%20De%20Gasolina,-Qual%20seu%20nome">Simulador
@@ -60,14 +62,22 @@
                 </div>
             </div>
             <div class="container">
+                <div class="caixa_formulario5">
+                    <div class="usuario">
+                        <h3>Olá, <span id="b_usuario">usuário</span>! Seja Bem Vindo(a) aos Simuladores</h3>
 
+                        <h3>Seu Identificador é <span id="b_id">ID</span></h3>
+
+                        <h3>Seu Email é <span id="b_email">ID</span></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
                 <div class="caixa_formulario">
 
                     <div class="formulario">
 
-
                         <h1>SIMULADOR DE GASOLINA</h1>
-
 
                         <span>Qual seu nome?</span>
                         <input id="nome_input1" type="text">
@@ -88,7 +98,7 @@
 
                 </div>
 
-                <div class="caixa_formulario2">
+                <div class="caixa_formulario2"></br>
                     <div>
                         <center>
                             </br>
@@ -101,6 +111,7 @@
                         </center>
                     </div>
                 </div>
+
             </div>
         </div>
 
@@ -210,7 +221,10 @@
             <div class="caixa_formulario2B">
                 <center>
                     <div class="ConfirmeE">
-                        <img style=height:300px width="auto" src="" alt="" id="planejando">
+                    
+                        <img style=height:200px width="auto" src="" alt="" id="planejando">
+                    </div>
+                    <div class="ConfirmeE">
                         <button onclick="planejarViagem()"> Salvar Planejamento de Viagem</button>
                     </div>
                 </center>
@@ -275,6 +289,17 @@
 </html>
 
 <script>
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    b_id.innerHTML = sessionStorage.ID_USUARIO;
+    b_email.innerHTML = sessionStorage.EMAIL_USUARIO;
+
+    var idViagem = sessionStorage.IDVIAGEM;
+    var idUsuario = sessionStorage.ID_USUARIO;
+
+    var idViagem = sessionStorage.IDVIAGEM;
+    console.log("Session ID: ", sessionStorage.ID_USUARIO);
+    console.log("Session EMAIL: ", sessionStorage.EMAIL_USUARIO);
+    console.log("Session NAME ", sessionStorage.NOME_USUARIO)
 
     function SimularG() {
         aguardar();
@@ -347,7 +372,7 @@
 
         Lista_local.push;
         Lista_CEP.push;
-        length
+    
 
         var tamanhoL = Lista_local.length
         var tamanhoC = Lista_CEP.length
@@ -370,7 +395,6 @@
 
     };
 
-
     var btn = document.querySelector(".no");
     var position
     btn.addEventListener("click", function () {
@@ -386,6 +410,7 @@
         btn.style.transform = `translate(${position}px,60px)`;
         btn.style.transition = "all 0.1s ease";
     });
+
 
     function tanks() {
         alert("Que bom! Você está no site certo");
@@ -461,11 +486,6 @@
                 div_frase4.innerHTML = `Sua viagem foi Cadastrada`
             };
 
-            if (Lista_imagens.length > 0) {
-
-                planejando.src = Lista_imagens[fkLocalVar];
-
-            }
             // Enviando o valor da nova input
             fetch("/usuario2/planejarViagem", {
                 method: "POST",
@@ -504,7 +524,7 @@
                         sessionStorage.EMAIL_USUARIO = json.email;
                         sessionStorage.SENHA_USUARIO = json.senha;
                         sessionStorage.NOME_USUARIO = json.nome;
-                        sessionStorage.IDVIAGEM = json.id;
+                        sessionStorage.ID_VIAGEM = json.id;
 
                     });
 

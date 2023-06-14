@@ -1,17 +1,7 @@
-/* pagina mural */
-
-.header .container h2 {
-  font-size: 30px;
-  text-align: center;
-  text-transform: capitalize;
-  color: #BEC4ED;
-  opacity: .4;
-}
-
 .janela {
   height: 88vh;
   width: 320px;
-  padding-left: 30px;
+  position: fixed;
 }
 
 .hello {
@@ -19,78 +9,26 @@
   border-radius: 10px;
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
   padding: 18px;
+  width: 270px;
 }
 
 .fundo {
   display: flex;
-  height: 89vb;
+  height: auto;
 }
 
-*,
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.label-captura {
-  display: flex;
-  justify-content: center;
-}
-
-.publicacao-btn-editar {
-  cursor: pointer;
-  font-family: Arial, Helvetica, sans-serif;
-  border: 0;
-  border-radius: 5px;
-  font-weight: 600;
-  font-size: 14px;
-  padding: 5px 8px;
-  color: #BEC4ED;
-  background-color: #e6005a;
-  width: 80px;
-}
-
-.publicacao {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: stretch;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
-  border-bottom: 3px solid #e6005a;
-  padding: 20px;
-}
-
-.publicacao>*:not(:last-child) {
-  padding: 0 0 10px 0;
-}
-
-.div-results {
-  width: 100%;
-}
-
-.div-results .feed-container {
-  border-radius: 5px;
-  margin-bottom: 80px;
-
-}
-
-.div-buttons {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.div-buttons>* {
-  margin-left: 30px;
+.fundo5 {
+  height: 88vh;
+  width: 320px;
+  padding-left: 30px;
 }
 
 /* pagina graficos */
 
-
 .dash {
   width: 75%;
-  top: 0;
   left: 20%;
-  height: 85vh;
+  height: auto;
   background-color: #BEC4ED;
   border-radius: 10px;
   margin-right: 4%;
@@ -99,29 +37,34 @@ body {
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
+.dash2 {
+  width: 90%;
+  top: 0;
+  left: 20%;
+  height: 85vh;
+  background-color: #BEC4ED;
+  border-radius: 10px;
+  margin-right: 4%;
+  margin-left: 4%;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
 .regua {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  width: 100%;
-  margin-top: 30px;
-}
-
-.maismeses {
-  background-color: #69418B;
-  border-radius: 20px;
-  border: 2px solid #BEC4ED;
-  color: #BEC4ED;
-}
-
-.menosmeses {
-  background-color: #69418B;
-  border-radius: 20px;
-  border: 2px solid #BEC4ED;
-  color: #BEC4ED;
+  width: 50%;
+  margin-top: 20px;
 }
 
 .totalviagens {
+  background-color: #69418B;
+  border-radius: 20px;
+  border: 2px solid #BEC4ED;
+  color: #BEC4ED;
+}
+
+.totalviagensplan {
   background-color: #69418B;
   border-radius: 20px;
   border: 2px solid #BEC4ED;
@@ -136,33 +79,56 @@ body {
 }
 
 .item-regua {
-  width: 15%;
+  width: 150px;
+  height: 150px;
   text-align: center;
-  padding-top: 15px;
+  padding: 5px;
+  margin: 10px;
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
 .cards {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  height: 450px;
-  width: 100%;
-  align-items: center;
+  height: 500px;
   color: #BEC4ED;
+}
+
+.cards h1 {
+  font-size: 30px;
+  width: 100%;
+  border-bottom: solid #69418B 1px;
+  text-align: left;
+  font-weight: lighter;
+  margin: 15px;
+  color: #69418B;
+
+}
+
+.cards2 {
+  display: flex;
+  height: 590px;
+  color: #BEC4ED;
+}
+
+.cards2 h1 {
+  font-size: 30px;
+  width: 100%;
+  border-bottom: solid #69418B 1px;
+  text-align: left;
+  font-weight: lighter;
+  margin: 15px;
+  color: #69418B;
+
 }
 
 .card {
   margin: 2%;
-  width: 40%;
+  width: 500px;
   flex-wrap: wrap;
   display: flex;
-  text-align: center;
   height: 280px;
-  justify-content: right;
-  background-color: #212124;
-  padding: 2px;
   font-size: 20px;
+  border-radius: 10px;
 }
 
 .card p {
@@ -170,98 +136,60 @@ body {
   font-size: 50px;
   font-weight: lighter;
   text-align: left;
+  color: #69418B;
 }
 
-.cards h1 {
-  font-size: 22px;
-  width: 100%;
-  border-bottom: solid #BEC4ED 1px;
-  text-align: left;
-  font-weight: lighter;
-  margin: 20px;
-}
 
-/* .temperatura,
-.umidade {
-  margin: 5px;
-  margin-left: 20px;
-  width: 75%;
-} */
 
-.btns-dash {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
-
+#viagens_cards,
+#data_cards,
+#data_cards2,
+#viagens_cards2 {
+  margin: 2%;
 }
 
 .graph {
-  width: 90%;
+  width: 100%;
+  margin-left: 30px;
+}
+
+.graph2 {
+  width: 100%;
   margin: auto;
-  padding-top: 10px;
-}
-
-.tituloGraficos {
-  color: #212124;
-  display: flex;
-  justify-content: center;
-}
-
-.titulousuario {
-  color: #BEC4ED;
-  display: flex;
-  justify-content: center;
-}
-
-.btn-chart {
-  font-family: "Exo 2", sans-serif;
-  border: 0;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 10px 15px;
-  color: #212124;
-  background-color: #BEC4ED;
-  margin: 5px;
-  border-radius: 3px;
-}
-
-.btn-pink {
-  color: #BEC4ED;
-  background-color: #212124;
-}
-
-.btn-white {
-  color: #212124;
-  background-color: #BEC4ED;
-
-}
-
-.label-captura {
-  height: 80px;
-}
-
-.display-none {
-  display: none;
-}
-
-.display-flex {
-  display: flex;
-}
-
-.display-block {
-  display: block;
+  height: 80%;
+  margin-left: 60px;
 }
 
 canvas {
-  width: 100% !important;
+  width: 85% !important;
   height: 100% !important;
-  padding: 2%;
-
 }
-
 
 .inserir {
   padding-bottom: 2%;
   margin: 10px;
+}
+
+.listar {
+  width: 500px;
+}
+
+.itens {
+  margin-top: 10%;
+  background-color: #69418B;
+  padding: 3%;
+  border-radius: 10px;
+  height: 420px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.itens h1 {
+  color: #BEC4ED;
+  margin-bottom: 10px;
+}
+.itens h2 {
+  color: #BEC4ED;
+  margin: 2px
 }

@@ -219,7 +219,7 @@ a {
 /* Começo Carrosel */
 
 .Carrossel {
-    height: 500px;
+    height: 700px;
     display: block;
     margin-top: 15px;
 }
@@ -260,8 +260,6 @@ a {
         opacity: 0;
     }
 
-
-
     100% {
         transform: translateX(-200px);
         opacity: 0;
@@ -278,7 +276,7 @@ a {
 
 .pic-ctn>img {
     position: absolute;
-    top: 30px;
+    top: 50px;
     height: 400px;
     left: calc(5.5%);
     opacity: 0;
@@ -290,6 +288,7 @@ a {
 img:nth-child(1) {
     animation-delay: 1s;
 }
+
 img:nth-child(2) {
     animation-delay: 2s;
 }
@@ -322,24 +321,58 @@ img:nth-child(8) {
     animation-delay: 20s;
 }
 
+img:nth-child(9) {
+    animation-delay: 22s;
+}
+
+img:nth-child(10) {
+    animation-delay: 24s;
+}
+
 
 
 /* sobre mim */
 
 .sobre_mim {
-    height: 500px;
+    height: 600px;
+}
 
+.apresentacao {
+    width: 100%;
+    font-size: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #BEC4ED;
+    opacity: .4;
+    margin-top: 10px;
+}
+
+.texto3 {
+    margin: 19px;
+    font-size: 19px;
+    color: #BEC4ED;
+    text-indent: 5%;
+}
+
+.texto3 span{
+    font-size: 23px;
+    color: #1C3720;
 }
 
 .formulario {
     display: flex;
-    width: 700px;
+    width: 720px;
     height: 500px;
     background-color: #69418B;
     border-radius: 10px;
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-    margin-left: 720px;
+    margin-left: 700px;
 }
+
+
+
+
+
 
 /* Final Carrosel */
 /* Começo do Footer */

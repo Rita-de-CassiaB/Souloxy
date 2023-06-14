@@ -100,6 +100,14 @@
     color: #BEC4ED;
 }
 
+.caixa_formulario5 {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .apresentacao {
     width: 100%;
     font-size: 50px;
@@ -126,9 +134,9 @@
     width: 700px;
     justify-content: space-evenly;
     padding: 30px;
-    margin-bottom: 90px;
     background-color: #BEC4ED;
     border-radius: 10px;
+    margin-top: 50px;
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -176,6 +184,37 @@
 }
 
 .formulario5 span {
+    font-size: 20px;
+    text-align: center;
+    margin: 6px;
+    color: #69418B;
+}
+
+.formulario6 {
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    justify-content: space-evenly;
+    padding: 30px;
+    background-color: #BEC4ED;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.formulario6 .button {
+    margin-top: 10px;
+    background: #BEC4ED;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    width: 120px;
+    align-self: center;
+    justify-content: center;
+}
+
+.formulario6 span {
     font-size: 20px;
     text-align: center;
     margin: 6px;
@@ -268,11 +307,10 @@
 }
 
 #planejando {
-    margin-top: 60px;
-    margin-right: 80px;
-    margin-left: -100px;
     border-radius: 10px;
+    margin-left: -30px;
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    margin: 10px;
 }
 
 #img_sorteada {
@@ -280,7 +318,16 @@
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
 
-#select_atividades {
+#select_atividades, 
+#duracao_input,
+#numero_input,
+#data_input,
+#select_estacaoano,
+#select_locais,
+#select_satisfacao, 
+#id_input,
+#comentarios_input,
+#cidade_input{
     padding: 10px;
     text-align: center;
     background-color: #BEC4ED;
@@ -291,53 +338,13 @@
     border-width: 1px;
 }
 
-
-#select_estacaoano {
-    padding: 10px;
-    text-align: center;
-    background-color: #BEC4ED;
-    border-color: #1C3720;
-    border-radius: 20px;
-    color: #1C3720;
-    border-style: solid;
-    border-width: 1px;
-}
-
-#select_locais {
-    padding: 10px;
-    text-align: center;
-    background-color: #BEC4ED;
-    border-color: #1C3720;
-    border-radius: 20px;
-    color: #1C3720;
-    border-style: solid;
-    border-width: 1px;
-}
-
-#select_satisfacao {
-    padding: 10px;
-    text-align: center;
-    background-color: #BEC4ED;
-    border-color: #1C3720;
-    border-radius: 20px;
-    color: #1C3720;
-    border-style: solid;
-    border-width: 1px;
-}
 
 #div_result {
     color: #1C3720;
     font-size: 30px;
     text-align: center;
-
 }
 
-#div_result {
-    color: #1C3720;
-    font-size: 30px;
-    text-align: center;
-
-}
 
 #game {
     background-color: #1C3720;

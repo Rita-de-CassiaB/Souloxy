@@ -48,6 +48,9 @@
                             <span>Senha:</span>
                             <input id="senha_input" type="password">
 
+                            <span>Identificação:</span>
+                            <input id="id_input" type="number">
+
                             <div id="div_result"></div>
 
                         </div>
@@ -103,8 +106,9 @@
 
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
+        var idVar = id_input.value;
 
-        if (emailVar == "" || senhaVar == "") {
+        if (emailVar == "" || senhaVar == ""|| idVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "Por favor preencha os campos em branco";
             //  finalizarAguardar();
@@ -113,8 +117,9 @@
             setInterval(sumirMensagem, 5000)
         }
 
-        // console.log("FORM LOGIN: ", emailVar);
-        // console.log("FORM SENHA: ", senhaVar);
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+        console.log("FORM ID: ", idVar);
 
         fetch("/usuario/autenticar", {
             method: "POST",
@@ -124,6 +129,7 @@
             body: JSON.stringify({
                 emailServer: emailVar,
                 senhaServer: senhaVar,
+                idServer: idVar,
             })
         }).then(function (resposta) {
             // console.log("ESTOU NO THEN DO entrar()!");
@@ -138,7 +144,7 @@
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.SENHA_USUARIO = json.senha;
                     sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID = json.id;
+                    sessionStorage.ID_USUARIO = json.id;
                     // console.log("Session id ", sessionStorage.ID);
                     alert("Você esta logado");
                     setTimeout(function () {
