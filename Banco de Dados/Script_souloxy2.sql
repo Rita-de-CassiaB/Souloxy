@@ -1,5 +1,5 @@
 CREATE DATABASE Souloxy;
-
+DROP DATABASE Souloxy;
 USE Souloxy;
 
 CREATE TABLE usuario (
@@ -18,7 +18,7 @@ CREATE TABLE viagens (
 	cidade VARCHAR(50),
 	local VARCHAR(15),
 	atividades CHAR(1),
-	satisfacao CHAR(1),
+	satisfacao VARCHAR(2),
 	comentarios VARCHAR(200),
 	fkusuario CHAR(4),
 	CONSTRAINT fkusuario FOREIGN KEY  (fkusuario) REFERENCES usuario(id),
@@ -34,8 +34,8 @@ CREATE TABLE viagens (
 	CREATE TABLE viagensDesejadas (
     fkLocal INT, 
 	CONSTRAINT fkLocal FOREIGN KEY  (fkLocal) REFERENCES Local(idlocal),
-    fkUsuario2 CHAR(4),
-	CONSTRAINT fkUsuario2 FOREIGN KEY  (fkUsuario2) REFERENCES usuario(id),
+    fkusuario2 CHAR(4),
+	CONSTRAINT fkusuario2 FOREIGN KEY  (fkUsuario2) REFERENCES usuario(id),
     data DATE, 
     duracao VARCHAR(10),
     comentarios VARCHAR(200));
@@ -111,7 +111,25 @@ select
     
     SELECT * FROM Local;
 	SELECT * FROM usuario;
+    SELECT * FROM viagensDesejadas;
 	SELECT * FROM viagens;
-    desc viagens;
     
     DROP DATABASE Souloxy;
+    DROP TABLE viagensDesejadas;
+    DROP TABLE viagens;
+	DROP TABLE usuario;
+    
+                   
+SELECT (SELECT COUNT(cidade) FROM viagens where fkusuario = 1065 GROUP BY cidade );
+
+select          
+		nome, 
+        cidade, 
+        duracao, 
+        satisfacao,
+		DATE_FORMAT(data,'%D/%m/%a') as data
+                    from viagens
+                    join usuario
+                    on fkusuario = id
+                    where fkusuario = 2323
+                   order by nome desc;
