@@ -100,10 +100,10 @@
                         <h2> <span id="viagem_realizada"></span></h2>
                     </div>
                     
-                    <div class="item-regua totalviagensplan">
+                    <!-- <div class="item-regua totalviagensplan">
                         <h4>Total de Viagens Desejadas: </h4>
                         <h2> <span id="desejadas"></span></h2>
-                    </div>
+                    </div> -->
                 </div>
 
                 
@@ -278,7 +278,7 @@
             config
         );
 
-        setTimeout(() => atualizarGrafico(idUsuario, dados, myChart), 9000);
+        // setTimeout(() => atualizarGrafico(idUsuario, dados, myChart), 9000);
     }
 
 
@@ -288,7 +288,7 @@
     //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
     //     Para ajustar o "select", ajuste o comando sql em src/models
 
-    function atualizarGrafico(idUsuario, dados, myChart) {
+    /* function atualizarGrafico(idUsuario, dados, myChart) {
 
         fetch(`/viagens/tempo-real/${idUsuario}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
@@ -339,7 +339,7 @@
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
 
-    }
+    } */
 
     //Aqui chamamos o arquivo listar vindo da gatoModel
     fetch(`../viagens/listar/${idUsuario}`, {
@@ -384,7 +384,6 @@
 
         console.log(data);
         Lista_local = ['São Roque', 'Brotas', 'Peruíbe', 'Santo Antonio do Pinhal', 'Eldorado', 'Serra Negra', 'Cunha', 'Itu', 'Campos do Jordão', 'Araçoiaba da Serra', 'Ubatuba', 'Atibaia', 'São Bento do Sapucaí,', 'Águas de Prata', 'Socorro'];
-
         for (var A = 0; A < Lista_local.length; A++) {
             var element = data[A];
             data_cards2.innerHTML += `${element.data}<br>`;

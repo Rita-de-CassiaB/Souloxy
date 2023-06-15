@@ -99,13 +99,12 @@ function listarp(idUsuario) {
     console.log ("Acessei o viagens model - listar2")
 
 
-    var instrucao = `		select          
-    fklocal, 
+    var instrucao = `Select fklocal, 
     DATE_FORMAT(data,'%d/%m/%y') as data
      from viagensDesejadas   join usuario
                 on fkusuario2 = id
                 where fkusuario2 = ${idUsuario}
-               order by nome desc limit 5`;
+               order by nome;`;
 
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);

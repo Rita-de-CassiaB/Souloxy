@@ -55,6 +55,7 @@
   justify-content: space-evenly;
   width: 50%;
   margin-top: 20px;
+  flex-direction: column;
 }
 
 .totalviagens {
@@ -91,6 +92,7 @@
   display: flex;
   height: 500px;
   color: #BEC4ED;
+  margin-left: 15%;
 }
 
 .cards h1 {

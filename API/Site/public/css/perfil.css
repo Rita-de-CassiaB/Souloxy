@@ -48,7 +48,7 @@ body {
 
 
 .item {
-    width: 700px;
+    width: 1000px;
     height: 50vh;
     flex-shrink: 0;
     transition: all 600ms ease-in-out;
@@ -79,7 +79,7 @@ body {
 .arrow-right {
     position: absolute;
     top: 0;
-    left: 95.3%;
+    left: 95.5%;
     right: auto;
     bottom: 0;
     font-size: 20px;

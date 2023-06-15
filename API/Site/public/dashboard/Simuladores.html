@@ -136,9 +136,7 @@
                         Como utilizar?</br>
                         Selecione o local desejado, clique em Buscar CEP, copie e cole no <a
                             href="https://www.google.com.br/maps"> Google Maps </a> </br> Após isso, clique
-                        com
-                        o
-                        botão direito na tela, vá em medir distância, selecione a área do local no mapa e
+                        com o botão direito na tela, vá em medir distância, selecione a área do local no mapa e
                         depois
                         busque por sua
                         residência, ou o local de saída </br>
@@ -516,17 +514,6 @@
                     }, "2000")
 
                     console.log(resposta);
-
-                    resposta.json().then(json => {
-                        console.log(json);
-                        console.log(JSON.stringify(json));
-
-                        sessionStorage.EMAIL_USUARIO = json.email;
-                        sessionStorage.SENHA_USUARIO = json.senha;
-                        sessionStorage.NOME_USUARIO = json.nome;
-                        sessionStorage.ID_VIAGEM = json.id;
-
-                    });
 
                 }
                 else {
