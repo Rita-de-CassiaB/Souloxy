@@ -383,16 +383,11 @@
     }).then((data) => {
 
         console.log(data);
-        var maisdesej = ``
         Lista_local = ['São Roque', 'Brotas', 'Peruíbe', 'Santo Antonio do Pinhal', 'Eldorado', 'Serra Negra', 'Cunha', 'Itu', 'Campos do Jordão', 'Araçoiaba da Serra', 'Ubatuba', 'Atibaia', 'São Bento do Sapucaí,', 'Águas de Prata', 'Socorro'];
 
         for (var A = 0; A < Lista_local.length; A++) {
             var element = data[A];
             data_cards2.innerHTML += `${element.data}<br>`;
-
-            if (element.fklocal) {
-
-            }
 
             if (element.fklocal == 1) {
                 viagens_cards2.innerHTML += `São Roque <br>`; //1
@@ -431,7 +426,7 @@
 
         for (var A = 0; A < data.length; A++) {
             var element = data[A];
-            desejadas.innerHTML = `${element.fklocal.length}<br>`;
+            desejadas.innerHTML = `${element.data.length}<br>`;
         };
 
     });
